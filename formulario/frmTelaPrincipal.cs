@@ -95,7 +95,7 @@ namespace Desafio
         {
             try
             {
-                frmCliente cliente = null; 
+                frmCliente cliente = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmCliente)
@@ -110,7 +110,7 @@ namespace Desafio
                     cliente.MdiParent = this;
                     cliente.Show();
                 }
-                
+
                 cliente.Focus();
             }
             catch (Exception ex)
@@ -394,12 +394,12 @@ namespace Desafio
         private void tsbLogoff_Click(object sender, EventArgs e)
         {
             string mensagem = "Que realmente fazer Logoff?";
-            if (MessageBox.Show(mensagem,"Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(mensagem, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 this.Hide();
                 frmLogin login = new frmLogin();
                 login.Show();
-                
+
             }
         }
     }

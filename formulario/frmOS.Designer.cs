@@ -28,548 +28,547 @@ namespace Desafio
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idOrdemLabel;
-            System.Windows.Forms.Label idClienteLabel;
-            System.Windows.Forms.Label idServicoLabel;
-            System.Windows.Forms.Label dataDiaLabel;
-            System.Windows.Forms.Label cadastradorPorLabel;
+            components = new System.ComponentModel.Container();
+            Label idOrdemLabel;
+            Label idClienteLabel;
+            Label idServicoLabel;
+            Label dataDiaLabel;
+            Label cadastradorPorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOS));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cadastradorPorTextBox = new System.Windows.Forms.TextBox();
-            this.tbOrdemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.servicoDataSet = new Desafio.ServicoDataSet();
-            this.dataDiaTextBox = new System.Windows.Forms.TextBox();
-            this.idServicoComboBox = new System.Windows.Forms.ComboBox();
-            this.tbServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idClienteComboBox = new System.Windows.Forms.ComboBox();
-            this.tbClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idOrdemTextBox = new System.Windows.Forms.TextBox();
-            this.tbOrdemServicoTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbOrdemServicoTableAdapter();
-            this.tbOrdemServicoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbOrdemServicoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbmFiltrar = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisar = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbOrdemServicoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tbClienteTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter();
-            this.tbServicoTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter();
-            idOrdemLabel = new System.Windows.Forms.Label();
-            idClienteLabel = new System.Windows.Forms.Label();
-            idServicoLabel = new System.Windows.Forms.Label();
-            dataDiaLabel = new System.Windows.Forms.Label();
-            cadastradorPorLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingNavigator)).BeginInit();
-            this.tbOrdemServicoBindingNavigator.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoDataGridView)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            cadastradorPorTextBox = new TextBox();
+            tbOrdemServicoBindingSource = new BindingSource(components);
+            servicoDataSet = new ServicoDataSet();
+            dataDiaTextBox = new TextBox();
+            idServicoComboBox = new ComboBox();
+            tbServicoBindingSource = new BindingSource(components);
+            idClienteComboBox = new ComboBox();
+            tbClienteBindingSource = new BindingSource(components);
+            idOrdemTextBox = new TextBox();
+            tbOrdemServicoTableAdapter = new ServicoDataSetTableAdapters.tbOrdemServicoTableAdapter();
+            tbOrdemServicoBindingNavigator = new BindingNavigator(components);
+            bindingNavigatorAddNewItem = new ToolStripButton();
+            bindingNavigatorCountItem = new ToolStripLabel();
+            bindingNavigatorDeleteItem = new ToolStripButton();
+            bindingNavigatorMoveFirstItem = new ToolStripButton();
+            bindingNavigatorMovePreviousItem = new ToolStripButton();
+            bindingNavigatorSeparator = new ToolStripSeparator();
+            bindingNavigatorPositionItem = new ToolStripTextBox();
+            bindingNavigatorSeparator1 = new ToolStripSeparator();
+            bindingNavigatorMoveNextItem = new ToolStripButton();
+            bindingNavigatorMoveLastItem = new ToolStripButton();
+            bindingNavigatorSeparator2 = new ToolStripSeparator();
+            tbOrdemServicoBindingNavigatorSaveItem = new ToolStripButton();
+            label1 = new Label();
+            cbmFiltrar = new ComboBox();
+            label2 = new Label();
+            btnPesquisar = new Button();
+            txtPesquisar = new MaskedTextBox();
+            groupBox2 = new GroupBox();
+            tbOrdemServicoDataGridView = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            groupBox3 = new GroupBox();
+            tbClienteTableAdapter = new ServicoDataSetTableAdapters.tbClienteTableAdapter();
+            tbServicoTableAdapter = new ServicoDataSetTableAdapters.tbServicoTableAdapter();
+            idOrdemLabel = new Label();
+            idClienteLabel = new Label();
+            idServicoLabel = new Label();
+            dataDiaLabel = new Label();
+            cadastradorPorLabel = new Label();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbServicoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbClienteBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingNavigator).BeginInit();
+            tbOrdemServicoBindingNavigator.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoDataGridView).BeginInit();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // idOrdemLabel
             // 
             idOrdemLabel.AutoSize = true;
-            idOrdemLabel.Location = new System.Drawing.Point(7, 22);
+            idOrdemLabel.Location = new Point(8, 25);
+            idOrdemLabel.Margin = new Padding(4, 0, 4, 0);
             idOrdemLabel.Name = "idOrdemLabel";
-            idOrdemLabel.Size = new System.Drawing.Size(61, 13);
+            idOrdemLabel.Size = new Size(67, 15);
             idOrdemLabel.TabIndex = 0;
             idOrdemLabel.Text = "Código OS:";
             // 
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(7, 61);
+            idClienteLabel.Location = new Point(8, 70);
+            idClienteLabel.Margin = new Padding(4, 0, 4, 0);
             idClienteLabel.Name = "idClienteLabel";
-            idClienteLabel.Size = new System.Drawing.Size(88, 13);
+            idClienteLabel.Size = new Size(100, 15);
             idClienteLabel.TabIndex = 2;
             idClienteLabel.Text = "Nome do Cliente:";
             // 
             // idServicoLabel
             // 
             idServicoLabel.AutoSize = true;
-            idServicoLabel.Location = new System.Drawing.Point(7, 102);
+            idServicoLabel.Location = new Point(8, 118);
+            idServicoLabel.Margin = new Padding(4, 0, 4, 0);
             idServicoLabel.Name = "idServicoLabel";
-            idServicoLabel.Size = new System.Drawing.Size(92, 13);
+            idServicoLabel.Size = new Size(101, 15);
             idServicoLabel.TabIndex = 4;
             idServicoLabel.Text = "Nome do Serviço:";
             // 
             // dataDiaLabel
             // 
             dataDiaLabel.AutoSize = true;
-            dataDiaLabel.Location = new System.Drawing.Point(9, 142);
+            dataDiaLabel.Location = new Point(10, 164);
+            dataDiaLabel.Margin = new Padding(4, 0, 4, 0);
             dataDiaLabel.Name = "dataDiaLabel";
-            dataDiaLabel.Size = new System.Drawing.Size(93, 13);
+            dataDiaLabel.Size = new Size(101, 15);
             dataDiaLabel.TabIndex = 6;
             dataDiaLabel.Text = "Data do Cadastro:";
             // 
             // cadastradorPorLabel
             // 
             cadastradorPorLabel.AutoSize = true;
-            cadastradorPorLabel.Location = new System.Drawing.Point(9, 181);
+            cadastradorPorLabel.Location = new Point(10, 209);
+            cadastradorPorLabel.Margin = new Padding(4, 0, 4, 0);
             cadastradorPorLabel.Name = "cadastradorPorLabel";
-            cadastradorPorLabel.Size = new System.Drawing.Size(86, 13);
+            cadastradorPorLabel.Size = new Size(94, 15);
             cadastradorPorLabel.TabIndex = 8;
             cadastradorPorLabel.Text = "Cadastrado Por: ";
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(cadastradorPorLabel);
-            this.groupBox1.Controls.Add(this.cadastradorPorTextBox);
-            this.groupBox1.Controls.Add(dataDiaLabel);
-            this.groupBox1.Controls.Add(this.dataDiaTextBox);
-            this.groupBox1.Controls.Add(idServicoLabel);
-            this.groupBox1.Controls.Add(this.idServicoComboBox);
-            this.groupBox1.Controls.Add(idClienteLabel);
-            this.groupBox1.Controls.Add(this.idClienteComboBox);
-            this.groupBox1.Controls.Add(idOrdemLabel);
-            this.groupBox1.Controls.Add(this.idOrdemTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 228);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados OS";
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(cadastradorPorLabel);
+            groupBox1.Controls.Add(cadastradorPorTextBox);
+            groupBox1.Controls.Add(dataDiaLabel);
+            groupBox1.Controls.Add(dataDiaTextBox);
+            groupBox1.Controls.Add(idServicoLabel);
+            groupBox1.Controls.Add(idServicoComboBox);
+            groupBox1.Controls.Add(idClienteLabel);
+            groupBox1.Controls.Add(idClienteComboBox);
+            groupBox1.Controls.Add(idOrdemLabel);
+            groupBox1.Controls.Add(idOrdemTextBox);
+            groupBox1.Location = new Point(14, 31);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(638, 263);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Dados OS";
             // 
             // cadastradorPorTextBox
             // 
-            this.cadastradorPorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbOrdemServicoBindingSource, "cadastradorPor", true));
-            this.cadastradorPorTextBox.Enabled = false;
-            this.cadastradorPorTextBox.Location = new System.Drawing.Point(12, 197);
-            this.cadastradorPorTextBox.Name = "cadastradorPorTextBox";
-            this.cadastradorPorTextBox.Size = new System.Drawing.Size(159, 20);
-            this.cadastradorPorTextBox.TabIndex = 9;
+            cadastradorPorTextBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "cadastradorPor", true));
+            cadastradorPorTextBox.Enabled = false;
+            cadastradorPorTextBox.Location = new Point(14, 227);
+            cadastradorPorTextBox.Margin = new Padding(4, 3, 4, 3);
+            cadastradorPorTextBox.Name = "cadastradorPorTextBox";
+            cadastradorPorTextBox.Size = new Size(185, 23);
+            cadastradorPorTextBox.TabIndex = 9;
             // 
             // tbOrdemServicoBindingSource
             // 
-            this.tbOrdemServicoBindingSource.DataMember = "tbOrdemServico";
-            this.tbOrdemServicoBindingSource.DataSource = this.servicoDataSet;
+            tbOrdemServicoBindingSource.DataMember = "tbOrdemServico";
+            tbOrdemServicoBindingSource.DataSource = servicoDataSet;
             // 
             // servicoDataSet
             // 
-            this.servicoDataSet.DataSetName = "ServicoDataSet";
-            this.servicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            servicoDataSet.DataSetName = "ServicoDataSet";
+            servicoDataSet.Namespace = "http://tempuri.org/ServicoDataSet.xsd";
+            servicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataDiaTextBox
             // 
-            this.dataDiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbOrdemServicoBindingSource, "dataDia", true));
-            this.dataDiaTextBox.Enabled = false;
-            this.dataDiaTextBox.Location = new System.Drawing.Point(12, 158);
-            this.dataDiaTextBox.Name = "dataDiaTextBox";
-            this.dataDiaTextBox.Size = new System.Drawing.Size(159, 20);
-            this.dataDiaTextBox.TabIndex = 7;
+            dataDiaTextBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "dataDia", true));
+            dataDiaTextBox.Enabled = false;
+            dataDiaTextBox.Location = new Point(14, 182);
+            dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
+            dataDiaTextBox.Name = "dataDiaTextBox";
+            dataDiaTextBox.Size = new Size(185, 23);
+            dataDiaTextBox.TabIndex = 7;
             // 
             // idServicoComboBox
             // 
-            this.idServicoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbOrdemServicoBindingSource, "idServico", true));
-            this.idServicoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbOrdemServicoBindingSource, "idServico", true));
-            this.idServicoComboBox.DataSource = this.tbServicoBindingSource;
-            this.idServicoComboBox.DisplayMember = "idServico";
-            this.idServicoComboBox.FormattingEnabled = true;
-            this.idServicoComboBox.Location = new System.Drawing.Point(10, 118);
-            this.idServicoComboBox.Name = "idServicoComboBox";
-            this.idServicoComboBox.Size = new System.Drawing.Size(276, 21);
-            this.idServicoComboBox.TabIndex = 5;
-            this.idServicoComboBox.ValueMember = "idServico";
+            idServicoComboBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "idServico", true));
+            idServicoComboBox.DataBindings.Add(new Binding("SelectedValue", tbOrdemServicoBindingSource, "idServico", true));
+            idServicoComboBox.DataSource = tbServicoBindingSource;
+            idServicoComboBox.DisplayMember = "idServico";
+            idServicoComboBox.FormattingEnabled = true;
+            idServicoComboBox.Location = new Point(12, 136);
+            idServicoComboBox.Margin = new Padding(4, 3, 4, 3);
+            idServicoComboBox.Name = "idServicoComboBox";
+            idServicoComboBox.Size = new Size(321, 23);
+            idServicoComboBox.TabIndex = 5;
+            idServicoComboBox.ValueMember = "idServico";
             // 
             // tbServicoBindingSource
             // 
-            this.tbServicoBindingSource.DataMember = "tbServico";
-            this.tbServicoBindingSource.DataSource = this.servicoDataSet;
+            tbServicoBindingSource.DataMember = "tbServico";
+            tbServicoBindingSource.DataSource = servicoDataSet;
             // 
             // idClienteComboBox
             // 
-            this.idClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbOrdemServicoBindingSource, "idCliente", true));
-            this.idClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbOrdemServicoBindingSource, "idCliente", true));
-            this.idClienteComboBox.DataSource = this.tbClienteBindingSource;
-            this.idClienteComboBox.DisplayMember = "idCliente";
-            this.idClienteComboBox.FormattingEnabled = true;
-            this.idClienteComboBox.Location = new System.Drawing.Point(10, 77);
-            this.idClienteComboBox.Name = "idClienteComboBox";
-            this.idClienteComboBox.Size = new System.Drawing.Size(276, 21);
-            this.idClienteComboBox.TabIndex = 3;
-            this.idClienteComboBox.ValueMember = "idCliente";
+            idClienteComboBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "idCliente", true));
+            idClienteComboBox.DataBindings.Add(new Binding("SelectedValue", tbOrdemServicoBindingSource, "idCliente", true));
+            idClienteComboBox.DataSource = tbClienteBindingSource;
+            idClienteComboBox.DisplayMember = "idCliente";
+            idClienteComboBox.FormattingEnabled = true;
+            idClienteComboBox.Location = new Point(12, 89);
+            idClienteComboBox.Margin = new Padding(4, 3, 4, 3);
+            idClienteComboBox.Name = "idClienteComboBox";
+            idClienteComboBox.Size = new Size(321, 23);
+            idClienteComboBox.TabIndex = 3;
+            idClienteComboBox.ValueMember = "idCliente";
             // 
             // tbClienteBindingSource
             // 
-            this.tbClienteBindingSource.DataMember = "tbCliente";
-            this.tbClienteBindingSource.DataSource = this.servicoDataSet;
+            tbClienteBindingSource.DataMember = "tbCliente";
+            tbClienteBindingSource.DataSource = servicoDataSet;
             // 
             // idOrdemTextBox
             // 
-            this.idOrdemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbOrdemServicoBindingSource, "idOrdem", true));
-            this.idOrdemTextBox.Enabled = false;
-            this.idOrdemTextBox.Location = new System.Drawing.Point(10, 38);
-            this.idOrdemTextBox.Name = "idOrdemTextBox";
-            this.idOrdemTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idOrdemTextBox.TabIndex = 1;
+            idOrdemTextBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "idOrdem", true));
+            idOrdemTextBox.Enabled = false;
+            idOrdemTextBox.Location = new Point(12, 44);
+            idOrdemTextBox.Margin = new Padding(4, 3, 4, 3);
+            idOrdemTextBox.Name = "idOrdemTextBox";
+            idOrdemTextBox.Size = new Size(116, 23);
+            idOrdemTextBox.TabIndex = 1;
             // 
             // tbOrdemServicoTableAdapter
             // 
-            this.tbOrdemServicoTableAdapter.ClearBeforeFill = true;
+            tbOrdemServicoTableAdapter.ClearBeforeFill = true;
             // 
             // tbOrdemServicoBindingNavigator
             // 
-            this.tbOrdemServicoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.tbOrdemServicoBindingNavigator.BindingSource = this.tbOrdemServicoBindingSource;
-            this.tbOrdemServicoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.tbOrdemServicoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.tbOrdemServicoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.tbOrdemServicoBindingNavigatorSaveItem});
-            this.tbOrdemServicoBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.tbOrdemServicoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.tbOrdemServicoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.tbOrdemServicoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.tbOrdemServicoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.tbOrdemServicoBindingNavigator.Name = "tbOrdemServicoBindingNavigator";
-            this.tbOrdemServicoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tbOrdemServicoBindingNavigator.Size = new System.Drawing.Size(571, 25);
-            this.tbOrdemServicoBindingNavigator.TabIndex = 3;
-            this.tbOrdemServicoBindingNavigator.Text = "bindingNavigator1";
+            tbOrdemServicoBindingNavigator.AddNewItem = bindingNavigatorAddNewItem;
+            tbOrdemServicoBindingNavigator.BackColor = SystemColors.ButtonFace;
+            tbOrdemServicoBindingNavigator.BindingSource = tbOrdemServicoBindingSource;
+            tbOrdemServicoBindingNavigator.CountItem = bindingNavigatorCountItem;
+            tbOrdemServicoBindingNavigator.DeleteItem = bindingNavigatorDeleteItem;
+            tbOrdemServicoBindingNavigator.Items.AddRange(new ToolStripItem[] { bindingNavigatorMoveFirstItem, bindingNavigatorMovePreviousItem, bindingNavigatorSeparator, bindingNavigatorPositionItem, bindingNavigatorCountItem, bindingNavigatorSeparator1, bindingNavigatorMoveNextItem, bindingNavigatorMoveLastItem, bindingNavigatorSeparator2, bindingNavigatorAddNewItem, bindingNavigatorDeleteItem, tbOrdemServicoBindingNavigatorSaveItem });
+            tbOrdemServicoBindingNavigator.Location = new Point(0, 0);
+            tbOrdemServicoBindingNavigator.MoveFirstItem = bindingNavigatorMoveFirstItem;
+            tbOrdemServicoBindingNavigator.MoveLastItem = bindingNavigatorMoveLastItem;
+            tbOrdemServicoBindingNavigator.MoveNextItem = bindingNavigatorMoveNextItem;
+            tbOrdemServicoBindingNavigator.MovePreviousItem = bindingNavigatorMovePreviousItem;
+            tbOrdemServicoBindingNavigator.Name = "tbOrdemServicoBindingNavigator";
+            tbOrdemServicoBindingNavigator.PositionItem = bindingNavigatorPositionItem;
+            tbOrdemServicoBindingNavigator.Size = new Size(666, 25);
+            tbOrdemServicoBindingNavigator.TabIndex = 3;
+            tbOrdemServicoBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            bindingNavigatorAddNewItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorAddNewItem.Image = (Image)resources.GetObject("bindingNavigatorAddNewItem.Image");
+            bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorAddNewItem.Size = new Size(23, 22);
+            bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(38, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            bindingNavigatorCountItem.Size = new Size(37, 22);
+            bindingNavigatorCountItem.Text = "de {0}";
+            bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            bindingNavigatorDeleteItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorDeleteItem.Image = (Image)resources.GetObject("bindingNavigatorDeleteItem.Image");
+            bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorDeleteItem.Size = new Size(23, 22);
+            bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            bindingNavigatorMoveFirstItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorMoveFirstItem.Image = (Image)resources.GetObject("bindingNavigatorMoveFirstItem.Image");
+            bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorMoveFirstItem.Size = new Size(23, 22);
+            bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            bindingNavigatorMovePreviousItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorMovePreviousItem.Image = (Image)resources.GetObject("bindingNavigatorMovePreviousItem.Image");
+            bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorMovePreviousItem.Size = new Size(23, 22);
+            bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            bindingNavigatorSeparator.Size = new Size(6, 25);
             // 
             // bindingNavigatorPositionItem
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            bindingNavigatorPositionItem.AccessibleName = "Position";
+            bindingNavigatorPositionItem.AutoSize = false;
+            bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            bindingNavigatorPositionItem.Size = new Size(58, 23);
+            bindingNavigatorPositionItem.Text = "0";
+            bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            bindingNavigatorSeparator1.Size = new Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            bindingNavigatorMoveNextItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorMoveNextItem.Image = (Image)resources.GetObject("bindingNavigatorMoveNextItem.Image");
+            bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorMoveNextItem.Size = new Size(23, 22);
+            bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            bindingNavigatorMoveLastItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            bindingNavigatorMoveLastItem.Image = (Image)resources.GetObject("bindingNavigatorMoveLastItem.Image");
+            bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            bindingNavigatorMoveLastItem.Size = new Size(23, 22);
+            bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            bindingNavigatorSeparator2.Size = new Size(6, 25);
             // 
             // tbOrdemServicoBindingNavigatorSaveItem
             // 
-            this.tbOrdemServicoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbOrdemServicoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tbOrdemServicoBindingNavigatorSaveItem.Image")));
-            this.tbOrdemServicoBindingNavigatorSaveItem.Name = "tbOrdemServicoBindingNavigatorSaveItem";
-            this.tbOrdemServicoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.tbOrdemServicoBindingNavigatorSaveItem.Text = "Save Data";
-            this.tbOrdemServicoBindingNavigatorSaveItem.Click += new System.EventHandler(this.tbOrdemServicoBindingNavigatorSaveItem_Click);
+            tbOrdemServicoBindingNavigatorSaveItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tbOrdemServicoBindingNavigatorSaveItem.Image = (Image)resources.GetObject("tbOrdemServicoBindingNavigatorSaveItem.Image");
+            tbOrdemServicoBindingNavigatorSaveItem.Name = "tbOrdemServicoBindingNavigatorSaveItem";
+            tbOrdemServicoBindingNavigatorSaveItem.Size = new Size(23, 22);
+            tbOrdemServicoBindingNavigatorSaveItem.Text = "Save Data";
+            tbOrdemServicoBindingNavigatorSaveItem.Click += tbOrdemServicoBindingNavigatorSaveItem_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filtrar por:";
+            label1.AutoSize = true;
+            label1.Location = new Point(7, 37);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Filtrar por:";
             // 
             // cbmFiltrar
             // 
-            this.cbmFiltrar.FormattingEnabled = true;
-            this.cbmFiltrar.Items.AddRange(new object[] {
-            "",
-            "Código OS",
-            "Código Cliente",
-            "Código Serviço"});
-            this.cbmFiltrar.Location = new System.Drawing.Point(65, 29);
-            this.cbmFiltrar.Name = "cbmFiltrar";
-            this.cbmFiltrar.Size = new System.Drawing.Size(121, 21);
-            this.cbmFiltrar.TabIndex = 7;
+            cbmFiltrar.FormattingEnabled = true;
+            cbmFiltrar.Items.AddRange(new object[] { "", "Código OS", "Código Cliente", "Código Serviço" });
+            cbmFiltrar.Location = new Point(76, 33);
+            cbmFiltrar.Margin = new Padding(4, 3, 4, 3);
+            cbmFiltrar.Name = "cbmFiltrar";
+            cbmFiltrar.Size = new Size(140, 23);
+            cbmFiltrar.TabIndex = 7;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(192, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "=";
+            label2.AutoSize = true;
+            label2.Location = new Point(224, 37);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(15, 15);
+            label2.TabIndex = 8;
+            label2.Text = "=";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(349, 27);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 9;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            btnPesquisar.Location = new Point(407, 31);
+            btnPesquisar.Margin = new Padding(4, 3, 4, 3);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(88, 27);
+            btnPesquisar.TabIndex = 9;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(211, 29);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(132, 20);
-            this.txtPesquisar.TabIndex = 10;
+            txtPesquisar.Location = new Point(246, 33);
+            txtPesquisar.Margin = new Padding(4, 3, 4, 3);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.Size = new Size(153, 23);
+            txtPesquisar.TabIndex = 10;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.txtPesquisar);
-            this.groupBox2.Controls.Add(this.btnPesquisar);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.cbmFiltrar);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 261);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(547, 79);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "OS(s)";
+            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox2.Controls.Add(txtPesquisar);
+            groupBox2.Controls.Add(btnPesquisar);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(cbmFiltrar);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Location = new Point(14, 301);
+            groupBox2.Margin = new Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(4, 3, 4, 3);
+            groupBox2.Size = new Size(638, 91);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "OS(s)";
             // 
             // tbOrdemServicoDataGridView
             // 
-            this.tbOrdemServicoDataGridView.AllowUserToAddRows = false;
-            this.tbOrdemServicoDataGridView.AllowUserToDeleteRows = false;
-            this.tbOrdemServicoDataGridView.AutoGenerateColumns = false;
-            this.tbOrdemServicoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.tbOrdemServicoDataGridView.DataSource = this.tbOrdemServicoBindingSource;
-            this.tbOrdemServicoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbOrdemServicoDataGridView.Location = new System.Drawing.Point(3, 16);
-            this.tbOrdemServicoDataGridView.Name = "tbOrdemServicoDataGridView";
-            this.tbOrdemServicoDataGridView.ReadOnly = true;
-            this.tbOrdemServicoDataGridView.Size = new System.Drawing.Size(544, 214);
-            this.tbOrdemServicoDataGridView.TabIndex = 0;
-            this.tbOrdemServicoDataGridView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tbOrdemServicoDataGridView_MouseDoubleClick);
+            tbOrdemServicoDataGridView.AllowUserToAddRows = false;
+            tbOrdemServicoDataGridView.AllowUserToDeleteRows = false;
+            tbOrdemServicoDataGridView.AutoGenerateColumns = false;
+            tbOrdemServicoDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            tbOrdemServicoDataGridView.DataSource = tbOrdemServicoBindingSource;
+            tbOrdemServicoDataGridView.Dock = DockStyle.Fill;
+            tbOrdemServicoDataGridView.Location = new Point(4, 19);
+            tbOrdemServicoDataGridView.Margin = new Padding(4, 3, 4, 3);
+            tbOrdemServicoDataGridView.Name = "tbOrdemServicoDataGridView";
+            tbOrdemServicoDataGridView.ReadOnly = true;
+            tbOrdemServicoDataGridView.Size = new Size(634, 247);
+            tbOrdemServicoDataGridView.TabIndex = 0;
+            tbOrdemServicoDataGridView.MouseDoubleClick += tbOrdemServicoDataGridView_MouseDoubleClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idOrdem";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código OS";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.DataPropertyName = "idOrdem";
+            dataGridViewTextBoxColumn1.HeaderText = "Código OS";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "idCliente";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Código Cliente";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.DataPropertyName = "idCliente";
+            dataGridViewTextBoxColumn2.HeaderText = "Código Cliente";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "idServico";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Código Serviço";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.DataPropertyName = "idServico";
+            dataGridViewTextBoxColumn3.HeaderText = "Código Serviço";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "dataDia";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Data do Cadastro";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.DataPropertyName = "dataDia";
+            dataGridViewTextBoxColumn4.HeaderText = "Data do Cadastro";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "cadastradorPor";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cadastrado Por";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.DataPropertyName = "cadastradorPor";
+            dataGridViewTextBoxColumn5.HeaderText = "Cadastrado Por";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.tbOrdemServicoDataGridView);
-            this.groupBox3.Location = new System.Drawing.Point(9, 346);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(550, 233);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "OS(s)";
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(tbOrdemServicoDataGridView);
+            groupBox3.Location = new Point(10, 399);
+            groupBox3.Margin = new Padding(4, 3, 4, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(4, 3, 4, 3);
+            groupBox3.Size = new Size(642, 269);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "OS(s)";
             // 
             // tbClienteTableAdapter
             // 
-            this.tbClienteTableAdapter.ClearBeforeFill = true;
+            tbClienteTableAdapter.ClearBeforeFill = true;
             // 
             // tbServicoTableAdapter
             // 
-            this.tbServicoTableAdapter.ClearBeforeFill = true;
+            tbServicoTableAdapter.ClearBeforeFill = true;
             // 
             // frmOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 596);
-            this.Controls.Add(this.tbOrdemServicoBindingNavigator);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmOS";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar OS";
-            this.Load += new System.EventHandler(this.frmOS_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingNavigator)).EndInit();
-            this.tbOrdemServicoBindingNavigator.ResumeLayout(false);
-            this.tbOrdemServicoBindingNavigator.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoDataGridView)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(666, 688);
+            Controls.Add(tbOrdemServicoBindingNavigator);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "frmOS";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inserir Post";
+            Load += frmOS_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbServicoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbClienteBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingNavigator).EndInit();
+            tbOrdemServicoBindingNavigator.ResumeLayout(false);
+            tbOrdemServicoBindingNavigator.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoDataGridView).EndInit();
+            groupBox3.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private GroupBox groupBox1;
         private ServicoDataSet servicoDataSet;
-        private System.Windows.Forms.BindingSource tbOrdemServicoBindingSource;
+        private BindingSource tbOrdemServicoBindingSource;
         private Desafio.ServicoDataSetTableAdapters.tbOrdemServicoTableAdapter tbOrdemServicoTableAdapter;
-        private System.Windows.Forms.BindingNavigator tbOrdemServicoBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton tbOrdemServicoBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox cadastradorPorTextBox;
-        private System.Windows.Forms.TextBox dataDiaTextBox;
-        private System.Windows.Forms.ComboBox idServicoComboBox;
-        private System.Windows.Forms.ComboBox idClienteComboBox;
-        private System.Windows.Forms.TextBox idOrdemTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbmFiltrar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.MaskedTextBox txtPesquisar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView tbOrdemServicoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.BindingSource tbClienteBindingSource;
+        private BindingNavigator tbOrdemServicoBindingNavigator;
+        private ToolStripButton bindingNavigatorAddNewItem;
+        private ToolStripLabel bindingNavigatorCountItem;
+        private ToolStripButton bindingNavigatorDeleteItem;
+        private ToolStripButton bindingNavigatorMoveFirstItem;
+        private ToolStripButton bindingNavigatorMovePreviousItem;
+        private ToolStripSeparator bindingNavigatorSeparator;
+        private ToolStripTextBox bindingNavigatorPositionItem;
+        private ToolStripSeparator bindingNavigatorSeparator1;
+        private ToolStripButton bindingNavigatorMoveNextItem;
+        private ToolStripButton bindingNavigatorMoveLastItem;
+        private ToolStripSeparator bindingNavigatorSeparator2;
+        private ToolStripButton tbOrdemServicoBindingNavigatorSaveItem;
+        private TextBox cadastradorPorTextBox;
+        private TextBox dataDiaTextBox;
+        private ComboBox idServicoComboBox;
+        private ComboBox idClienteComboBox;
+        private TextBox idOrdemTextBox;
+        private Label label1;
+        private ComboBox cbmFiltrar;
+        private Label label2;
+        private Button btnPesquisar;
+        private MaskedTextBox txtPesquisar;
+        private GroupBox groupBox2;
+        private DataGridView tbOrdemServicoDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private GroupBox groupBox3;
+        private BindingSource tbClienteBindingSource;
         private Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter tbClienteTableAdapter;
-        private System.Windows.Forms.BindingSource tbServicoBindingSource;
+        private BindingSource tbServicoBindingSource;
         private Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter tbServicoTableAdapter;
     }
 }

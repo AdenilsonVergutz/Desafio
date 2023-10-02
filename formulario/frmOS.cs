@@ -62,12 +62,12 @@ namespace Desafio
                 {
                     //Define a instrução Sql
                     string sql = "SELECT * FROM tbOrdemServico WHERE idOrdem =" + txtPesquisar.Text + "";
-                    
+
                     //Lê os dados da variavel sql e conectar no cn
                     cmd = new SqlCommand(sql, cn);
                     //Abre conexão
                     cn.Open();
-                    
+
                     //Define o valor da CommandType para cmd
                     cmd.CommandType = CommandType.Text;
 
@@ -86,11 +86,11 @@ namespace Desafio
                     tbOrdemServicoDataGridView.DataSource = os;
 
                     //Fechar a conexão
-                   
+
 
                 }
                 if (cbmFiltrar.Text == "Código Cliente")
-                {                                    
+                {
                     //define a instrução SQL
                     string sql = "SELECT * FROM tbOrdemServico WHERE idCliente =" + txtPesquisar.Text + "";
                     cmd = new SqlCommand(sql, cn);
@@ -100,7 +100,7 @@ namespace Desafio
                     DataTable os = new DataTable();
                     da.Fill(os);
                     tbOrdemServicoDataGridView.DataSource = os;
-                    
+
                 }
                 if (cbmFiltrar.Text == "Código Serviço")
                 {
