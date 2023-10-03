@@ -26,24 +26,24 @@ namespace Desafio
                 usuárioToolStripMenuItem.Visible = false;
             }
 
-            //Mostrar o usuário conectado
-            tsslUsuario.Text = "Usuário: " + frmLogin.usuarioConectado;
+            ////Mostrar o usuário conectado
+            //tsslUsuario.Text = "Usuário: " + frmLogin.usuarioConectado;
 
-            //Mostrar o nome do PC
-            string myHost = System.Net.Dns.GetHostName();
-            tsslNomePC.Text = "Nome do PC: " + myHost;
+            ////Mostrar o nome do PC
+            //string myHost = System.Net.Dns.GetHostName();
+            //tsslNomePC.Text = "Nome do PC: " + myHost;
 
-            //Mostrar o IP do usuário
+            ////Mostrar o IP do usuário
 
-            System.Net.IPHostEntry myIPs = System.Net.Dns.GetHostEntry(myHost);
-            foreach (System.Net.IPAddress myIP in myIPs.AddressList)
-            {
-                //Mostar o IP
-                tsslIP.Text = "IP: " + myIP;
+            //System.Net.IPHostEntry myIPs = System.Net.Dns.GetHostEntry(myHost);
+            //foreach (System.Net.IPAddress myIP in myIPs.AddressList)
+            //{
+            //    //Mostar o IP
+            //    tsslIP.Text = "IP: " + myIP;
 
-            }
-            //Mostrar a Data
-            tsslData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            //}
+            ////Mostrar a Data
+            //tsslData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
         }
 
@@ -401,6 +401,11 @@ namespace Desafio
                 login.Show();
 
             }
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Desafio
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.InactiveCaption;
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, relatórioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -147,6 +148,7 @@ namespace Desafio
             statusStrip1.Size = new Size(1185, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
+            statusStrip1.ItemClicked += statusStrip1_ItemClicked;
             // 
             // tsslUsuario
             // 
@@ -180,6 +182,7 @@ namespace Desafio
             // 
             // toolStrip1
             // 
+            toolStrip1.BackColor = SystemColors.InactiveCaption;
             toolStrip1.Items.AddRange(new ToolStripItem[] { tsbCliente, tsbServico, tsbOS, tsbLogoff });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
