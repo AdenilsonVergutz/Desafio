@@ -10,12 +10,15 @@
 
   <ItemGroup>
     <PackageReference Include="Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1358.0" />
+    <PackageReference Include="DevExpress.Win.Design" Version="23.1.5" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.WebForms" Version="150.1586.0" />
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1586.0" />
+    <PackageReference Include="Microsoft.WinForms.Designer.SDK" Version="1.6.0" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

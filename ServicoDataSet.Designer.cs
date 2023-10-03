@@ -1483,7 +1483,14 @@ namespace Desafio {
             private global::System.Data.DataColumn columndataDia;
             
             private global::System.Data.DataColumn columncadastradorPor;
-            
+
+            private global::System.Data.DataColumn columnbio;
+
+            private global::System.Data.DataColumn columnslug;
+
+            private global::System.Data.DataColumn columnemail;
+
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tbUsuarioDataTable() {
@@ -1572,7 +1579,37 @@ namespace Desafio {
                     return this.columncadastradorPor;
                 }
             }
-            
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn bioColumn
+            {
+                get
+                {
+                    return this.columnbio;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn slugColumn
+            {
+                get
+                {
+                    return this.columnslug;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emailColumn
+            {
+                get
+                {
+                    return this.columnemail;
+                }
+            }
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
@@ -1610,7 +1647,7 @@ namespace Desafio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbUsuarioRow AddtbUsuarioRow(string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor) {
+            public tbUsuarioRow AddtbUsuarioRow(string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, string bio, string slug, string email) {
                 tbUsuarioRow rowtbUsuarioRow = ((tbUsuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1619,7 +1656,10 @@ namespace Desafio {
                         repitaSenha,
                         nivelAcesso,
                         dataDia,
-                        cadastradorPor};
+                        cadastradorPor,
+                        bio,
+                        slug,
+                        email};
                 rowtbUsuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbUsuarioRow);
                 return rowtbUsuarioRow;
@@ -1656,8 +1696,13 @@ namespace Desafio {
                 this.columnnivelAcesso = base.Columns["nivelAcesso"];
                 this.columndataDia = base.Columns["dataDia"];
                 this.columncadastradorPor = base.Columns["cadastradorPor"];
+                this.columnbio = base.Columns["bio"];
+                this.columnslug = base.Columns["slug"];
+                this.columnemail = base.Columns["email"];
+
+
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
@@ -1675,6 +1720,13 @@ namespace Desafio {
                 base.Columns.Add(this.columndataDia);
                 this.columncadastradorPor = new global::System.Data.DataColumn("cadastradorPor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncadastradorPor);
+                this.columnbio = new global::System.Data.DataColumn("bio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbio);
+                this.columnslug = new global::System.Data.DataColumn("slug", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnslug);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidUsuario}, true));
                 this.columnidUsuario.AutoIncrement = true;
@@ -1691,6 +1743,12 @@ namespace Desafio {
                 this.columnnivelAcesso.MaxLength = 20;
                 this.columndataDia.MaxLength = 50;
                 this.columncadastradorPor.MaxLength = 50;
+                this.columnbio.AllowDBNull = false;
+                this.columnbio.MaxLength = 250;
+                this.columnslug.AllowDBNull = false;
+                this.columnslug.MaxLength = 50;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2503,7 +2561,68 @@ namespace Desafio {
                     this[this.tabletbUsuario.cadastradorPorColumn] = value;
                 }
             }
-            
+
+            public string bio
+            {
+                get
+                {
+                    try
+                    {
+                        return ((string)(this[this.tabletbUsuario.bioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e)
+                    {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'bio\' na tabela \'tbUsuario\' é DBNull.", e);
+                    }
+                }
+                set
+                {
+                    this[this.tabletbUsuario.bioColumn] = value;
+                }
+            }
+
+            public string slug
+            {
+                get
+                {
+                    try
+                    {
+                        return ((string)(this[this.tabletbUsuario.slugColumn]));
+                    }
+                    catch (global::System.InvalidCastException e)
+                    {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'slug\' na tabela \'tbUsuario\' é DBNull.", e);
+                    }
+                }
+                set
+                {
+                    this[this.tabletbUsuario.slugColumn] = value;
+                }
+            }
+
+            public string email
+            {
+                get
+                {
+                    try
+                    {
+                        return ((string)(this[this.tabletbUsuario.emailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e)
+                    {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'email\' na tabela \'tbUsuario\' é DBNull.", e);
+                    }
+                }
+                set
+                {
+                    this[this.tabletbUsuario.emailColumn] = value;
+                }
+            }
+
+
+
+
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdataDiaNull() {
@@ -2527,6 +2646,52 @@ namespace Desafio {
             public void SetcadastradorPorNull() {
                 this[this.tabletbUsuario.cadastradorPorColumn] = global::System.Convert.DBNull;
             }
+
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IbioNull()
+            {
+                return this.IsNull(this.tabletbUsuario.bioColumn);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetbioNull()
+            {
+                this[this.tabletbUsuario.bioColumn] = global::System.Convert.DBNull;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslugNull()
+            {
+                return this.IsNull(this.tabletbUsuario.slugColumn);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetslugNull()
+            {
+                this[this.tabletbUsuario.slugColumn] = global::System.Convert.DBNull;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IemailNull()
+            {
+                return this.IsNull(this.tabletbUsuario.emailColumn);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemailNull()
+            {
+                this[this.tabletbUsuario.emailColumn] = global::System.Convert.DBNull;
+            }
+
+
+
         }
         
         /// <summary>
@@ -4030,6 +4195,7 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_cadastradoPor));
             }
+
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4155,10 +4321,14 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
             tableMapping.ColumnMappings.Add("nivelAcesso", "nivelAcesso");
             tableMapping.ColumnMappings.Add("dataDia", "dataDia");
             tableMapping.ColumnMappings.Add("cadastradorPor", "cadastradorPor");
+            tableMapping.ColumnMappings.Add("bio", "bio");
+            tableMapping.ColumnMappings.Add("slug", "slug");
+            tableMapping.ColumnMappings.Add("email", "email");
+
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tbUsuario] WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tbUsuario] WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug)) AND  ([email] = @Original_email))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4169,10 +4339,19 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_dataDia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataDia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_cadastradorPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+
+            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_bio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_slug", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+
+
             this._adapter.InsertCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbUsuario] ([idUsuario], [usuario], [senha], [repitaSenha], [nivelAcesso], [dataDia], [cadastradorPor]) VALUES (@idUsuario, @usuario, @senha, @repitaSenha, @nivelAcesso, @dataDia, @cadastradorPor);
-SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor FROM tbUsuario WHERE (idUsuario = @idUsuario)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbUsuario] ([idUsuario], [usuario], [senha], [repitaSenha], [nivelAcesso], [dataDia], [cadastradorPor], [bio], [slug], [email]) VALUES (@idUsuario, @usuario, @senha, @repitaSenha, @nivelAcesso, @dataDia, @cadastradorPor, @bio, @slug, @email);
+            SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email FROM tbUsuario WHERE (idUsuario = @idUsuario)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4181,10 +4360,17 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@nivelAcesso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelAcesso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@dataDia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataDia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+
+
+
+
             this._adapter.UpdateCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbUsuario] SET [idUsuario] = @idUsuario, [usuario] = @usuario, [senha] = @senha, [repitaSenha] = @repitaSenha, [nivelAcesso] = @nivelAcesso, [dataDia] = @dataDia, [cadastradorPor] = @cadastradorPor WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)));
-SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor FROM tbUsuario WHERE (idUsuario = @idUsuario)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbUsuario] SET [idUsuario] = @idUsuario, [usuario] = @usuario, [senha] = @senha, [repitaSenha] = @repitaSenha, [nivelAcesso] = @nivelAcesso, [dataDia] = @dataDia, [cadastradorPor] = @cadastradorPor, [bio] = @bio, [slug] = @slug, [email] = @email WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug) ([email] = @Original_email));
+S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email FROM tbUsuario WHERE (idUsuario = @idUsuario)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4202,8 +4388,18 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_dataDia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataDia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_cadastradorPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+
+
+            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_bio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_slug", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+
+
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
@@ -4217,8 +4413,7 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorP" +
-                "or FROM dbo.tbUsuario";
+            this._commandCollection[0].CommandText = "SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email FROM dbo.tbUsuario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4279,7 +4474,7 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor) {
+        public virtual int Delete(int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor, string Original_bio, string Original_slug, string Original_email) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idUsuario));
             if ((Original_usuario == null)) {
                 throw new global::System.ArgumentNullException("Original_usuario");
@@ -4321,6 +4516,40 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_cadastradorPor));
             }
+
+
+            if ((Original_bio == null))
+            {
+                throw new global::System.ArgumentNullException("Original_bio");
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_bio));
+            }
+
+            if ((Original_slug == null))
+            {
+                throw new global::System.ArgumentNullException("Original_slug");
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_slug));
+            }
+
+            if ((Original_email == null))
+            {
+                throw new global::System.ArgumentNullException("Original_email");
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_email));
+            }
+
+
+
+
+
+
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4341,7 +4570,7 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idUsuario, string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor) {
+        public virtual int Insert(int idUsuario, string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, string bio, string slug, string email) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idUsuario));
             if ((usuario == null)) {
                 throw new global::System.ArgumentNullException("usuario");
@@ -4379,6 +4608,34 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cadastradorPor));
             }
+
+
+            if ((bio == null))
+            {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(bio));
+            }
+
+            if ((slug == null))
+            {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(slug));
+            }
+            if ((email == null))
+            {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(email));
+            }
+
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4399,7 +4656,7 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idUsuario, string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor) {
+        public virtual int Update(int idUsuario, string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, string bio, string slug, string email, int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor, string Original_bio, string Original_slug, string Original_email) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idUsuario));
             if ((usuario == null)) {
                 throw new global::System.ArgumentNullException("usuario");
@@ -4437,47 +4694,113 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(cadastradorPor));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idUsuario));
+
+
+            if ((bio == null))
+            {
+                throw new global::System.ArgumentNullException("bio");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(bio));
+            }
+
+            if ((slug == null))
+            {
+                throw new global::System.ArgumentNullException("slug");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(repitaSenha));
+            }
+
+            if ((email == null))
+            {
+                throw new global::System.ArgumentNullException("email");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(email));
+            }
+
+
+
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idUsuario));
             if ((Original_usuario == null)) {
                 throw new global::System.ArgumentNullException("Original_usuario");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_usuario));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_usuario));
             }
             if ((Original_senha == null)) {
                 throw new global::System.ArgumentNullException("Original_senha");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_senha));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_senha));
             }
             if ((Original_repitaSenha == null)) {
                 throw new global::System.ArgumentNullException("Original_repitaSenha");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_repitaSenha));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_repitaSenha));
             }
             if ((Original_nivelAcesso == null)) {
                 throw new global::System.ArgumentNullException("Original_nivelAcesso");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_nivelAcesso));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_nivelAcesso));
             }
             if ((Original_dataDia == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_dataDia));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_dataDia));
             }
             if ((Original_cadastradorPor == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_cadastradorPor));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_cadastradorPor));
             }
+
+            if ((Original_bio == null))
+            {
+                throw new global::System.ArgumentNullException("Original_bio");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_bio));
+            }
+
+            if ((Original_slug == null))
+            {
+                throw new global::System.ArgumentNullException("Original_slug");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_slug));
+            }
+
+            if ((Original_email == null))
+            {
+                throw new global::System.ArgumentNullException("Original_email");
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_email));
+            }
+
+
+
+
+
+
+
+
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4498,8 +4821,8 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor) {
-            return this.Update(Original_idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, Original_idUsuario, Original_usuario, Original_senha, Original_repitaSenha, Original_nivelAcesso, Original_dataDia, Original_cadastradorPor);
+        public virtual int Update(string usuario, string senha, string repitaSenha, string nivelAcesso, string dataDia, string cadastradorPor, string bio, string slug, string email, int Original_idUsuario, string Original_usuario, string Original_senha, string Original_repitaSenha, string Original_nivelAcesso, string Original_dataDia, string Original_cadastradorPor, string Original_bio, string Original_slug, string Original_email) {
+            return this.Update(Original_idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email, Original_idUsuario, Original_usuario, Original_senha, Original_repitaSenha, Original_nivelAcesso, Original_dataDia, Original_cadastradorPor, Original_bio, Original_slug, Original_email);
         }
     }
 }

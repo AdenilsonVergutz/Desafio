@@ -30,7 +30,7 @@ namespace Desafio.formulario
             try
             {
                 //Se os campos estiver preenchido faça
-                if ((usuarioTextBox.Text != "") && (nivelAcessoComboBox.Text != "") && (senhaTextBox.Text != "") && (repitaSenhaTextBox.Text != ""))
+                if ((usuarioTextBox.Text != "") && (nivelAcessoComboBox.Text != "") && (senhaTextBox.Text != "") && (repitaSenhaTextBox.Text != "") && (emailTextBox.Text != "") && (bioTextBox.Text != "") && (slugTextBox.Text != ""))
                 {
                     //Se as senhas forem igual faça
                     if (senhaTextBox.Text == repitaSenhaTextBox.Text)
@@ -70,19 +70,19 @@ namespace Desafio.formulario
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
-        {          
+        {
             try
             {
                 if (cbmFiltrar.Text == "Código")
                 {
                     //Define a instrução Sql
                     string sql = "SELECT * FROM tbUsuario WHERE idUsuario =" + txtPesquisar.Text + "";
-                    
+
                     //Lê os dados da variavel sql e conectar no cn
                     cmd = new SqlCommand(sql, cn);
                     //Abre conexão
                     cn.Open();
-                    
+
                     //Define o valor da CommandType para cmd
                     cmd.CommandType = CommandType.Text;
 
@@ -101,11 +101,11 @@ namespace Desafio.formulario
                     tbUsuarioDataGridView.DataSource = usuario;
 
                     //Fechar a conexão
-                   
+
 
                 }
                 if (cbmFiltrar.Text == "Usuário")
-                {                                    
+                {
                     //define a instrução SQL
                     string sql = "SELECT * FROM tbUsuario WHERE usuario LIKE '%" + txtPesquisar.Text + "%'";
                     cmd = new SqlCommand(sql, cn);
@@ -115,7 +115,7 @@ namespace Desafio.formulario
                     DataTable usuario = new DataTable();
                     da.Fill(usuario);
                     tbUsuarioDataGridView.DataSource = usuario;
-                    
+
                 }
             }
             catch (Exception ex)
@@ -137,6 +137,9 @@ namespace Desafio.formulario
             nivelAcessoComboBox.Text = "";
             dataDiaTextBox.Text = "";
             cadastradorPorTextBox.Clear();
+            emailTextBox.Text = "";
+            slugTextBox.Text = "";
+            bioTextBox.Text = "";
         }
         private void tbUsuarioDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -150,8 +153,12 @@ namespace Desafio.formulario
                 nivelAcessoComboBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[4].Value.ToString();
                 dataDiaTextBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[5].Value.ToString();
                 cadastradorPorTextBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[6].Value.ToString();
-                
-               
+                emailTextBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[1].Value.ToString();
+                bioTextBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[1].Value.ToString();
+                slugTextBox.Text = tbUsuarioDataGridView.CurrentRow.Cells[1].Value.ToString();
+
+
+
             }
             catch (Exception ex)
             {
@@ -159,8 +166,29 @@ namespace Desafio.formulario
             }
         }
 
-     
+        private void tbUsuarioBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
 
-     
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
