@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Windows.Forms;
 
 namespace Desafio
@@ -18,3 +19,14 @@ namespace Desafio
         }
     }
 }
+
+
+
+//ALTER TABLE tbUsuario ADD bio VARCHAR(250)
+//ALTER TABLE tbUsuario ADD slug VARCHAR(50)
+//ALTER TABLE tbUsuario ADD email VARCHAR(50)
+
+
+//  update tbUsuario set bio = 'Bio teste'
+//  update tbUsuario set slug = 'Slug teste'
+//  update tbUsuario set email = 'adenilson@teste.com'
