@@ -4328,7 +4328,7 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tbUsuario] WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug)) AND  ([email] = @Original_email))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tbUsuario] WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug) AND  ([email] = @Original_email))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4340,11 +4340,8 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_cadastradorPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
 
-            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_bio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_slug", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            //this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
 
 
@@ -4369,8 +4366,8 @@ SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FRO
 
             this._adapter.UpdateCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbUsuario] SET [idUsuario] = @idUsuario, [usuario] = @usuario, [senha] = @senha, [repitaSenha] = @repitaSenha, [nivelAcesso] = @nivelAcesso, [dataDia] = @dataDia, [cadastradorPor] = @cadastradorPor, [bio] = @bio, [slug] = @slug, [email] = @email WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug) ([email] = @Original_email));
-S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email FROM tbUsuario WHERE (idUsuario = @idUsuario)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbUsuario] SET [idUsuario] = @idUsuario, [usuario] = @usuario, [senha] = @senha, [repitaSenha] = @repitaSenha, [nivelAcesso] = @nivelAcesso, [dataDia] = @dataDia, [cadastradorPor] = @cadastradorPor, [bio] = @bio, [slug] = @slug, [email] = @email WHERE (([idUsuario] = @Original_idUsuario) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([repitaSenha] = @Original_repitaSenha) AND ([nivelAcesso] = @Original_nivelAcesso) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)) AND ([bio] = @Original_bio) AND ([slug] = @Original_slug) AND ([email] = @Original_email));
+            SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastradorPor, bio, slug, email FROM tbUsuario WHERE (idUsuario = @idUsuario)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4379,6 +4376,13 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@nivelAcesso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelAcesso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@dataDia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataDia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+
+
+
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4390,11 +4394,8 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
 
 
-            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_bio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_bio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_slug", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_slug", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slug", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            //this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::Microsoft.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
 
 
@@ -4596,6 +4597,7 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(nivelAcesso));
             }
+
             if ((dataDia == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
@@ -4609,10 +4611,9 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cadastradorPor));
             }
 
-
             if ((bio == null))
             {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("bio");
             }
             else
             {
@@ -4621,20 +4622,24 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
 
             if ((slug == null))
             {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("slug");
             }
             else
             {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(slug));
             }
+
             if ((email == null))
             {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("email");
             }
             else
             {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(email));
             }
+
+
+
 
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4724,8 +4729,8 @@ S           ELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, 
             }
 
 
-
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idUsuario));
+            //this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idUsuario));
+            
             if ((Original_usuario == null)) {
                 throw new global::System.ArgumentNullException("Original_usuario");
             }

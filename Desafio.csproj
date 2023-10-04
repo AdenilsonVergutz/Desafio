@@ -38,9 +38,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="ServicoDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServicoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="ServicoDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServicoDataSet.xsd</DependentUpon>
+    </Compile>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ServicoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServicoDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Update="ServicoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
