@@ -26,17 +26,7 @@ namespace Desafio
 
         public frmLogin()
         {
-            //Thread t = new Thread(new ThreadStart(SplashScreen));
-            //t.Start();
-            //Thread.Sleep(50000);
-            //t.Abort();
             InitializeComponent();
-        }
-
-        public void SplashScreen()
-        {
-            //Executar a Tela de Splash
-            Application.Run(new frmSplash());
         }
 
 
