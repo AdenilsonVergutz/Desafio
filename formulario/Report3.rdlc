@@ -223,7 +223,7 @@
                         <PaddingTop>2pt</PaddingTop>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>Código OS</Value>
+                      <Value>Código Post</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>

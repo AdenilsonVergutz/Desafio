@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Desafio
 {
-    public partial class frmOS : Form
+    public partial class frmPost : Form
     {
-        public frmOS()
+        public frmPost()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace Desafio
                 this.Validate();
                 this.tbOrdemServicoBindingSource.EndEdit();
                 this.tbOrdemServicoTableAdapter.Update(this.servicoDataSet.tbOrdemServico);
-                MessageBox.Show("OS realizado com sucesso",
+                MessageBox.Show("Post cadastrado com sucesso",
                                "Sucesso",
                                    MessageBoxButtons.OK,
                                        MessageBoxIcon.Information);
@@ -58,7 +58,7 @@ namespace Desafio
         {
             try
             {
-                if (cbmFiltrar.Text == "Código OS")
+                if (cbmFiltrar.Text == "POST")
                 {
                     //Define a instrução Sql
                     string sql = "SELECT * FROM tbOrdemServico WHERE idOrdem =" + txtPesquisar.Text + "";
@@ -89,7 +89,7 @@ namespace Desafio
 
 
                 }
-                if (cbmFiltrar.Text == "Código Cliente")
+                if (cbmFiltrar.Text == "Autor")
                 {
                     //define a instrução SQL
                     string sql = "SELECT * FROM tbOrdemServico WHERE idCliente =" + txtPesquisar.Text + "";
@@ -102,7 +102,7 @@ namespace Desafio
                     tbOrdemServicoDataGridView.DataSource = os;
 
                 }
-                if (cbmFiltrar.Text == "Código Serviço")
+                if (cbmFiltrar.Text == "Código Categoria")
                 {
                     //define a instrução SQL
                     string sql = "SELECT * FROM tbOrdemServico WHERE idServico=" + txtPesquisar.Text + "";
@@ -142,6 +142,16 @@ namespace Desafio
             idServicoComboBox.Text = tbOrdemServicoDataGridView.CurrentRow.Cells[2].Value.ToString();
             dataDiaTextBox.Text = tbOrdemServicoDataGridView.CurrentRow.Cells[3].Value.ToString();
             cadastradorPorTextBox.Text = tbOrdemServicoDataGridView.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Desafio
 {
-    partial class frmRelCliente
+    partial class frmRelCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,19 @@ namespace Desafio
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelCliente));
-            this.tbClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelCategoria));
+            this.tbServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicoDataSet = new Desafio.ServicoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tbClienteTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).BeginInit();
+            this.tbServicoTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbClienteBindingSource
+            // tbServicoBindingSource
             // 
-            this.tbClienteBindingSource.DataMember = "tbCliente";
-            this.tbClienteBindingSource.DataSource = this.ServicoDataSet;
+            this.tbServicoBindingSource.DataMember = "tbServico";
+            this.tbServicoBindingSource.DataSource = this.ServicoDataSet;
             // 
             // ServicoDataSet
             // 
@@ -52,31 +52,31 @@ namespace Desafio
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ServicoDataSet_tbCliente";
-            reportDataSource1.Value = this.tbClienteBindingSource;
+            reportDataSource1.Name = "ServicoDataSet_tbServico";
+            reportDataSource1.Value = this.tbServicoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Desafio.formulario.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Desafio.formulario.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(934, 506);
+            this.reportViewer1.Size = new System.Drawing.Size(746, 388);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tbClienteTableAdapter
+            // tbServicoTableAdapter
             // 
-            this.tbClienteTableAdapter.ClearBeforeFill = true;
+            this.tbServicoTableAdapter.ClearBeforeFill = true;
             // 
-            // frmRelCliente
+            // frmRelServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 506);
+            this.ClientSize = new System.Drawing.Size(746, 388);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRelCliente";
+            this.Name = "frmRelServico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Relatório de Cliente";
-            this.Load += new System.EventHandler(this.frmRelCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).EndInit();
+            this.Text = "Relatório Serviço";
+            this.Load += new System.EventHandler(this.frmRelServico_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,8 +85,8 @@ namespace Desafio
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource tbClienteBindingSource;
+        private System.Windows.Forms.BindingSource tbServicoBindingSource;
         private ServicoDataSet ServicoDataSet;
-        private Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter tbClienteTableAdapter;
+        private Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter tbServicoTableAdapter;
     }
 }

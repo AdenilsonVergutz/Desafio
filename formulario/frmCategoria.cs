@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Desafio.formulario
 {
-    public partial class frmServico : Form
+    public partial class frmCategoria : Form
     {
-        public frmServico()
+        public frmCategoria()
         {
             InitializeComponent();
         }
@@ -30,27 +30,27 @@ namespace Desafio.formulario
                 //Se os campos estiver preenchido faça
                 if (nomeTextBox.Text != "")
                 {
-                    
-                        //Mostrar a Data do Cadastro na Hora
-                        if (dataDiaTextBox.Text == "")
-                        {
-                            dataDiaTextBox.Text = DateTime.Now.ToString();
-                        }
-                        //Mostrar quem Cadastrou o usuario
-                        if (cadastradoPorTextBox.Text == "")
-                        {
-                            cadastradoPorTextBox.Text = frmLogin.usuarioConectado;
-                        }
-                        //Executar a aplicação
-                        this.Validate();
-                        this.tbServicoBindingSource.EndEdit();
-                        this.tbServicoTableAdapter.Update(this.servicoDataSet.tbServico);
-                        MessageBox.Show("Cadastro realizado com sucesso",
-                                   "Sucesso",
-                                       MessageBoxButtons.OK,
-                                           MessageBoxIcon.Information);
+
+                    //Mostrar a Data do Cadastro na Hora
+                    if (dataDiaTextBox.Text == "")
+                    {
+                        dataDiaTextBox.Text = DateTime.Now.ToString();
+                    }
+                    //Mostrar quem Cadastrou o usuario
+                    if (cadastradoPorTextBox.Text == "")
+                    {
+                        cadastradoPorTextBox.Text = frmLogin.usuarioConectado;
+                    }
+                    //Executar a aplicação
+                    this.Validate();
+                    this.tbServicoBindingSource.EndEdit();
+                    this.tbServicoTableAdapter.Update(this.servicoDataSet.tbServico);
+                    MessageBox.Show("Cadastro realizado com sucesso",
+                               "Sucesso",
+                                   MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information);
                 }
-                
+
                 else
                 {
                     //Ser os campos não estiverem preenchido
@@ -62,7 +62,7 @@ namespace Desafio.formulario
                 //Caso haja uma exceção será tratada neste código
                 MessageBox.Show("Não foi possível salvar pelo seguinte motivo: " + ex.Message);
             }
-            
+
 
         }
 
@@ -104,7 +104,7 @@ namespace Desafio.formulario
                     /*A tbUsuarioDataGridView recebe o DataTable usuario*/
                     tbServicoDataGridView.DataSource = servico;
 
-                   
+
 
 
                 }
@@ -121,7 +121,7 @@ namespace Desafio.formulario
                     tbServicoDataGridView.DataSource = servico;
 
                 }
-              
+
             }
             catch (Exception ex)
             {

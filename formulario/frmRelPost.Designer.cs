@@ -1,6 +1,6 @@
 namespace Desafio
 {
-    partial class frmRelOS
+    partial class frmRelPost
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Desafio
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelOS));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelPost));
             this.tbOrdemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicoDataSet = new Desafio.ServicoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();

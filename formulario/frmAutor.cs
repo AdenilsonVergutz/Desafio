@@ -10,30 +10,30 @@ using System.Windows.Forms;
 
 namespace Desafio
 {
-    public partial class frmCliente : Form
+    public partial class frmAutor : Form
     {
-        public frmCliente()
+        public frmAutor()
         {
             InitializeComponent();
         }
         SqlConnection cn = new SqlConnection(Properties.Settings.Default.ServicoConnectionString);
         SqlCommand cmd = null;
 
-        
+
         private void tbClienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
                 if ((nomeTextBox.Text != "") && (cpfMaskedTextBox.Text != ""))
                 {
-                   
-                        this.Validate();
-                        this.tbClienteBindingSource.EndEdit();
-                        this.tbClienteTableAdapter.Update(this.servicoDataSet.tbCliente);
-                        MessageBox.Show("Cadastro realizado com sucesso",
-                                "Sucesso",
-                                    MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+
+                    this.Validate();
+                    this.tbClienteBindingSource.EndEdit();
+                    this.tbClienteTableAdapter.Update(this.servicoDataSet.tbCliente);
+                    MessageBox.Show("Cadastro realizado com sucesso",
+                            "Sucesso",
+                                MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
 
                     //Insere a Data
                     if (dataDiaTextBox.Text == "")
@@ -44,9 +44,9 @@ namespace Desafio
                     if (cadastradoPorTextBox.Text == "")
                     {
                         cadastradoPorTextBox.Text = frmLogin.usuarioConectado;
-                    }                  
-                   
-                  
+                    }
+
+
                 }
                 else
                 {
@@ -70,14 +70,14 @@ namespace Desafio
             this.tbOrdemServicoTableAdapter.Fill(this.servicoDataSet.tbOrdemServico);
             // TODO: This line of code loads data into the 'servicoDataSet.tbCliente' table. You can move, or remove it, as needed.
             this.tbClienteTableAdapter.Fill(this.servicoDataSet.tbCliente);
-            
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (cbmFiltrar.Text == "Código")
+                if (cbmFiltrar.Text == "Código Autor")
                 {
                     //Define a instrução Sql
                     string sql = "SELECT * FROM tbCliente WHERE idCliente =" + txtPesquisar.Text + "";
@@ -150,8 +150,8 @@ namespace Desafio
             if (cbmFiltrar.Text == "Código")
             {
                 txtPesquisar.Mask = "";
-                
-                
+
+
             }
             if (cbmFiltrar.Text == "Nome")
             {
@@ -181,7 +181,7 @@ namespace Desafio
                 da.Fill(os);
                 tbOrdemServicoDataGridView.DataSource = os;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -218,7 +218,12 @@ namespace Desafio
             estadoComboBox.Text = tbClienteDataGridView.CurrentRow.Cells[7].Value.ToString();
             dataDiaTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[8].Value.ToString();
             cadastradoPorTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[9].Value.ToString();
-               
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

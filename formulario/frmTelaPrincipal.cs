@@ -95,18 +95,18 @@ namespace Desafio
         {
             try
             {
-                frmCliente cliente = null;
+                frmAutor cliente = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmCliente)
+                    if (frm is frmAutor)
                     {
-                        cliente = (frmCliente)frm;
+                        cliente = (frmAutor)frm;
                         break;
                     }
                 }
                 if (cliente == null)
                 {
-                    cliente = new frmCliente();
+                    cliente = new frmAutor();
                     cliente.MdiParent = this;
                     cliente.Show();
                 }
@@ -127,18 +127,18 @@ namespace Desafio
         {
             try
             {
-                formulario.frmServico servico = null;
+                formulario.frmCategoria servico = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is formulario.frmServico)
+                    if (frm is formulario.frmCategoria)
                     {
-                        servico = (formulario.frmServico)frm;
+                        servico = (formulario.frmCategoria)frm;
                         break;
                     }
                 }
                 if (servico == null)
                 {
-                    servico = new formulario.frmServico();
+                    servico = new formulario.frmCategoria();
                     servico.MdiParent = this;
                     servico.Show();
                 }
@@ -159,18 +159,18 @@ namespace Desafio
         {
             try
             {
-                frmOS os = null;
+                frmPost os = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmOS)
+                    if (frm is frmPost)
                     {
-                        os = (frmOS)frm;
+                        os = (frmPost)frm;
                         break;
                     }
                 }
                 if (os == null)
                 {
-                    os = new frmOS();
+                    os = new frmPost();
                     os.MdiParent = this;
                     os.Show();
                 }
@@ -200,18 +200,18 @@ namespace Desafio
         {
             try
             {
-                frmRelCliente relcliente = null;
+                frmRelAutor relcliente = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmRelCliente)
+                    if (frm is frmRelAutor)
                     {
-                        relcliente = (frmRelCliente)frm;
+                        relcliente = (frmRelAutor)frm;
                         break;
                     }
                 }
                 if (relcliente == null)
                 {
-                    relcliente = new frmRelCliente();
+                    relcliente = new frmRelAutor();
                     relcliente.MdiParent = this;
                     relcliente.Show();
                 }
@@ -236,18 +236,18 @@ namespace Desafio
         {
             try
             {
-                frmRelServico relServico = null;
+                frmRelCategoria relServico = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmRelServico)
+                    if (frm is frmRelCategoria)
                     {
-                        relServico = (frmRelServico)frm;
+                        relServico = (frmRelCategoria)frm;
                         break;
                     }
                 }
                 if (relServico == null)
                 {
-                    relServico = new frmRelServico();
+                    relServico = new frmRelCategoria();
                     relServico.MdiParent = this;
                     relServico.Show();
                 }
@@ -268,18 +268,18 @@ namespace Desafio
         {
             try
             {
-                frmRelOS relOS = null;
+                frmRelPost relOS = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmRelOS)
+                    if (frm is frmRelPost)
                     {
-                        relOS = (frmRelOS)frm;
+                        relOS = (frmRelPost)frm;
                         break;
                     }
                 }
                 if (relOS == null)
                 {
-                    relOS = new frmRelOS();
+                    relOS = new frmRelPost();
                     relOS.MdiParent = this;
                     relOS.Show();
                 }
@@ -299,18 +299,18 @@ namespace Desafio
         {
             try
             {
-                frmCliente cliente = null;
+                frmAutor cliente = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmCliente)
+                    if (frm is frmAutor)
                     {
-                        cliente = (frmCliente)frm;
+                        cliente = (frmAutor)frm;
                         break;
                     }
                 }
                 if (cliente == null)
                 {
-                    cliente = new frmCliente();
+                    cliente = new frmAutor();
                     cliente.MdiParent = this;
                     cliente.Show();
                 }
@@ -331,18 +331,18 @@ namespace Desafio
         {
             try
             {
-                formulario.frmServico servico = null;
+                formulario.frmCategoria servico = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is formulario.frmServico)
+                    if (frm is formulario.frmCategoria)
                     {
-                        servico = (formulario.frmServico)frm;
+                        servico = (formulario.frmCategoria)frm;
                         break;
                     }
                 }
                 if (servico == null)
                 {
-                    servico = new formulario.frmServico();
+                    servico = new formulario.frmCategoria();
                     servico.MdiParent = this;
                     servico.Show();
                 }
@@ -363,18 +363,18 @@ namespace Desafio
         {
             try
             {
-                frmOS os = null;
+                frmPost os = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is frmOS)
+                    if (frm is frmPost)
                     {
-                        os = (frmOS)frm;
+                        os = (frmPost)frm;
                         break;
                     }
                 }
                 if (os == null)
                 {
-                    os = new frmOS();
+                    os = new frmPost();
                     os.MdiParent = this;
                     os.Show();
                 }

@@ -1,6 +1,6 @@
 namespace Desafio
 {
-    partial class frmOS
+    partial class frmPost
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@ namespace Desafio
             Label idServicoLabel;
             Label dataDiaLabel;
             Label cadastradorPorLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOS));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPost));
             groupBox1 = new GroupBox();
             cadastradorPorTextBox = new TextBox();
             tbOrdemServicoBindingSource = new BindingSource(components);
@@ -99,7 +99,7 @@ namespace Desafio
             idOrdemLabel.Name = "idOrdemLabel";
             idOrdemLabel.Size = new Size(67, 15);
             idOrdemLabel.TabIndex = 0;
-            idOrdemLabel.Text = "Código OS:";
+            idOrdemLabel.Text = "Código POST:";
             // 
             // idClienteLabel
             // 
@@ -107,9 +107,9 @@ namespace Desafio
             idClienteLabel.Location = new Point(8, 70);
             idClienteLabel.Margin = new Padding(4, 0, 4, 0);
             idClienteLabel.Name = "idClienteLabel";
-            idClienteLabel.Size = new Size(100, 15);
+            idClienteLabel.Size = new Size(93, 15);
             idClienteLabel.TabIndex = 2;
-            idClienteLabel.Text = "Nome do Cliente:";
+            idClienteLabel.Text = "Nome do Autor:";
             // 
             // idServicoLabel
             // 
@@ -117,14 +117,14 @@ namespace Desafio
             idServicoLabel.Location = new Point(8, 118);
             idServicoLabel.Margin = new Padding(4, 0, 4, 0);
             idServicoLabel.Name = "idServicoLabel";
-            idServicoLabel.Size = new Size(101, 15);
+            idServicoLabel.Size = new Size(61, 15);
             idServicoLabel.TabIndex = 4;
-            idServicoLabel.Text = "Nome do Serviço:";
+            idServicoLabel.Text = "Categoria:";
             // 
             // dataDiaLabel
             // 
             dataDiaLabel.AutoSize = true;
-            dataDiaLabel.Location = new Point(10, 164);
+            dataDiaLabel.Location = new Point(426, 209);
             dataDiaLabel.Margin = new Padding(4, 0, 4, 0);
             dataDiaLabel.Name = "dataDiaLabel";
             dataDiaLabel.Size = new Size(101, 15);
@@ -161,7 +161,8 @@ namespace Desafio
             groupBox1.Size = new Size(638, 263);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Dados OS";
+            groupBox1.Text = "Dados do Post";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // cadastradorPorTextBox
             // 
@@ -188,7 +189,7 @@ namespace Desafio
             // 
             dataDiaTextBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "dataDia", true));
             dataDiaTextBox.Enabled = false;
-            dataDiaTextBox.Location = new Point(14, 182);
+            dataDiaTextBox.Location = new Point(430, 227);
             dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
             dataDiaTextBox.Name = "dataDiaTextBox";
             dataDiaTextBox.Size = new Size(185, 23);
@@ -217,6 +218,8 @@ namespace Desafio
             // 
             idClienteComboBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "idCliente", true));
             idClienteComboBox.DataBindings.Add(new Binding("SelectedValue", tbOrdemServicoBindingSource, "idCliente", true));
+            //idClienteComboBox.DataBindings.Add(new Binding("Text", tbOrdemServicoBindingSource, "nome", true));
+            //idClienteComboBox.DataBindings.Add(new Binding("SelectedValue", tbOrdemServicoBindingSource, "nome", true));
             idClienteComboBox.DataSource = tbClienteBindingSource;
             idClienteComboBox.DisplayMember = "idCliente";
             idClienteComboBox.FormattingEnabled = true;
@@ -226,6 +229,7 @@ namespace Desafio
             idClienteComboBox.Size = new Size(321, 23);
             idClienteComboBox.TabIndex = 3;
             idClienteComboBox.ValueMember = "idCliente";
+            idClienteComboBox.SelectedIndexChanged += idClienteComboBox_SelectedIndexChanged;
             // 
             // tbClienteBindingSource
             // 
@@ -372,7 +376,7 @@ namespace Desafio
             // cbmFiltrar
             // 
             cbmFiltrar.FormattingEnabled = true;
-            cbmFiltrar.Items.AddRange(new object[] { "", "Código OS", "Código Cliente", "Código Serviço" });
+            cbmFiltrar.Items.AddRange(new object[] { "", "POST", "Autor", "categoria" });
             cbmFiltrar.Location = new Point(76, 33);
             cbmFiltrar.Margin = new Padding(4, 3, 4, 3);
             cbmFiltrar.Name = "cbmFiltrar";
@@ -423,7 +427,7 @@ namespace Desafio
             groupBox2.Size = new Size(638, 91);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
-            groupBox2.Text = "OS(s)";
+            groupBox2.Text = "Posts";
             // 
             // tbOrdemServicoDataGridView
             // 
@@ -444,21 +448,21 @@ namespace Desafio
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewTextBoxColumn1.DataPropertyName = "idOrdem";
-            dataGridViewTextBoxColumn1.HeaderText = "Código OS";
+            dataGridViewTextBoxColumn1.HeaderText = "Post";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.DataPropertyName = "idCliente";
-            dataGridViewTextBoxColumn2.HeaderText = "Código Cliente";
+            dataGridViewTextBoxColumn2.HeaderText = "Código Autor";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.DataPropertyName = "idServico";
-            dataGridViewTextBoxColumn3.HeaderText = "Código Serviço";
+            dataGridViewTextBoxColumn3.HeaderText = "Código Categoria";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -487,7 +491,7 @@ namespace Desafio
             groupBox3.Size = new Size(642, 269);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
-            groupBox3.Text = "OS(s)";
+            groupBox3.Text = "Post(s)";
             // 
             // tbClienteTableAdapter
             // 
@@ -497,7 +501,7 @@ namespace Desafio
             // 
             tbServicoTableAdapter.ClearBeforeFill = true;
             // 
-            // frmOS
+            // frmPost
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -508,7 +512,7 @@ namespace Desafio
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
-            Name = "frmOS";
+            Name = "frmPost";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Post";
             Load += frmOS_Load;

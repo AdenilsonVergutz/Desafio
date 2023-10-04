@@ -79,35 +79,35 @@ namespace Desafio
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(168, 22);
+            usuárioToolStripMenuItem.Size = new Size(127, 22);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(168, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Size = new Size(127, 22);
+            clienteToolStripMenuItem.Text = "Autor";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // serviçoToolStripMenuItem
             // 
             serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-            serviçoToolStripMenuItem.Size = new Size(168, 22);
-            serviçoToolStripMenuItem.Text = "Serviço";
+            serviçoToolStripMenuItem.Size = new Size(127, 22);
+            serviçoToolStripMenuItem.Text = "Categoria";
             serviçoToolStripMenuItem.Click += serviçoToolStripMenuItem_Click;
             // 
             // ordemDeServiçoToolStripMenuItem
             // 
             ordemDeServiçoToolStripMenuItem.Name = "ordemDeServiçoToolStripMenuItem";
-            ordemDeServiçoToolStripMenuItem.Size = new Size(168, 22);
-            ordemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço";
+            ordemDeServiçoToolStripMenuItem.Size = new Size(127, 22);
+            ordemDeServiçoToolStripMenuItem.Text = "Postagem";
             ordemDeServiçoToolStripMenuItem.Click += ordemDeServiçoToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(168, 22);
+            sairToolStripMenuItem.Size = new Size(127, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -122,21 +122,21 @@ namespace Desafio
             // 
             clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
             clienteToolStripMenuItem1.Size = new Size(168, 22);
-            clienteToolStripMenuItem1.Text = "Cliente";
+            clienteToolStripMenuItem1.Text = "Autor";
             clienteToolStripMenuItem1.Click += clienteToolStripMenuItem1_Click;
             // 
             // serviçoToolStripMenuItem1
             // 
             serviçoToolStripMenuItem1.Name = "serviçoToolStripMenuItem1";
             serviçoToolStripMenuItem1.Size = new Size(168, 22);
-            serviçoToolStripMenuItem1.Text = "Serviço";
+            serviçoToolStripMenuItem1.Text = "Categoria";
             serviçoToolStripMenuItem1.Click += serviçoToolStripMenuItem1_Click;
             // 
             // ordemDeServiçoToolStripMenuItem1
             // 
             ordemDeServiçoToolStripMenuItem1.Name = "ordemDeServiçoToolStripMenuItem1";
             ordemDeServiçoToolStripMenuItem1.Size = new Size(168, 22);
-            ordemDeServiçoToolStripMenuItem1.Text = "Ordem de Serviço";
+            ordemDeServiçoToolStripMenuItem1.Text = "Post";
             ordemDeServiçoToolStripMenuItem1.Click += ordemDeServiçoToolStripMenuItem1_Click;
             // 
             // statusStrip1
@@ -196,8 +196,8 @@ namespace Desafio
             tsbCliente.ImageScaling = ToolStripItemImageScaling.None;
             tsbCliente.ImageTransparentColor = Color.Magenta;
             tsbCliente.Name = "tsbCliente";
-            tsbCliente.Size = new Size(48, 43);
-            tsbCliente.Text = "Cliente";
+            tsbCliente.Size = new Size(41, 43);
+            tsbCliente.Text = "Autor";
             tsbCliente.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbCliente.Click += tsbCliente_Click;
             // 
@@ -207,8 +207,8 @@ namespace Desafio
             tsbServico.ImageScaling = ToolStripItemImageScaling.None;
             tsbServico.ImageTransparentColor = Color.Magenta;
             tsbServico.Name = "tsbServico";
-            tsbServico.Size = new Size(49, 43);
-            tsbServico.Text = "Serviço";
+            tsbServico.Size = new Size(62, 43);
+            tsbServico.Text = "Categoria";
             tsbServico.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbServico.Click += tsbServico_Click;
             // 
@@ -218,8 +218,8 @@ namespace Desafio
             tsbOS.ImageScaling = ToolStripItemImageScaling.None;
             tsbOS.ImageTransparentColor = Color.Magenta;
             tsbOS.Name = "tsbOS";
-            tsbOS.Size = new Size(105, 43);
-            tsbOS.Text = "Ordem de Serviço";
+            tsbOS.Size = new Size(44, 43);
+            tsbOS.Text = "Postar";
             tsbOS.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbOS.Click += tsbOS_Click;
             // 

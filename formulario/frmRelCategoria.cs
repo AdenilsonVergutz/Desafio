@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Desafio
 {
-    public partial class frmRelServico : Form
+    public partial class frmRelCategoria : Form
     {
-        public frmRelServico()
+        public frmRelCategoria()
         {
             InitializeComponent();
         }
