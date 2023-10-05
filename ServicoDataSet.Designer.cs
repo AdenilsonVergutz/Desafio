@@ -1138,11 +1138,12 @@ namespace Desafio
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbPostRow FindByIdIdAutor(int Id, int IdAutor)
+            public tbPostRow FindByIdIdAutor(int Id, int IdAutor, int IdCategoria)
             {
                 return ((tbPostRow)(this.Rows.Find(new object[] {
                             Id,
-                            IdAutor})));
+                            IdAutor, IdCategoria})));
+
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1200,7 +1201,10 @@ namespace Desafio
                 base.Columns.Add(this.columnSlug);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid,
-                                this.columnIdAutor}, true));
+                                this.columnIdAutor, this.columnIdCategoria}, true));
+
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = 1;
                 this.columnid.AllowDBNull = false;
                 this.columndataDia.MaxLength = 20;
                 this.columncadastradorPor.MaxLength = 50;
@@ -4304,10 +4308,10 @@ SELECT Id, nome, cpf, telefone, endereco, bairro, cidade, estado, dataDia, cadas
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbPost] ([Id], [IdCategoria], [IdAutor], [TagId], [Titulo], [Slug], [dataDia], [cadastradorPor]) VALUES (@Id, @IdCategoria, @IdAutor, @TagId, @Titulo, @Slug, @dataDia, @cadastradorPor);
-SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FROM tbPost WHERE (Id = @Id) AND (IdAutor = @IdAutor)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbPost] ([IdCategoria], [IdAutor], [TagId], [Titulo], [Slug], [dataDia], [cadastradorPor]) VALUES (@IdCategoria, @IdAutor, @TagId, @Titulo, @Slug, @dataDia, @cadastradorPor);
+            SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FROM tbPost WHERE WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            //this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCategoria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCategoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAutor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TagId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4318,7 +4322,7 @@ SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FR
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbPost] SET [Id] = @Id, [IdCategoria] = @IdCategoria, [IdAutor] = @IdAutor, [TagId] = @TagId, [Titulo] = @Titulo, [Slug] = @Slug, [dataDia] = @dataDia, [cadastradorPor] = @cadastradorPor WHERE (([Id] = @Original_Id) AND ([IdCategoria] = @Original_IdCategoria) AND ([IdAutor] = @Original_IdAutor) AND ((@IsNull_TagId = 1 AND [TagId] IS NULL) OR ([TagId] = @Original_TagId)) AND ([Titulo] = @Original_Titulo) AND ([Slug] = @Original_Slug) AND ((@IsNull_dataDia = 1 AND [dataDia] IS NULL) OR ([dataDia] = @Original_dataDia)) AND ((@IsNull_cadastradorPor = 1 AND [cadastradorPor] IS NULL) OR ([cadastradorPor] = @Original_cadastradorPor)));
-SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FROM tbPost WHERE (Id = @Id) AND (IdAutor = @IdAutor)";
+            SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FROM tbPost WHERE (Id = @Id) AND (IdAutor = @IdAutor)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCategoria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCategoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4356,8 +4360,7 @@ SELECT Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FR" +
-                "OM dbo.tbPost";
+            this._commandCollection[0].CommandText = "SELECT  Id, IdCategoria, IdAutor, TagId, Titulo, Slug, dataDia, cadastradorPor FROM dbo.tbPost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
 
@@ -4604,8 +4607,7 @@ SELECT Id, nome, descricao, observacao, valor, dataDia, cadastradoPor FROM tbCat
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, nome, descricao, observacao, valor, dataDia, cadastradoPor FROM dbo.tb" +
-                "Categoria";
+            this._commandCollection[0].CommandText = "SELECT id, nome, descricao, observacao, valor, dataDia, cadastradoPor FROM dbo.tbCategoria";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
 
