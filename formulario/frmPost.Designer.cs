@@ -1,3 +1,6 @@
+using Desafio.ServicoDataSetTableAdapters;
+using System.Windows.Forms;
+
 namespace Desafio
 {
     partial class frmPost
@@ -40,13 +43,12 @@ namespace Desafio
             tbPostBindingSource = new BindingSource(components);
             servicoDataSet = new ServicoDataSet();
             dataDiaTextBox = new TextBox();
-            idCategoriaComboBox = new ComboBox();
             tbCategoriaBindingSource = new BindingSource(components);
             idAutorComboBox = new ComboBox();
             tbAutorBindingSource = new BindingSource(components);
-            idOrdemTextBox = new TextBox();
-            tbPostTableAdapter = new ServicoDataSetTableAdapters.tbPostTableAdapter();
-            tbOrdemServicoBindingNavigator = new BindingNavigator(components);
+            idPostTextBox = new TextBox();
+            tbPostTableAdapter = new tbPostTableAdapter();
+            tbPostBindingNavigator = new BindingNavigator(components);
             bindingNavigatorAddNewItem = new ToolStripButton();
             bindingNavigatorCountItem = new ToolStripLabel();
             bindingNavigatorDeleteItem = new ToolStripButton();
@@ -58,7 +60,7 @@ namespace Desafio
             bindingNavigatorMoveNextItem = new ToolStripButton();
             bindingNavigatorMoveLastItem = new ToolStripButton();
             bindingNavigatorSeparator2 = new ToolStripSeparator();
-            tbOrdemServicoBindingNavigatorSaveItem = new ToolStripButton();
+            tbPostBindingNavigatorSaveItem = new ToolStripButton();
             label1 = new Label();
             cbmFiltrar = new ComboBox();
             label2 = new Label();
@@ -70,8 +72,9 @@ namespace Desafio
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             groupBox3 = new GroupBox();
-            tbAutorTableAdapter = new ServicoDataSetTableAdapters.tbAutorTableAdapter();
-            tbCategoriaTableAdapter = new ServicoDataSetTableAdapters.tbCategoriaTableAdapter();
+            tbAutorTableAdapter = new tbAutorTableAdapter();
+            tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
+            idCategoriaComboBox = new ComboBox();
             idOrdemLabel = new Label();
             idAutorLabel = new Label();
             idCategoriaLabel = new Label();
@@ -82,8 +85,8 @@ namespace Desafio
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingNavigator).BeginInit();
-            tbOrdemServicoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).BeginInit();
+            tbPostBindingNavigator.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tbPostDataGridView).BeginInit();
             groupBox3.SuspendLayout();
@@ -142,16 +145,16 @@ namespace Desafio
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(idCategoriaComboBox);
             groupBox1.Controls.Add(cadastradorPorLabel);
             groupBox1.Controls.Add(cadastradorPorTextBox);
             groupBox1.Controls.Add(dataDiaLabel);
             groupBox1.Controls.Add(dataDiaTextBox);
             groupBox1.Controls.Add(idCategoriaLabel);
-            groupBox1.Controls.Add(idCategoriaComboBox);
             groupBox1.Controls.Add(idAutorLabel);
             groupBox1.Controls.Add(idAutorComboBox);
             groupBox1.Controls.Add(idOrdemLabel);
-            groupBox1.Controls.Add(idOrdemTextBox);
+            groupBox1.Controls.Add(idPostTextBox);
             groupBox1.Location = new Point(14, 31);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
@@ -193,77 +196,82 @@ namespace Desafio
             dataDiaTextBox.Size = new Size(185, 23);
             dataDiaTextBox.TabIndex = 7;
             // 
-            // idCategoriaComboBox
-            // 
-            idCategoriaComboBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "idCategoria", true));
-            idCategoriaComboBox.DataBindings.Add(new Binding("SelectedValue", tbCategoriaBindingSource, "nome", true));
-            idCategoriaComboBox.DataSource = tbCategoriaBindingSource;
-            idCategoriaComboBox.DisplayMember = "idCategoria";
-            idCategoriaComboBox.FormattingEnabled = true;
-            idCategoriaComboBox.Location = new Point(12, 136);
-            idCategoriaComboBox.Margin = new Padding(4, 3, 4, 3);
-            idCategoriaComboBox.Name = "idCategoriaComboBox";
-            idCategoriaComboBox.Size = new Size(321, 23);
-            idCategoriaComboBox.TabIndex = 5;
-            idCategoriaComboBox.ValueMember = "idCategoria";
-            // 
-            // tbCategoriaBindingSource
-            // 
-            tbCategoriaBindingSource.DataMember = "tbCategoria";
-            tbCategoriaBindingSource.DataSource = servicoDataSet;
-            // 
             // idAutorComboBox
             // 
-            idAutorComboBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Id", true));
-            idAutorComboBox.DataBindings.Add(new Binding("SelectedValue", tbAutorBindingSource, "nome", true));
+           
             idAutorComboBox.DataSource = tbAutorBindingSource;
-            idAutorComboBox.DisplayMember = "Id";
+            idAutorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             idAutorComboBox.FormattingEnabled = true;
             idAutorComboBox.Location = new Point(12, 89);
             idAutorComboBox.Margin = new Padding(4, 3, 4, 3);
             idAutorComboBox.Name = "idAutorComboBox";
             idAutorComboBox.Size = new Size(321, 23);
             idAutorComboBox.TabIndex = 3;
-            idAutorComboBox.ValueMember = "Id";
+            idAutorComboBox.ValueMember = "nome";
             idAutorComboBox.SelectedIndexChanged += idAutorComboBox_SelectedIndexChanged;
             // 
+
             // tbAutorBindingSource
             // 
             tbAutorBindingSource.DataMember = "tbAutor";
             tbAutorBindingSource.DataSource = servicoDataSet;
+
+            // idCategoriaComboBox
             // 
-            // idOrdemTextBox
+
+            idCategoriaComboBox.DataSource = tbCategoriaBindingSource;
+            idCategoriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            idCategoriaComboBox.FormattingEnabled = true;
+            idCategoriaComboBox.Location = new Point(10, 141);
+            idCategoriaComboBox.Name = "idCategoriaComboBox";
+            idCategoriaComboBox.Size = new Size(323, 23);
+            idCategoriaComboBox.TabIndex = 10;
+            idCategoriaComboBox.ValueMember = "nome";
+            idCategoriaComboBox.SelectedIndexChanged += idCategoriaComboBox_SelectedIndexChanged;
+
+            // tbUsuarioBindingSource
+            // 
+            tbCategoriaBindingSource.DataMember = "tbCategoria";
+            tbCategoriaBindingSource.DataSource = servicoDataSet;
+
             // 
-            idOrdemTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Id", true));
-            idOrdemTextBox.Enabled = false;
-            idOrdemTextBox.Location = new Point(12, 44);
-            idOrdemTextBox.Margin = new Padding(4, 3, 4, 3);
-            idOrdemTextBox.Name = "idTextBox";
-            idOrdemTextBox.Size = new Size(116, 23);
-            idOrdemTextBox.TabIndex = 1;
+
+
+
+
+            // 
+            // idPostTextBox
+            // 
+            idPostTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Id", true));
+            idPostTextBox.Enabled = false;
+            idPostTextBox.Location = new Point(12, 44);
+            idPostTextBox.Margin = new Padding(4, 3, 4, 3);
+            idPostTextBox.Name = "idPostTextBox";
+            idPostTextBox.Size = new Size(116, 23);
+            idPostTextBox.TabIndex = 1;
             // 
             // tbPostTableAdapter
             // 
             tbPostTableAdapter.ClearBeforeFill = true;
             // 
-            // tbOrdemServicoBindingNavigator
+            // tbPostBindingNavigator
             // 
-            tbOrdemServicoBindingNavigator.AddNewItem = bindingNavigatorAddNewItem;
-            tbOrdemServicoBindingNavigator.BackColor = SystemColors.ButtonFace;
-            tbOrdemServicoBindingNavigator.BindingSource = tbPostBindingSource;
-            tbOrdemServicoBindingNavigator.CountItem = bindingNavigatorCountItem;
-            tbOrdemServicoBindingNavigator.DeleteItem = bindingNavigatorDeleteItem;
-            tbOrdemServicoBindingNavigator.Items.AddRange(new ToolStripItem[] { bindingNavigatorMoveFirstItem, bindingNavigatorMovePreviousItem, bindingNavigatorSeparator, bindingNavigatorPositionItem, bindingNavigatorCountItem, bindingNavigatorSeparator1, bindingNavigatorMoveNextItem, bindingNavigatorMoveLastItem, bindingNavigatorSeparator2, bindingNavigatorAddNewItem, bindingNavigatorDeleteItem, tbOrdemServicoBindingNavigatorSaveItem });
-            tbOrdemServicoBindingNavigator.Location = new Point(0, 0);
-            tbOrdemServicoBindingNavigator.MoveFirstItem = bindingNavigatorMoveFirstItem;
-            tbOrdemServicoBindingNavigator.MoveLastItem = bindingNavigatorMoveLastItem;
-            tbOrdemServicoBindingNavigator.MoveNextItem = bindingNavigatorMoveNextItem;
-            tbOrdemServicoBindingNavigator.MovePreviousItem = bindingNavigatorMovePreviousItem;
-            tbOrdemServicoBindingNavigator.Name = "tbOrdemServicoBindingNavigator";
-            tbOrdemServicoBindingNavigator.PositionItem = bindingNavigatorPositionItem;
-            tbOrdemServicoBindingNavigator.Size = new Size(666, 25);
-            tbOrdemServicoBindingNavigator.TabIndex = 3;
-            tbOrdemServicoBindingNavigator.Text = "bindingNavigator1";
+            tbPostBindingNavigator.AddNewItem = bindingNavigatorAddNewItem;
+            tbPostBindingNavigator.BackColor = SystemColors.ButtonFace;
+            tbPostBindingNavigator.BindingSource = tbPostBindingSource;
+            tbPostBindingNavigator.CountItem = bindingNavigatorCountItem;
+            tbPostBindingNavigator.DeleteItem = bindingNavigatorDeleteItem;
+            tbPostBindingNavigator.Items.AddRange(new ToolStripItem[] { bindingNavigatorMoveFirstItem, bindingNavigatorMovePreviousItem, bindingNavigatorSeparator, bindingNavigatorPositionItem, bindingNavigatorCountItem, bindingNavigatorSeparator1, bindingNavigatorMoveNextItem, bindingNavigatorMoveLastItem, bindingNavigatorSeparator2, bindingNavigatorAddNewItem, bindingNavigatorDeleteItem, tbPostBindingNavigatorSaveItem });
+            tbPostBindingNavigator.Location = new Point(0, 0);
+            tbPostBindingNavigator.MoveFirstItem = bindingNavigatorMoveFirstItem;
+            tbPostBindingNavigator.MoveLastItem = bindingNavigatorMoveLastItem;
+            tbPostBindingNavigator.MoveNextItem = bindingNavigatorMoveNextItem;
+            tbPostBindingNavigator.MovePreviousItem = bindingNavigatorMovePreviousItem;
+            tbPostBindingNavigator.Name = "tbPostBindingNavigator";
+            tbPostBindingNavigator.PositionItem = bindingNavigatorPositionItem;
+            tbPostBindingNavigator.Size = new Size(666, 25);
+            tbPostBindingNavigator.TabIndex = 3;
+            tbPostBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -350,14 +358,14 @@ namespace Desafio
             bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             bindingNavigatorSeparator2.Size = new Size(6, 25);
             // 
-            // tbOrdemServicoBindingNavigatorSaveItem
+            // tbPostBindingNavigatorSaveItem
             // 
-            tbOrdemServicoBindingNavigatorSaveItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tbOrdemServicoBindingNavigatorSaveItem.Image = (Image)resources.GetObject("tbOrdemServicoBindingNavigatorSaveItem.Image");
-            tbOrdemServicoBindingNavigatorSaveItem.Name = "tbOrdemServicoBindingNavigatorSaveItem";
-            tbOrdemServicoBindingNavigatorSaveItem.Size = new Size(23, 22);
-            tbOrdemServicoBindingNavigatorSaveItem.Text = "Save Data";
-            tbOrdemServicoBindingNavigatorSaveItem.Click += tbOrdemServicoBindingNavigatorSaveItem_Click;
+            tbPostBindingNavigatorSaveItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tbPostBindingNavigatorSaveItem.Image = (Image)resources.GetObject("tbPostBindingNavigatorSaveItem.Image");
+            tbPostBindingNavigatorSaveItem.Name = "tbPostBindingNavigatorSaveItem";
+            tbPostBindingNavigatorSaveItem.Size = new Size(23, 22);
+            tbPostBindingNavigatorSaveItem.Text = "Save Data";
+            tbPostBindingNavigatorSaveItem.Click += tbPostBindingNavigatorSaveItem_Click;
             // 
             // label1
             // 
@@ -439,7 +447,7 @@ namespace Desafio
             tbPostDataGridView.ReadOnly = true;
             tbPostDataGridView.Size = new Size(634, 247);
             tbPostDataGridView.TabIndex = 0;
-            tbPostDataGridView.MouseDoubleClick += tbOrdemServicoDataGridView_MouseDoubleClick;
+            tbPostDataGridView.MouseDoubleClick += tbPostDataGridView_MouseDoubleClick;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -483,12 +491,13 @@ namespace Desafio
             // 
             tbCategoriaTableAdapter.ClearBeforeFill = true;
             // 
+
             // frmPost
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(666, 688);
-            Controls.Add(tbOrdemServicoBindingNavigator);
+            Controls.Add(tbPostBindingNavigator);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -504,9 +513,9 @@ namespace Desafio
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tbOrdemServicoBindingNavigator).EndInit();
-            tbOrdemServicoBindingNavigator.ResumeLayout(false);
-            tbOrdemServicoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).EndInit();
+            tbPostBindingNavigator.ResumeLayout(false);
+            tbPostBindingNavigator.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tbPostDataGridView).EndInit();
@@ -520,8 +529,8 @@ namespace Desafio
         private GroupBox groupBox1;
         private ServicoDataSet servicoDataSet;
         private BindingSource tbPostBindingSource;
-        private Desafio.ServicoDataSetTableAdapters.tbPostTableAdapter tbPostTableAdapter;
-        private BindingNavigator tbOrdemServicoBindingNavigator;
+        private tbPostTableAdapter tbPostTableAdapter;
+        private BindingNavigator tbPostBindingNavigator;
         private ToolStripButton bindingNavigatorAddNewItem;
         private ToolStripLabel bindingNavigatorCountItem;
         private ToolStripButton bindingNavigatorDeleteItem;
@@ -533,12 +542,11 @@ namespace Desafio
         private ToolStripButton bindingNavigatorMoveNextItem;
         private ToolStripButton bindingNavigatorMoveLastItem;
         private ToolStripSeparator bindingNavigatorSeparator2;
-        private ToolStripButton tbOrdemServicoBindingNavigatorSaveItem;
+        private ToolStripButton tbPostBindingNavigatorSaveItem;
         private TextBox cadastradorPorTextBox;
         private TextBox dataDiaTextBox;
-        private ComboBox idCategoriaComboBox;
         private ComboBox idAutorComboBox;
-        private TextBox idOrdemTextBox;
+        private TextBox idPostTextBox;
         private Label label1;
         private ComboBox cbmFiltrar;
         private Label label2;
@@ -553,8 +561,9 @@ namespace Desafio
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private GroupBox groupBox3;
         private BindingSource tbAutorBindingSource;
-        private Desafio.ServicoDataSetTableAdapters.tbAutorTableAdapter tbAutorTableAdapter;
+        private tbAutorTableAdapter tbAutorTableAdapter;
         private BindingSource tbCategoriaBindingSource;
-        private Desafio.ServicoDataSetTableAdapters.tbCategoriaTableAdapter tbCategoriaTableAdapter;
+        private tbCategoriaTableAdapter tbCategoriaTableAdapter;
+        private ComboBox idCategoriaComboBox;
     }
 }

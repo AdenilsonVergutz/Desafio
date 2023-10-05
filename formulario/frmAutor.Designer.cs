@@ -677,13 +677,7 @@ namespace Desafio
             dataGridViewTextBoxColumn11.ReadOnly = true;
             dataGridViewTextBoxColumn11.Width = 50;
             // 
-            // dataGridViewTextBoxColumn13
-            // 
-            dataGridViewTextBoxColumn13.DataPropertyName = "idCategoria";
-            dataGridViewTextBoxColumn13.HeaderText = "Código Categoria";
-            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            dataGridViewTextBoxColumn13.ReadOnly = true;
-            dataGridViewTextBoxColumn13.Width = 50;
+
             // 
             // dataGridViewTextBoxColumn14
             // 

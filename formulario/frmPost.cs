@@ -17,7 +17,7 @@ namespace Desafio
         }
         SqlConnection cn = new SqlConnection(Desafio.Properties.Settings.Default.ServicoConnectionString);
         SqlCommand cmd = null;
-        private void tbOrdemServicoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void tbPostBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             if ((idAutorComboBox.Text != "") && (idCategoriaComboBox.Text != ""))
             {
@@ -128,16 +128,16 @@ namespace Desafio
 
         private void LimparCampo()
         {
-            idOrdemTextBox.Clear();
+            idPostTextBox.Clear();
             idAutorComboBox.SelectedIndex = -1;
             idCategoriaComboBox.SelectedIndex = -1;
             dataDiaTextBox.Clear();
             cadastradorPorTextBox.Clear();
         }
-        private void tbOrdemServicoDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbPostDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             LimparCampo();
-            idOrdemTextBox.Text = tbPostDataGridView.CurrentRow.Cells[0].Value.ToString();
+            idPostTextBox.Text = tbPostDataGridView.CurrentRow.Cells[0].Value.ToString();
             idAutorComboBox.Text = tbPostDataGridView.CurrentRow.Cells[1].Value.ToString();
             idCategoriaComboBox.Text = tbPostDataGridView.CurrentRow.Cells[2].Value.ToString();
             dataDiaTextBox.Text = tbPostDataGridView.CurrentRow.Cells[3].Value.ToString();
@@ -150,6 +150,11 @@ namespace Desafio
         }
 
         private void idAutorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idCategoriaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
