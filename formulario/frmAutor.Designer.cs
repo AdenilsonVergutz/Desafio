@@ -89,7 +89,6 @@ namespace Desafio
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             groupBox4 = new GroupBox();
             tbPostDataGridView = new DataGridView();
-            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
@@ -659,7 +658,7 @@ namespace Desafio
             tbPostDataGridView.AllowUserToAddRows = false;
             tbPostDataGridView.AllowUserToDeleteRows = false;
             tbPostDataGridView.AutoGenerateColumns = false;
-            tbPostDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15 });
+            tbPostDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15 });
             tbPostDataGridView.DataSource = tbPostBindingSource;
             tbPostDataGridView.Dock = DockStyle.Fill;
             tbPostDataGridView.Location = new Point(4, 19);
@@ -668,15 +667,15 @@ namespace Desafio
             tbPostDataGridView.ReadOnly = true;
             tbPostDataGridView.Size = new Size(484, 292);
             tbPostDataGridView.TabIndex = 0;
+            tbPostDataGridView.CellContentClick += tbPostDataGridView_CellContentClick;
             // 
-            // dataGridViewTextBoxColumn11
+            // dataGridViewTextBoxColumn13
             // 
-            dataGridViewTextBoxColumn11.DataPropertyName = "idOrdem";
-            dataGridViewTextBoxColumn11.HeaderText = "Código POST";
-            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            dataGridViewTextBoxColumn11.ReadOnly = true;
-            dataGridViewTextBoxColumn11.Width = 50;
-            // 
+            dataGridViewTextBoxColumn13.DataPropertyName = "Id";
+            dataGridViewTextBoxColumn13.HeaderText = "Código post";
+            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            dataGridViewTextBoxColumn13.ReadOnly = true;
+            dataGridViewTextBoxColumn13.Width = 120;
 
             // 
             // dataGridViewTextBoxColumn14
