@@ -93,7 +93,7 @@
             </TableRow>
           </TableRows>
         </Footer>
-        <DataSetName>ServicoDataSet_tbCliente</DataSetName>
+        <DataSetName>ServicoDataSet_tbAutor</DataSetName>
         <Top>0.5cm</Top>
         <Details>
           <TableRows>
@@ -101,8 +101,8 @@
               <TableCells>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="idCliente">
-                      <rd:DefaultName>idCliente</rd:DefaultName>
+                    <Textbox Name="Id">
+                      <rd:DefaultName>Id</rd:DefaultName>
                       <ZIndex>3</ZIndex>
                       <Style>
                         <TextAlign>Left</TextAlign>
@@ -112,7 +112,7 @@
                         <PaddingTop>2pt</PaddingTop>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!idCliente.Value</Value>
+                      <Value>=Fields!Id.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -190,7 +190,7 @@
                         <PaddingTop>2pt</PaddingTop>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>Cliente</Value>
+                      <Value>autor</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -292,7 +292,7 @@
         </Style>
         <CanGrow>true</CanGrow>
         <Height>1cm</Height>
-        <Value>Cadastro de Cliente</Value>
+        <Value>Cadastro de autor</Value>
       </Textbox>
     </ReportItems>
     <Height>1.75cm</Height>
@@ -302,23 +302,23 @@
   <rd:ReportID>0a9eea99-91ee-4db8-89f8-3bf6482b3398</rd:ReportID>
   <LeftMargin>2.5cm</LeftMargin>
   <DataSets>
-    <DataSet Name="ServicoDataSet_tbCliente">
+    <DataSet Name="ServicoDataSet_tbAutor">
       <rd:DataSetInfo>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:DataSetName>ServicoDataSet</rd:DataSetName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterName>tbClienteTableAdapter</rd:TableAdapterName>
-        <rd:TableName>tbCliente</rd:TableName>
+        <rd:TableAdapterName>tbAutorTableAdapter</rd:TableAdapterName>
+        <rd:TableName>tbAutor</rd:TableName>
       </rd:DataSetInfo>
       <Query>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-        <CommandText>SELECT idCliente, nome, cpf, telefone, endereco, bairro, cidade, estado, dataDia, cadastradoPor FROM dbo.tbCliente</CommandText>
+        <CommandText>SELECT Id, nome, cpf, telefone, endereco, bairro, cidade, estado, dataDia, cadastradoPor FROM dbo.tbAutor</CommandText>
         <DataSourceName>ServicoConnectionString</DataSourceName>
       </Query>
       <Fields>
-        <Field Name="idCliente">
+        <Field Name="Id">
           <rd:TypeName>System.Int32</rd:TypeName>
-          <DataField>idCliente</DataField>
+          <DataField>Id</DataField>
         </Field>
         <Field Name="nome">
           <rd:TypeName>System.String</rd:TypeName>

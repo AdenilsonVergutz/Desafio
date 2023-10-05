@@ -43,8 +43,8 @@ namespace Desafio.formulario
                     }
                     //Executar a aplicação
                     this.Validate();
-                    this.tbServicoBindingSource.EndEdit();
-                    this.tbServicoTableAdapter.Update(this.servicoDataSet.tbServico);
+                    this.tbCategoriaBindingSource.EndEdit();
+                    this.tbCategoriaTableAdapter.Update(this.servicoDataSet.tbCategoria);
                     MessageBox.Show("Cadastro realizado com sucesso",
                                "Sucesso",
                                    MessageBoxButtons.OK,
@@ -68,8 +68,8 @@ namespace Desafio.formulario
 
         private void frmServico_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'servicoDataSet.tbServico' table. You can move, or remove it, as needed.
-            this.tbServicoTableAdapter.Fill(this.servicoDataSet.tbServico);
+            // TODO: This line of code loads data into the 'servicoDataSet.tbCategoria' table. You can move, or remove it, as needed.
+            this.tbCategoriaTableAdapter.Fill(this.servicoDataSet.tbCategoria);
 
         }
 
@@ -80,7 +80,7 @@ namespace Desafio.formulario
                 if (cbmFiltrar.Text == "Código")
                 {
                     //Define a instrução Sql
-                    string sql = "SELECT * FROM tbServico WHERE idServico =" + txtPesquisar.Text + "";
+                    string sql = "SELECT * FROM tbCategoria WHERE Id =" + txtPesquisar.Text + "";
 
                     //Lê os dados da variavel sql e conectar no cn
                     cmd = new SqlCommand(sql, cn);
@@ -102,7 +102,7 @@ namespace Desafio.formulario
                     da.Fill(servico);
 
                     /*A tbUsuarioDataGridView recebe o DataTable usuario*/
-                    tbServicoDataGridView.DataSource = servico;
+                    tbCategoriaDataGridView.DataSource = servico;
 
 
 
@@ -111,14 +111,14 @@ namespace Desafio.formulario
                 if (cbmFiltrar.Text == "Nome")
                 {
                     //define a instrução SQL
-                    string sql = "SELECT * FROM tbServico WHERE nome LIKE '%" + txtPesquisar.Text + "%'";
+                    string sql = "SELECT * FROM tbCategoria WHERE nome LIKE '%" + txtPesquisar.Text + "%'";
                     cmd = new SqlCommand(sql, cn);
                     cn.Open();
                     cmd.CommandType = CommandType.Text;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable servico = new DataTable();
                     da.Fill(servico);
-                    tbServicoDataGridView.DataSource = servico;
+                    tbCategoriaDataGridView.DataSource = servico;
 
                 }
 
@@ -134,7 +134,7 @@ namespace Desafio.formulario
         }
         private void LimparCampo()
         {
-            idServicoTextBox.Clear();
+            idCategoriaTextBox.Clear();
             nomeTextBox.Clear();
             descricaoTextBox.Clear();
             valorTextBox.Clear();
@@ -145,13 +145,13 @@ namespace Desafio.formulario
         private void tbServicoDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             LimparCampo();
-            idServicoTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[0].Value.ToString();
-            nomeTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[1].Value.ToString();
-            descricaoTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[2].Value.ToString();
-            observacaoTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[3].Value.ToString();
-            valorTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[4].Value.ToString();
-            dataDiaTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[5].Value.ToString();
-            cadastradoPorTextBox.Text = tbServicoDataGridView.CurrentRow.Cells[6].Value.ToString();
+            idCategoriaTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[0].Value.ToString();
+            nomeTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[1].Value.ToString();
+            descricaoTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[2].Value.ToString();
+            observacaoTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[3].Value.ToString();
+            valorTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[4].Value.ToString();
+            dataDiaTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[5].Value.ToString();
+            cadastradoPorTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[6].Value.ToString();
 
         }
     }

@@ -31,18 +31,18 @@ namespace Desafio
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelAutor));
-            this.tbClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbAutorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicoDataSet = new Desafio.ServicoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tbClienteTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).BeginInit();
+            this.tbAutorTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbAutorTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAutorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbClienteBindingSource
+            // tbAutorBindingSource
             // 
-            this.tbClienteBindingSource.DataMember = "tbCliente";
-            this.tbClienteBindingSource.DataSource = this.ServicoDataSet;
+            this.tbAutorBindingSource.DataMember = "tbAutor";
+            this.tbAutorBindingSource.DataSource = this.ServicoDataSet;
             // 
             // ServicoDataSet
             // 
@@ -52,8 +52,8 @@ namespace Desafio
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ServicoDataSet_tbCliente";
-            reportDataSource1.Value = this.tbClienteBindingSource;
+            reportDataSource1.Name = "ServicoDataSet_tbAutor";
+            reportDataSource1.Value = this.tbAutorBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Desafio.formulario.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -61,22 +61,22 @@ namespace Desafio
             this.reportViewer1.Size = new System.Drawing.Size(934, 506);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tbClienteTableAdapter
+            // tbAutorTableAdapter
             // 
-            this.tbClienteTableAdapter.ClearBeforeFill = true;
+            this.tbAutorTableAdapter.ClearBeforeFill = true;
             // 
-            // frmRelCliente
+            // frmRelAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 506);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRelCliente";
+            this.Name = "frmRelAutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Autor";
-            this.Load += new System.EventHandler(this.frmRelCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbClienteBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.frmRelAutor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbAutorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,8 +85,8 @@ namespace Desafio
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource tbClienteBindingSource;
+        private System.Windows.Forms.BindingSource tbAutorBindingSource;
         private ServicoDataSet ServicoDataSet;
-        private Desafio.ServicoDataSetTableAdapters.tbClienteTableAdapter tbClienteTableAdapter;
+        private Desafio.ServicoDataSetTableAdapters.tbAutorTableAdapter tbAutorTableAdapter;
     }
 }

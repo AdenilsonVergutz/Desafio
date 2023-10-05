@@ -54,6 +54,8 @@ namespace Desafio
                 if ((usuarioComboBox.Text != "") && (nivelAcessoComboBox.Text != "") && (senhaTextBox.Text != ""))
                 {
                     //Responsavel pelo Comando Sql
+
+             
                     SqlCommand comm = new SqlCommand("Select * From tbUsuario Where usuario = @usuario and " +
                         "senha = @senha and nivelAcesso=@nivel", conn);
 

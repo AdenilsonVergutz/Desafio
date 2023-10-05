@@ -29,7 +29,7 @@ namespace Desafio.formulario
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Label idServicoLabel;
+            Label idCategoriaLabel;
             Label nomeLabel;
             Label descricaoLabel;
             Label observacaoLabel;
@@ -38,8 +38,8 @@ namespace Desafio.formulario
             Label cadastradoPorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             groupBox1 = new GroupBox();
-            idServicoTextBox = new TextBox();
-            tbServicoBindingSource = new BindingSource(components);
+            idCategoriaTextBox = new TextBox();
+            tbCategoriaBindingSource = new BindingSource(components);
             servicoDataSet = new ServicoDataSet();
             nomeTextBox = new TextBox();
             descricaoTextBox = new TextBox();
@@ -47,7 +47,7 @@ namespace Desafio.formulario
             valorTextBox = new TextBox();
             dataDiaTextBox = new TextBox();
             cadastradoPorTextBox = new TextBox();
-            tbServicoTableAdapter = new ServicoDataSetTableAdapters.tbServicoTableAdapter();
+            tbCategoriaTableAdapter = new ServicoDataSetTableAdapters.tbCategoriaTableAdapter();
             tbServicoBindingNavigator = new BindingNavigator(components);
             bindingNavigatorAddNewItem = new ToolStripButton();
             bindingNavigatorCountItem = new ToolStripLabel();
@@ -68,7 +68,7 @@ namespace Desafio.formulario
             cbmFiltrar = new ComboBox();
             label1 = new Label();
             groupBox3 = new GroupBox();
-            tbServicoDataGridView = new DataGridView();
+            tbCategoriaDataGridView = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@ namespace Desafio.formulario
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            idServicoLabel = new Label();
+            idCategoriaLabel = new Label();
             nomeLabel = new Label();
             descricaoLabel = new Label();
             observacaoLabel = new Label();
@@ -84,24 +84,24 @@ namespace Desafio.formulario
             dataDiaLabel = new Label();
             cadastradoPorLabel = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbServicoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbServicoBindingNavigator).BeginInit();
             tbServicoBindingNavigator.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbServicoDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbCategoriaDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // idServicoLabel
+            // idCategoriaLabel
             // 
-            idServicoLabel.AutoSize = true;
-            idServicoLabel.Location = new Point(7, 31);
-            idServicoLabel.Margin = new Padding(4, 0, 4, 0);
-            idServicoLabel.Name = "idServicoLabel";
-            idServicoLabel.Size = new Size(52, 15);
-            idServicoLabel.TabIndex = 0;
-            idServicoLabel.Text = "Código: ";
+            idCategoriaLabel.AutoSize = true;
+            idCategoriaLabel.Location = new Point(7, 31);
+            idCategoriaLabel.Margin = new Padding(4, 0, 4, 0);
+            idCategoriaLabel.Name = "idCategoriaLabel";
+            idCategoriaLabel.Size = new Size(52, 15);
+            idCategoriaLabel.TabIndex = 0;
+            idCategoriaLabel.Text = "Código: ";
             // 
             // nomeLabel
             // 
@@ -166,8 +166,8 @@ namespace Desafio.formulario
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(idServicoLabel);
-            groupBox1.Controls.Add(idServicoTextBox);
+            groupBox1.Controls.Add(idCategoriaLabel);
+            groupBox1.Controls.Add(idCategoriaTextBox);
             groupBox1.Controls.Add(nomeLabel);
             groupBox1.Controls.Add(nomeTextBox);
             groupBox1.Controls.Add(descricaoLabel);
@@ -189,20 +189,20 @@ namespace Desafio.formulario
             groupBox1.TabStop = false;
             groupBox1.Text = "Dados Categoria";
             // 
-            // idServicoTextBox
+            // idCategoriaTextBox
             // 
-            idServicoTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "idServico", true));
-            idServicoTextBox.Enabled = false;
-            idServicoTextBox.Location = new Point(10, 50);
-            idServicoTextBox.Margin = new Padding(4, 3, 4, 3);
-            idServicoTextBox.Name = "idServicoTextBox";
-            idServicoTextBox.Size = new Size(116, 23);
-            idServicoTextBox.TabIndex = 1;
+            idCategoriaTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "Id", true));
+            idCategoriaTextBox.Enabled = false;
+            idCategoriaTextBox.Location = new Point(10, 50);
+            idCategoriaTextBox.Margin = new Padding(4, 3, 4, 3);
+            idCategoriaTextBox.Name = "idCategoriaTextBox";
+            idCategoriaTextBox.Size = new Size(116, 23);
+            idCategoriaTextBox.TabIndex = 1;
             // 
-            // tbServicoBindingSource
+            // tbCategoriaBindingSource
             // 
-            tbServicoBindingSource.DataMember = "tbServico";
-            tbServicoBindingSource.DataSource = servicoDataSet;
+            tbCategoriaBindingSource.DataMember = "tbCategoria";
+            tbCategoriaBindingSource.DataSource = servicoDataSet;
             // 
             // servicoDataSet
             // 
@@ -212,7 +212,7 @@ namespace Desafio.formulario
             // 
             // nomeTextBox
             // 
-            nomeTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "nome", true));
+            nomeTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "nome", true));
             nomeTextBox.Location = new Point(134, 50);
             nomeTextBox.Margin = new Padding(4, 3, 4, 3);
             nomeTextBox.Name = "nomeTextBox";
@@ -221,7 +221,7 @@ namespace Desafio.formulario
             // 
             // descricaoTextBox
             // 
-            descricaoTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "descricao", true));
+            descricaoTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "descricao", true));
             descricaoTextBox.Location = new Point(7, 95);
             descricaoTextBox.Margin = new Padding(4, 3, 4, 3);
             descricaoTextBox.Multiline = true;
@@ -232,7 +232,7 @@ namespace Desafio.formulario
             // 
             // observacaoTextBox
             // 
-            observacaoTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "observacao", true));
+            observacaoTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "observacao", true));
             observacaoTextBox.Location = new Point(7, 165);
             observacaoTextBox.Margin = new Padding(4, 3, 4, 3);
             observacaoTextBox.Multiline = true;
@@ -243,7 +243,7 @@ namespace Desafio.formulario
             // 
             // valorTextBox
             // 
-            valorTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "valor", true));
+            valorTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "valor", true));
             valorTextBox.Location = new Point(10, 235);
             valorTextBox.Margin = new Padding(4, 3, 4, 3);
             valorTextBox.Name = "valorTextBox";
@@ -252,7 +252,7 @@ namespace Desafio.formulario
             // 
             // dataDiaTextBox
             // 
-            dataDiaTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "dataDia", true));
+            dataDiaTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "dataDia", true));
             dataDiaTextBox.Enabled = false;
             dataDiaTextBox.Location = new Point(134, 235);
             dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
@@ -262,7 +262,7 @@ namespace Desafio.formulario
             // 
             // cadastradoPorTextBox
             // 
-            cadastradoPorTextBox.DataBindings.Add(new Binding("Text", tbServicoBindingSource, "cadastradoPor", true));
+            cadastradoPorTextBox.DataBindings.Add(new Binding("Text", tbCategoriaBindingSource, "cadastradoPor", true));
             cadastradoPorTextBox.Enabled = false;
             cadastradoPorTextBox.Location = new Point(292, 235);
             cadastradoPorTextBox.Margin = new Padding(4, 3, 4, 3);
@@ -270,14 +270,14 @@ namespace Desafio.formulario
             cadastradoPorTextBox.Size = new Size(215, 23);
             cadastradoPorTextBox.TabIndex = 13;
             // 
-            // tbServicoTableAdapter
+            // tbCategoriaTableAdapter
             // 
-            tbServicoTableAdapter.ClearBeforeFill = true;
+            tbCategoriaTableAdapter.ClearBeforeFill = true;
             // 
             // tbServicoBindingNavigator
             // 
             tbServicoBindingNavigator.AddNewItem = bindingNavigatorAddNewItem;
-            tbServicoBindingNavigator.BindingSource = tbServicoBindingSource;
+            tbServicoBindingNavigator.BindingSource = tbCategoriaBindingSource;
             tbServicoBindingNavigator.CountItem = bindingNavigatorCountItem;
             tbServicoBindingNavigator.DeleteItem = bindingNavigatorDeleteItem;
             tbServicoBindingNavigator.Items.AddRange(new ToolStripItem[] { bindingNavigatorMoveFirstItem, bindingNavigatorMovePreviousItem, bindingNavigatorSeparator, bindingNavigatorPositionItem, bindingNavigatorCountItem, bindingNavigatorSeparator1, bindingNavigatorMoveNextItem, bindingNavigatorMoveLastItem, bindingNavigatorSeparator2, bindingNavigatorAddNewItem, bindingNavigatorDeleteItem, tbServicoBindingNavigatorSaveItem });
@@ -456,7 +456,7 @@ namespace Desafio.formulario
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(tbServicoDataGridView);
+            groupBox3.Controls.Add(tbCategoriaDataGridView);
             groupBox3.Location = new Point(14, 389);
             groupBox3.Margin = new Padding(4, 3, 4, 3);
             groupBox3.Name = "groupBox3";
@@ -466,25 +466,25 @@ namespace Desafio.formulario
             groupBox3.TabStop = false;
             groupBox3.Text = "Serviço(s)";
             // 
-            // tbServicoDataGridView
+            // tbCategoriaDataGridView
             // 
-            tbServicoDataGridView.AllowUserToAddRows = false;
-            tbServicoDataGridView.AllowUserToDeleteRows = false;
-            tbServicoDataGridView.AutoGenerateColumns = false;
-            tbServicoDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
-            tbServicoDataGridView.DataSource = tbServicoBindingSource;
-            tbServicoDataGridView.Dock = DockStyle.Fill;
-            tbServicoDataGridView.Location = new Point(4, 19);
-            tbServicoDataGridView.Margin = new Padding(4, 3, 4, 3);
-            tbServicoDataGridView.Name = "tbServicoDataGridView";
-            tbServicoDataGridView.ReadOnly = true;
-            tbServicoDataGridView.Size = new Size(809, 284);
-            tbServicoDataGridView.TabIndex = 0;
-            tbServicoDataGridView.MouseDoubleClick += tbServicoDataGridView_MouseDoubleClick;
+            tbCategoriaDataGridView.AllowUserToAddRows = false;
+            tbCategoriaDataGridView.AllowUserToDeleteRows = false;
+            tbCategoriaDataGridView.AutoGenerateColumns = false;
+            tbCategoriaDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
+            tbCategoriaDataGridView.DataSource = tbCategoriaBindingSource;
+            tbCategoriaDataGridView.Dock = DockStyle.Fill;
+            tbCategoriaDataGridView.Location = new Point(4, 19);
+            tbCategoriaDataGridView.Margin = new Padding(4, 3, 4, 3);
+            tbCategoriaDataGridView.Name = "tbCategoriaDataGridView";
+            tbCategoriaDataGridView.ReadOnly = true;
+            tbCategoriaDataGridView.Size = new Size(809, 284);
+            tbCategoriaDataGridView.TabIndex = 0;
+            tbCategoriaDataGridView.MouseDoubleClick += tbServicoDataGridView_MouseDoubleClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "idServico";
+            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             dataGridViewTextBoxColumn1.HeaderText = "Código";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -549,7 +549,7 @@ namespace Desafio.formulario
             Load += frmServico_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tbServicoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbServicoBindingNavigator).EndInit();
             tbServicoBindingNavigator.ResumeLayout(false);
@@ -557,7 +557,7 @@ namespace Desafio.formulario
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tbServicoDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbCategoriaDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -566,8 +566,8 @@ namespace Desafio.formulario
 
         private GroupBox groupBox1;
         private ServicoDataSet servicoDataSet;
-        private BindingSource tbServicoBindingSource;
-        private Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter tbServicoTableAdapter;
+        private BindingSource tbCategoriaBindingSource;
+        private Desafio.ServicoDataSetTableAdapters.tbCategoriaTableAdapter tbCategoriaTableAdapter;
         private BindingNavigator tbServicoBindingNavigator;
         private ToolStripButton bindingNavigatorAddNewItem;
         private ToolStripLabel bindingNavigatorCountItem;
@@ -581,7 +581,7 @@ namespace Desafio.formulario
         private ToolStripButton bindingNavigatorMoveLastItem;
         private ToolStripSeparator bindingNavigatorSeparator2;
         private ToolStripButton tbServicoBindingNavigatorSaveItem;
-        private TextBox idServicoTextBox;
+        private TextBox idCategoriaTextBox;
         private TextBox nomeTextBox;
         private TextBox descricaoTextBox;
         private TextBox observacaoTextBox;
@@ -595,7 +595,7 @@ namespace Desafio.formulario
         private ComboBox cbmFiltrar;
         private Label label1;
         private GroupBox groupBox3;
-        private DataGridView tbServicoDataGridView;
+        private DataGridView tbCategoriaDataGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

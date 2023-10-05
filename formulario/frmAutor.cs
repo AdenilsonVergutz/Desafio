@@ -20,7 +20,7 @@ namespace Desafio
         SqlCommand cmd = null;
 
 
-        private void tbClienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void tbAutorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -28,8 +28,8 @@ namespace Desafio
                 {
 
                     this.Validate();
-                    this.tbClienteBindingSource.EndEdit();
-                    this.tbClienteTableAdapter.Update(this.servicoDataSet.tbCliente);
+                    this.tbAutorBindingSource.EndEdit();
+                    this.tbAutorTableAdapter.Update(this.servicoDataSet.tbAutor);
                     MessageBox.Show("Cadastro realizado com sucesso",
                             "Sucesso",
                                 MessageBoxButtons.OK,
@@ -62,14 +62,14 @@ namespace Desafio
             }
         }
 
-        private void frmCliente_Load(object sender, EventArgs e)
+        private void frmAutor_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'servicoDataSet.tbOrdemServico' table. You can move, or remove it, as needed.
-            this.tbOrdemServicoTableAdapter.Fill(this.servicoDataSet.tbOrdemServico);
-            // TODO: This line of code loads data into the 'servicoDataSet.tbOrdemServico' table. You can move, or remove it, as needed.
-            this.tbOrdemServicoTableAdapter.Fill(this.servicoDataSet.tbOrdemServico);
-            // TODO: This line of code loads data into the 'servicoDataSet.tbCliente' table. You can move, or remove it, as needed.
-            this.tbClienteTableAdapter.Fill(this.servicoDataSet.tbCliente);
+            // TODO: This line of code loads data into the 'servicoDataSet.tbPost' table. You can move, or remove it, as needed.
+            this.tbPostTableAdapter.Fill(this.servicoDataSet.tbPost);
+            // TODO: This line of code loads data into the 'servicoDataSet.tbPost' table. You can move, or remove it, as needed.
+            this.tbPostTableAdapter.Fill(this.servicoDataSet.tbPost);
+            // TODO: This line of code loads data into the 'servicoDataSet.tbAutor' table. You can move, or remove it, as needed.
+            this.tbAutorTableAdapter.Fill(this.servicoDataSet.tbAutor);
 
         }
 
@@ -80,7 +80,7 @@ namespace Desafio
                 if (cbmFiltrar.Text == "Código Autor")
                 {
                     //Define a instrução Sql
-                    string sql = "SELECT * FROM tbCliente WHERE idCliente =" + txtPesquisar.Text + "";
+                    string sql = "SELECT * FROM tbAutor WHERE Id =" + txtPesquisar.Text + "";
 
                     //Lê os dados da variavel sql e conectar no cn
                     cmd = new SqlCommand(sql, cn);
@@ -95,14 +95,14 @@ namespace Desafio
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                     //Representa uma tabela de dados na memória.
-                    DataTable cliente = new DataTable();
+                    DataTable autor = new DataTable();
 
                     /* Adiciona ou atualiza linhas em um DataTable para que correspondam na fonte de 
                      * dados usando o DataTable.*/
-                    da.Fill(cliente);
+                    da.Fill(autor);
 
                     /*A tbUsuarioDataGridView recebe o DataTable usuario*/
-                    tbClienteDataGridView.DataSource = cliente;
+                    tbAutorDataGridView.DataSource = autor;
 
                     //Fechar a conexão
 
@@ -111,27 +111,27 @@ namespace Desafio
                 if (cbmFiltrar.Text == "Nome")
                 {
                     //define a instrução SQL
-                    string sql = "SELECT * FROM tbCliente WHERE nome LIKE '%" + txtPesquisar.Text + "%'";
+                    string sql = "SELECT * FROM tbAutor WHERE nome LIKE '%" + txtPesquisar.Text + "%'";
                     cmd = new SqlCommand(sql, cn);
                     cn.Open();
                     cmd.CommandType = CommandType.Text;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable cliente = new DataTable();
-                    da.Fill(cliente);
-                    tbClienteDataGridView.DataSource = cliente;
+                    DataTable autor = new DataTable();
+                    da.Fill(autor);
+                    tbAutorDataGridView.DataSource = autor;
 
                 }
                 if (cbmFiltrar.Text == "CPF")
                 {
                     //define a instrução SQL
-                    string sql = "SELECT * FROM tbCliente WHERE cpf ='" + txtPesquisar.Text + "'";
+                    string sql = "SELECT * FROM tbAutor WHERE cpf ='" + txtPesquisar.Text + "'";
                     cmd = new SqlCommand(sql, cn);
                     cn.Open();
                     cmd.CommandType = CommandType.Text;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable cliente = new DataTable();
-                    da.Fill(cliente);
-                    tbClienteDataGridView.DataSource = cliente;
+                    DataTable autor = new DataTable();
+                    da.Fill(autor);
+                    tbAutorDataGridView.DataSource = autor;
 
                 }
             }
@@ -172,14 +172,14 @@ namespace Desafio
             try
             {
                 //define a instrução SQL
-                string sql = "SELECT * FROM tbOrdemServico WHERE idCliente ='" + idClienteTextBox.Text + "'";
+                string sql = "SELECT * FROM tbPost WHERE Id ='" + idAutorTextBox.Text + "'";
                 cmd = new SqlCommand(sql, cn);
                 cn.Open();
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable os = new DataTable();
                 da.Fill(os);
-                tbOrdemServicoDataGridView.DataSource = os;
+                tbPostDataGridView.DataSource = os;
             }
             catch (Exception ex)
             {
@@ -194,7 +194,7 @@ namespace Desafio
 
         private void LimparCampo()
         {
-            idClienteTextBox.Clear();
+            idAutorTextBox.Clear();
             nomeTextBox.Clear();
             cpfMaskedTextBox.Clear();
             telefoneMaskedTextBox.Clear();
@@ -205,19 +205,19 @@ namespace Desafio
             dataDiaTextBox.Clear();
             cadastradoPorTextBox.Clear();
         }
-        private void tbClienteDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbAutorDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             LimparCampo();
-            idClienteTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
-            nomeTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
-            cpfMaskedTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
-            telefoneMaskedTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
-            enderecoTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[4].Value.ToString();
-            bairroTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[5].Value.ToString();
-            cidadeTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[6].Value.ToString();
-            estadoComboBox.Text = tbClienteDataGridView.CurrentRow.Cells[7].Value.ToString();
-            dataDiaTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[8].Value.ToString();
-            cadastradoPorTextBox.Text = tbClienteDataGridView.CurrentRow.Cells[9].Value.ToString();
+            idAutorTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[0].Value.ToString();
+            nomeTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[1].Value.ToString();
+            cpfMaskedTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[2].Value.ToString();
+            telefoneMaskedTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[3].Value.ToString();
+            enderecoTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[4].Value.ToString();
+            bairroTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[5].Value.ToString();
+            cidadeTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[6].Value.ToString();
+            estadoComboBox.Text = tbAutorDataGridView.CurrentRow.Cells[7].Value.ToString();
+            dataDiaTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[8].Value.ToString();
+            cadastradoPorTextBox.Text = tbAutorDataGridView.CurrentRow.Cells[9].Value.ToString();
 
         }
 

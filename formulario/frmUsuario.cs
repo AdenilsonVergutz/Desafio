@@ -83,6 +83,8 @@ namespace Desafio.formulario
                     //Abre conexão
                     cn.Open();
 
+
+
                     //Define o valor da CommandType para cmd
                     cmd.CommandType = CommandType.Text;
 
@@ -115,6 +117,7 @@ namespace Desafio.formulario
                     DataTable usuario = new DataTable();
                     da.Fill(usuario);
                     tbUsuarioDataGridView.DataSource = usuario;
+
 
                 }
             }

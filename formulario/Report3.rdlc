@@ -134,8 +134,8 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="idCliente">
-                      <rd:DefaultName>idCliente</rd:DefaultName>
+                    <Textbox Name="Id">
+                      <rd:DefaultName>Id</rd:DefaultName>
                       <ZIndex>3</ZIndex>
                       <Style>
                         <TextAlign>Left</TextAlign>
@@ -145,7 +145,7 @@
                         <PaddingTop>2pt</PaddingTop>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!idCliente.Value</Value>
+                      <Value>=Fields!Id.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -242,7 +242,7 @@
                         <PaddingTop>2pt</PaddingTop>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>Código Cliente</Value>
+                      <Value>Código autor</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -360,12 +360,12 @@
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:DataSetName>ServicoDataSet</rd:DataSetName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterName>tbOrdemServicoTableAdapter</rd:TableAdapterName>
-        <rd:TableName>tbOrdemServico</rd:TableName>
+        <rd:TableAdapterName>tbPostTableAdapter</rd:TableAdapterName>
+        <rd:TableName>tbPost</rd:TableName>
       </rd:DataSetInfo>
       <Query>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-        <CommandText>SELECT idOrdem, idCliente, idServico, dataDia, cadastradorPor FROM dbo.tbOrdemServico</CommandText>
+        <CommandText>SELECT idOrdem, Id, idServico, dataDia, cadastradorPor FROM dbo.tbPost</CommandText>
         <DataSourceName>ServicoConnectionString</DataSourceName>
       </Query>
       <Fields>
@@ -373,9 +373,9 @@
           <rd:TypeName>System.Int32</rd:TypeName>
           <DataField>idOrdem</DataField>
         </Field>
-        <Field Name="idCliente">
+        <Field Name="Id">
           <rd:TypeName>System.Int32</rd:TypeName>
-          <DataField>idCliente</DataField>
+          <DataField>Id</DataField>
         </Field>
         <Field Name="idServico">
           <rd:TypeName>System.Int32</rd:TypeName>

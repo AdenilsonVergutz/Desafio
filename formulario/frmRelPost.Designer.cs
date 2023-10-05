@@ -31,18 +31,18 @@ namespace Desafio
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelPost));
-            this.tbOrdemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbPostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicoDataSet = new Desafio.ServicoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tbOrdemServicoTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbOrdemServicoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingSource)).BeginInit();
+            this.tbPostTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbPostTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPostBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbOrdemServicoBindingSource
+            // tbPostBindingSource
             // 
-            this.tbOrdemServicoBindingSource.DataMember = "tbOrdemServico";
-            this.tbOrdemServicoBindingSource.DataSource = this.ServicoDataSet;
+            this.tbPostBindingSource.DataMember = "tbPost";
+            this.tbPostBindingSource.DataSource = this.ServicoDataSet;
             // 
             // ServicoDataSet
             // 
@@ -53,7 +53,7 @@ namespace Desafio
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "ServicoDataSet_tbOrdemServico";
-            reportDataSource1.Value = this.tbOrdemServicoBindingSource;
+            reportDataSource1.Value = this.tbPostBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Desafio.formulario.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -61,9 +61,9 @@ namespace Desafio
             this.reportViewer1.Size = new System.Drawing.Size(703, 354);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tbOrdemServicoTableAdapter
+            // tbPostTableAdapter
             // 
-            this.tbOrdemServicoTableAdapter.ClearBeforeFill = true;
+            this.tbPostTableAdapter.ClearBeforeFill = true;
             // 
             // frmRelOS
             // 
@@ -76,7 +76,7 @@ namespace Desafio
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Ordem de Serviço";
             this.Load += new System.EventHandler(this.frmRelOS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbOrdemServicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPostBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,8 +85,8 @@ namespace Desafio
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource tbOrdemServicoBindingSource;
+        private System.Windows.Forms.BindingSource tbPostBindingSource;
         private ServicoDataSet ServicoDataSet;
-        private Desafio.ServicoDataSetTableAdapters.tbOrdemServicoTableAdapter tbOrdemServicoTableAdapter;
+        private Desafio.ServicoDataSetTableAdapters.tbPostTableAdapter tbPostTableAdapter;
     }
 }

@@ -251,12 +251,12 @@
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:DataSetName>ServicoDataSet</rd:DataSetName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterName>tbServicoTableAdapter</rd:TableAdapterName>
-        <rd:TableName>tbServico</rd:TableName>
+        <rd:TableAdapterName>tbCategoriaTableAdapter</rd:TableAdapterName>
+        <rd:TableName>tbCategoria</rd:TableName>
       </rd:DataSetInfo>
       <Query>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-        <CommandText>SELECT idServico, nome, descricao, observacao, valor, dataDia, cadastradoPor FROM dbo.tbServico</CommandText>
+        <CommandText>SELECT id, nome, descricao, observacao, valor, dataDia, cadastradoPor FROM dbo.tbCategoria</CommandText>
         <DataSourceName>ServicoConnectionString</DataSourceName>
       </Query>
       <Fields>

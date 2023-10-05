@@ -17,8 +17,8 @@ namespace Desafio
 
         private void frmRelServico_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ServicoDataSet.tbServico' table. You can move, or remove it, as needed.
-            this.tbServicoTableAdapter.Fill(this.ServicoDataSet.tbServico);
+            // TODO: This line of code loads data into the 'ServicoDataSet.tbCategoria' table. You can move, or remove it, as needed.
+            this.tbCategoriaTableAdapter.Fill(this.ServicoDataSet.tbCategoria);
 
             this.reportViewer1.RefreshReport();
         }

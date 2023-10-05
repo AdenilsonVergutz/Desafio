@@ -91,27 +91,27 @@ namespace Desafio
 
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AutorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                frmAutor cliente = null;
+                frmAutor autor = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmAutor)
                     {
-                        cliente = (frmAutor)frm;
+                        autor = (frmAutor)frm;
                         break;
                     }
                 }
-                if (cliente == null)
+                if (autor == null)
                 {
-                    cliente = new frmAutor();
-                    cliente.MdiParent = this;
-                    cliente.Show();
+                    autor = new frmAutor();
+                    autor.MdiParent = this;
+                    autor.Show();
                 }
 
-                cliente.Focus();
+                autor.Focus();
             }
             catch (Exception ex)
             {
@@ -196,27 +196,27 @@ namespace Desafio
 
         }
 
-        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void AutorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
-                frmRelAutor relcliente = null;
+                frmRelAutor relAutor = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmRelAutor)
                     {
-                        relcliente = (frmRelAutor)frm;
+                        relAutor = (frmRelAutor)frm;
                         break;
                     }
                 }
-                if (relcliente == null)
+                if (relAutor == null)
                 {
-                    relcliente = new frmRelAutor();
-                    relcliente.MdiParent = this;
-                    relcliente.Show();
+                    relAutor = new frmRelAutor();
+                    relAutor.MdiParent = this;
+                    relAutor.Show();
                 }
 
-                relcliente.Focus();
+                relAutor.Focus();
             }
             catch (Exception ex)
             {
@@ -295,27 +295,27 @@ namespace Desafio
             }
         }
 
-        private void tsbCliente_Click(object sender, EventArgs e)
+        private void tsbAutor_Click(object sender, EventArgs e)
         {
             try
             {
-                frmAutor cliente = null;
+                frmAutor autor = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmAutor)
                     {
-                        cliente = (frmAutor)frm;
+                        autor = (frmAutor)frm;
                         break;
                     }
                 }
-                if (cliente == null)
+                if (autor == null)
                 {
-                    cliente = new frmAutor();
-                    cliente.MdiParent = this;
-                    cliente.Show();
+                    autor = new frmAutor();
+                    autor.MdiParent = this;
+                    autor.Show();
                 }
 
-                cliente.Focus();
+                autor.Focus();
             }
             catch (Exception ex)
             {

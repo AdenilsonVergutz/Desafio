@@ -31,18 +31,18 @@ namespace Desafio
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelCategoria));
-            this.tbServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbCategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicoDataSet = new Desafio.ServicoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tbServicoTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).BeginInit();
+            this.tbCategoriaTableAdapter = new Desafio.ServicoDataSetTableAdapters.tbCategoriaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCategoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbServicoBindingSource
+            // tbCategoriaBindingSource
             // 
-            this.tbServicoBindingSource.DataMember = "tbServico";
-            this.tbServicoBindingSource.DataSource = this.ServicoDataSet;
+            this.tbCategoriaBindingSource.DataMember = "tbCategoria";
+            this.tbCategoriaBindingSource.DataSource = this.ServicoDataSet;
             // 
             // ServicoDataSet
             // 
@@ -53,7 +53,7 @@ namespace Desafio
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "ServicoDataSet_tbServico";
-            reportDataSource1.Value = this.tbServicoBindingSource;
+            reportDataSource1.Value = this.tbCategoriaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Desafio.formulario.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -61,9 +61,9 @@ namespace Desafio
             this.reportViewer1.Size = new System.Drawing.Size(746, 388);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tbServicoTableAdapter
+            // tbCategoriaTableAdapter
             // 
-            this.tbServicoTableAdapter.ClearBeforeFill = true;
+            this.tbCategoriaTableAdapter.ClearBeforeFill = true;
             // 
             // frmRelServico
             // 
@@ -76,7 +76,7 @@ namespace Desafio
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Serviço";
             this.Load += new System.EventHandler(this.frmRelServico_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbServicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCategoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,8 +85,8 @@ namespace Desafio
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource tbServicoBindingSource;
+        private System.Windows.Forms.BindingSource tbCategoriaBindingSource;
         private ServicoDataSet ServicoDataSet;
-        private Desafio.ServicoDataSetTableAdapters.tbServicoTableAdapter tbServicoTableAdapter;
+        private Desafio.ServicoDataSetTableAdapters.tbCategoriaTableAdapter tbCategoriaTableAdapter;
     }
 }

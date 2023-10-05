@@ -33,12 +33,12 @@ namespace Desafio
             menuStrip1 = new MenuStrip();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             usuárioToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
+            AutorToolStripMenuItem = new ToolStripMenuItem();
             serviçoToolStripMenuItem = new ToolStripMenuItem();
             ordemDeServiçoToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem1 = new ToolStripMenuItem();
+            AutorToolStripMenuItem1 = new ToolStripMenuItem();
             serviçoToolStripMenuItem1 = new ToolStripMenuItem();
             ordemDeServiçoToolStripMenuItem1 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -48,7 +48,7 @@ namespace Desafio
             tsslData = new ToolStripStatusLabel();
             tsslHora = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
-            tsbCliente = new ToolStripButton();
+            tsbAutor = new ToolStripButton();
             tsbServico = new ToolStripButton();
             tsbOS = new ToolStripButton();
             tsbLogoff = new ToolStripButton();
@@ -71,7 +71,7 @@ namespace Desafio
             // 
             // cadastroToolStripMenuItem
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem, clienteToolStripMenuItem, serviçoToolStripMenuItem, ordemDeServiçoToolStripMenuItem, sairToolStripMenuItem });
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem, AutorToolStripMenuItem, serviçoToolStripMenuItem, ordemDeServiçoToolStripMenuItem, sairToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             cadastroToolStripMenuItem.Size = new Size(66, 20);
             cadastroToolStripMenuItem.Text = "Cadastro";
@@ -83,12 +83,12 @@ namespace Desafio
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
-            // clienteToolStripMenuItem
+            // AutorToolStripMenuItem
             // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(127, 22);
-            clienteToolStripMenuItem.Text = "Autor";
-            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            AutorToolStripMenuItem.Name = "AutorToolStripMenuItem";
+            AutorToolStripMenuItem.Size = new Size(127, 22);
+            AutorToolStripMenuItem.Text = "Autor";
+            AutorToolStripMenuItem.Click += AutorToolStripMenuItem_Click;
             // 
             // serviçoToolStripMenuItem
             // 
@@ -113,17 +113,17 @@ namespace Desafio
             // 
             // relatórioToolStripMenuItem
             // 
-            relatórioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem1, serviçoToolStripMenuItem1, ordemDeServiçoToolStripMenuItem1 });
+            relatórioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AutorToolStripMenuItem1, serviçoToolStripMenuItem1, ordemDeServiçoToolStripMenuItem1 });
             relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
             relatórioToolStripMenuItem.Size = new Size(66, 20);
             relatórioToolStripMenuItem.Text = "Relatório";
             // 
-            // clienteToolStripMenuItem1
+            // AutorToolStripMenuItem1
             // 
-            clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            clienteToolStripMenuItem1.Size = new Size(168, 22);
-            clienteToolStripMenuItem1.Text = "Autor";
-            clienteToolStripMenuItem1.Click += clienteToolStripMenuItem1_Click;
+            AutorToolStripMenuItem1.Name = "AutorToolStripMenuItem1";
+            AutorToolStripMenuItem1.Size = new Size(168, 22);
+            AutorToolStripMenuItem1.Text = "Autor";
+            AutorToolStripMenuItem1.Click += AutorToolStripMenuItem1_Click;
             // 
             // serviçoToolStripMenuItem1
             // 
@@ -183,23 +183,23 @@ namespace Desafio
             // toolStrip1
             // 
             toolStrip1.BackColor = SystemColors.InactiveCaption;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbCliente, tsbServico, tsbOS, tsbLogoff });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbAutor, tsbServico, tsbOS, tsbLogoff });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1185, 46);
             toolStrip1.TabIndex = 3;
             toolStrip1.Text = "toolStrip1";
             // 
-            // tsbCliente
+            // tsbAutor
             // 
-            tsbCliente.Image = Properties.Resources.group;
-            tsbCliente.ImageScaling = ToolStripItemImageScaling.None;
-            tsbCliente.ImageTransparentColor = Color.Magenta;
-            tsbCliente.Name = "tsbCliente";
-            tsbCliente.Size = new Size(41, 43);
-            tsbCliente.Text = "Autor";
-            tsbCliente.TextImageRelation = TextImageRelation.ImageAboveText;
-            tsbCliente.Click += tsbCliente_Click;
+            tsbAutor.Image = Properties.Resources.group;
+            tsbAutor.ImageScaling = ToolStripItemImageScaling.None;
+            tsbAutor.ImageTransparentColor = Color.Magenta;
+            tsbAutor.Name = "tsbAutor";
+            tsbAutor.Size = new Size(41, 43);
+            tsbAutor.Text = "Autor";
+            tsbAutor.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbAutor.Click += tsbAutor_Click;
             // 
             // tsbServico
             // 
@@ -275,12 +275,12 @@ namespace Desafio
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem usuárioToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem AutorToolStripMenuItem;
         private ToolStripMenuItem serviçoToolStripMenuItem;
         private ToolStripMenuItem ordemDeServiçoToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem1;
+        private ToolStripMenuItem AutorToolStripMenuItem1;
         private ToolStripMenuItem serviçoToolStripMenuItem1;
         private ToolStripMenuItem ordemDeServiçoToolStripMenuItem1;
         private StatusStrip statusStrip1;
@@ -290,7 +290,7 @@ namespace Desafio
         private ToolStripStatusLabel tsslData;
         private ToolStripStatusLabel tsslHora;
         private ToolStrip toolStrip1;
-        private ToolStripButton tsbCliente;
+        private ToolStripButton tsbAutor;
         private ToolStripButton tsbServico;
         private ToolStripButton tsbOS;
         private ToolStripButton tsbLogoff;
