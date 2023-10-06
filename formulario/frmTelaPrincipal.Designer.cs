@@ -49,10 +49,11 @@ namespace Desafio
             tsslHora = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
             tsbAutor = new ToolStripButton();
-            tsbServico = new ToolStripButton();
-            tsbOS = new ToolStripButton();
+            tsbCategoria = new ToolStripButton();
+            tsbPost = new ToolStripButton();
             tsbLogoff = new ToolStripButton();
             timer1 = new System.Windows.Forms.Timer(components);
+            tsbTag = new ToolStripButton();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -102,7 +103,7 @@ namespace Desafio
             ordemDeServiçoToolStripMenuItem.Name = "ordemDeServiçoToolStripMenuItem";
             ordemDeServiçoToolStripMenuItem.Size = new Size(127, 22);
             ordemDeServiçoToolStripMenuItem.Text = "Postagem";
-            ordemDeServiçoToolStripMenuItem.Click += ordemDeServiçoToolStripMenuItem_Click;
+            ordemDeServiçoToolStripMenuItem.Click += PostToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -121,23 +122,23 @@ namespace Desafio
             // AutorToolStripMenuItem1
             // 
             AutorToolStripMenuItem1.Name = "AutorToolStripMenuItem1";
-            AutorToolStripMenuItem1.Size = new Size(168, 22);
+            AutorToolStripMenuItem1.Size = new Size(125, 22);
             AutorToolStripMenuItem1.Text = "Autor";
             AutorToolStripMenuItem1.Click += AutorToolStripMenuItem1_Click;
             // 
             // serviçoToolStripMenuItem1
             // 
             serviçoToolStripMenuItem1.Name = "serviçoToolStripMenuItem1";
-            serviçoToolStripMenuItem1.Size = new Size(168, 22);
+            serviçoToolStripMenuItem1.Size = new Size(125, 22);
             serviçoToolStripMenuItem1.Text = "Categoria";
-            serviçoToolStripMenuItem1.Click += serviçoToolStripMenuItem1_Click;
+            serviçoToolStripMenuItem1.Click += categoriaToolStripMenuItem1_Click;
             // 
             // ordemDeServiçoToolStripMenuItem1
             // 
             ordemDeServiçoToolStripMenuItem1.Name = "ordemDeServiçoToolStripMenuItem1";
-            ordemDeServiçoToolStripMenuItem1.Size = new Size(168, 22);
+            ordemDeServiçoToolStripMenuItem1.Size = new Size(125, 22);
             ordemDeServiçoToolStripMenuItem1.Text = "Post";
-            ordemDeServiçoToolStripMenuItem1.Click += ordemDeServiçoToolStripMenuItem1_Click;
+            ordemDeServiçoToolStripMenuItem1.Click += PostToolStripMenuItem1_Click;
             // 
             // statusStrip1
             // 
@@ -183,7 +184,7 @@ namespace Desafio
             // toolStrip1
             // 
             toolStrip1.BackColor = SystemColors.InactiveCaption;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbAutor, tsbServico, tsbOS, tsbLogoff });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbAutor, tsbCategoria, tsbTag, tsbPost, tsbLogoff });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1185, 46);
@@ -201,27 +202,27 @@ namespace Desafio
             tsbAutor.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbAutor.Click += tsbAutor_Click;
             // 
-            // tsbServico
+            // tsbCategoria
             // 
-            tsbServico.Image = Properties.Resources.applications;
-            tsbServico.ImageScaling = ToolStripItemImageScaling.None;
-            tsbServico.ImageTransparentColor = Color.Magenta;
-            tsbServico.Name = "tsbServico";
-            tsbServico.Size = new Size(62, 43);
-            tsbServico.Text = "Categoria";
-            tsbServico.TextImageRelation = TextImageRelation.ImageAboveText;
-            tsbServico.Click += tsbServico_Click;
+            tsbCategoria.Image = Properties.Resources.applications;
+            tsbCategoria.ImageScaling = ToolStripItemImageScaling.None;
+            tsbCategoria.ImageTransparentColor = Color.Magenta;
+            tsbCategoria.Name = "tsbCategoria";
+            tsbCategoria.Size = new Size(62, 43);
+            tsbCategoria.Text = "Categoria";
+            tsbCategoria.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbCategoria.Click += tsbCategoria_Click;
             // 
-            // tsbOS
+            // tsbPost
             // 
-            tsbOS.Image = Properties.Resources.paste;
-            tsbOS.ImageScaling = ToolStripItemImageScaling.None;
-            tsbOS.ImageTransparentColor = Color.Magenta;
-            tsbOS.Name = "tsbOS";
-            tsbOS.Size = new Size(44, 43);
-            tsbOS.Text = "Postar";
-            tsbOS.TextImageRelation = TextImageRelation.ImageAboveText;
-            tsbOS.Click += tsbOS_Click;
+            tsbPost.Image = Properties.Resources.paste;
+            tsbPost.ImageScaling = ToolStripItemImageScaling.None;
+            tsbPost.ImageTransparentColor = Color.Magenta;
+            tsbPost.Name = "tsbPost";
+            tsbPost.Size = new Size(34, 43);
+            tsbPost.Text = "Post";
+            tsbPost.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbPost.Click += tsbPost_Click;
             // 
             // tsbLogoff
             // 
@@ -239,6 +240,19 @@ namespace Desafio
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
+            // 
+            // tsbTag
+            // 
+            tsbTag.Image = (Image)resources.GetObject("tsbTag.Image");
+            tsbTag.ImageScaling = ToolStripItemImageScaling.None;
+            tsbTag.ImageTransparentColor = Color.Magenta;
+            tsbTag.Name = "tsbTag";
+            tsbTag.Size = new Size(29, 43);
+            tsbTag.Text = "Tag";
+            tsbTag.TextDirection = ToolStripTextDirection.Horizontal;
+            tsbTag.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbTag.Click += tsbTag_Click;
+
             // 
             // frmTelaPrincipal
             // 
@@ -291,9 +305,10 @@ namespace Desafio
         private ToolStripStatusLabel tsslHora;
         private ToolStrip toolStrip1;
         private ToolStripButton tsbAutor;
-        private ToolStripButton tsbServico;
-        private ToolStripButton tsbOS;
+        private ToolStripButton tsbCategoria;
+        private ToolStripButton tsbPost;
         private ToolStripButton tsbLogoff;
         private System.Windows.Forms.Timer timer1;
+        private ToolStripButton tsbTag;
     }
 }

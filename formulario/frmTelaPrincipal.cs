@@ -1,3 +1,4 @@
+using Desafio.formulario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -155,7 +156,7 @@ namespace Desafio
 
         }
 
-        private void ordemDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PostToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -232,27 +233,27 @@ namespace Desafio
             Application.Exit();
         }
 
-        private void serviçoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void categoriaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
-                frmRelCategoria relServico = null;
+                frmRelCategoria relCategoria = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmRelCategoria)
                     {
-                        relServico = (frmRelCategoria)frm;
+                        relCategoria = (frmRelCategoria)frm;
                         break;
                     }
                 }
-                if (relServico == null)
+                if (relCategoria == null)
                 {
-                    relServico = new frmRelCategoria();
-                    relServico.MdiParent = this;
-                    relServico.Show();
+                    relCategoria = new frmRelCategoria();
+                    relCategoria.MdiParent = this;
+                    relCategoria.Show();
                 }
 
-                relServico.Focus();
+                relCategoria.Focus();
             }
             catch (Exception ex)
             {
@@ -264,27 +265,27 @@ namespace Desafio
 
         }
 
-        private void ordemDeServiçoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void PostToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
-                frmRelPost relOS = null;
+                frmRelPost relPost = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmRelPost)
                     {
-                        relOS = (frmRelPost)frm;
+                        relPost = (frmRelPost)frm;
                         break;
                     }
                 }
-                if (relOS == null)
+                if (relPost == null)
                 {
-                    relOS = new frmRelPost();
-                    relOS.MdiParent = this;
-                    relOS.Show();
+                    relPost = new frmRelPost();
+                    relPost.MdiParent = this;
+                    relPost.Show();
                 }
 
-                relOS.Focus();
+                relPost.Focus();
             }
             catch (Exception ex)
             {
@@ -327,27 +328,27 @@ namespace Desafio
 
         }
 
-        private void tsbServico_Click(object sender, EventArgs e)
+        private void tsbCategoria_Click(object sender, EventArgs e)
         {
             try
             {
-                formulario.frmCategoria servico = null;
+                formulario.frmCategoria categoria = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is formulario.frmCategoria)
                     {
-                        servico = (formulario.frmCategoria)frm;
+                        categoria = (formulario.frmCategoria)frm;
                         break;
                     }
                 }
-                if (servico == null)
+                if (categoria == null)
                 {
-                    servico = new formulario.frmCategoria();
-                    servico.MdiParent = this;
-                    servico.Show();
+                    categoria = new formulario.frmCategoria();
+                    categoria.MdiParent = this;
+                    categoria.Show();
                 }
 
-                servico.Focus();
+                categoria.Focus();
             }
             catch (Exception ex)
             {
@@ -359,27 +360,63 @@ namespace Desafio
 
         }
 
-        private void tsbOS_Click(object sender, EventArgs e)
+
+        private void tsbTag_Click(object sender, EventArgs e)
         {
             try
             {
-                frmPost os = null;
+                FrmTag tag = null;
+                foreach (Form frm in this.MdiChildren)
+                {
+                    if (frm is FrmTag)
+                    {
+                        tag = (FrmTag)frm;
+                        break;
+                    }
+                }
+                if (tag == null)
+                {
+                    tag = new FrmTag();
+                    tag.MdiParent = this;
+                    tag.Show();
+                }
+
+                tag.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ser conectar ao formulário devido ao erro: " + ex.Message,
+                    "Aviso",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+            }
+
+        }
+
+
+
+
+        private void tsbPost_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmPost post = null;
                 foreach (Form frm in this.MdiChildren)
                 {
                     if (frm is frmPost)
                     {
-                        os = (frmPost)frm;
+                        post = (frmPost)frm;
                         break;
                     }
                 }
-                if (os == null)
+                if (post == null)
                 {
-                    os = new frmPost();
-                    os.MdiParent = this;
-                    os.Show();
+                    post = new frmPost();
+                    post.MdiParent = this;
+                    post.Show();
                 }
 
-                os.Focus();
+                post.Focus();
             }
             catch (Exception ex)
             {
