@@ -29,6 +29,7 @@ namespace Desafio
                 {
                     cadastradorPorTextBox.Text = frmLogin.usuarioConectado;
                 }
+
                 this.Validate();
                 this.tbPostBindingSource.EndEdit();
                 this.tbPostTableAdapter.Update(this.servicoDataSet.tbPost);

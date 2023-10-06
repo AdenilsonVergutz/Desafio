@@ -1216,7 +1216,7 @@ namespace Desafio
                 this.columndataDia.MaxLength = 20;
                 this.columncadastradorPor.MaxLength = 50;
                 this.columnIdCategoria.AllowDBNull = false;
-                //this.columnIdAutor.AllowDBNull = true;
+                this.columnIdAutor.AllowDBNull = true;
                 this.columnTitulo.AllowDBNull = false;
                 this.columnTitulo.MaxLength = 160;
                 this.columnSlug.AllowDBNull = false;
