@@ -696,7 +696,7 @@ namespace Desafio
             // 
             // tbPostBindingSource
             // 
-            tbPostBindingSource.DataMember = "FK_tbPost_tbAutor_id";
+            tbPostBindingSource.DataMember = "FK_Post_Autor_id";
             tbPostBindingSource.DataSource = tbAutorBindingSource;
             // 
             // tbPostTableAdapter

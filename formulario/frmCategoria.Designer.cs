@@ -546,7 +546,7 @@ namespace Desafio.formulario
             Name = "frmServico";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de categoria";
-            Load += frmServico_Load;
+            Load += frmCategoria_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).EndInit();

@@ -113,7 +113,7 @@ namespace Desafio
 
 
 //     CONSTRAINT[PK_Post] PRIMARY KEY([Id], [IdAutor]),
-//     CONSTRAINT[FK_Post_IdCategoria] FOREIGN KEY([IdCategoria]) REFERENCES[tbCategoria]([Id]),
+//     CONSTRAINT[FK_tbPost_tbCategoria_id] FOREIGN KEY([IdCategoria]) REFERENCES[tbCategoria]([Id]),
 //     CONSTRAINT[FK_Post_AutorId] FOREIGN KEY([IdAutor]) REFERENCES[tbAutor]([Id]),
 //     CONSTRAINT[FK_Post_Tag] FOREIGN KEY([TagId]) REFERENCES[tbTag]([Id]),
 
@@ -265,7 +265,7 @@ namespace Desafio
 
 
 //     CONSTRAINT[PK_Post] PRIMARY KEY([Id], [IdAutor]),
-//     CONSTRAINT[FK_Post_IdCategoria] FOREIGN KEY([IdCategoria]) REFERENCES[tbCategoria]([Id]),
+//     CONSTRAINT[FK_tbPost_tbCategoria_id] FOREIGN KEY([IdCategoria]) REFERENCES[tbCategoria]([Id]),
 //     CONSTRAINT[FK_Post_NomeCategoria] FOREIGN KEY([NomeCategoria]) REFERENCES[tbCategoria]([nome]),
 
 //     CONSTRAINT[FK_Post_AutorId] FOREIGN KEY([IdAutor]) REFERENCES[tbAutor]([Id]),

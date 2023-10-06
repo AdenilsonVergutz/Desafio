@@ -39,11 +39,12 @@ namespace Desafio
             Label cadastradorPorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPost));
             groupBox1 = new GroupBox();
+            idCategoriaComboBox = new ComboBox();
+            tbCategoriaBindingSource = new BindingSource(components);
+            servicoDataSet = new ServicoDataSet();
             cadastradorPorTextBox = new TextBox();
             tbPostBindingSource = new BindingSource(components);
-            servicoDataSet = new ServicoDataSet();
             dataDiaTextBox = new TextBox();
-            tbCategoriaBindingSource = new BindingSource(components);
             idAutorComboBox = new ComboBox();
             tbAutorBindingSource = new BindingSource(components);
             idPostTextBox = new TextBox();
@@ -74,16 +75,15 @@ namespace Desafio
             groupBox3 = new GroupBox();
             tbAutorTableAdapter = new tbAutorTableAdapter();
             tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
-            idCategoriaComboBox = new ComboBox();
             idOrdemLabel = new Label();
             idAutorLabel = new Label();
             idCategoriaLabel = new Label();
             dataDiaLabel = new Label();
             cadastradorPorLabel = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).BeginInit();
             tbPostBindingNavigator.SuspendLayout();
@@ -165,6 +165,33 @@ namespace Desafio
             groupBox1.Text = "Dados do Post";
             groupBox1.Enter += groupBox1_Enter;
             // 
+            // idCategoriaComboBox
+            // 
+
+            this.idCategoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbPostBindingSource, "Id", true));
+            this.idCategoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbPostBindingSource, "idCategoria", true));
+            this.idCategoriaComboBox.DataSource = tbCategoriaBindingSource;
+            this.idCategoriaComboBox.DisplayMember = "Id";
+            this.idCategoriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.idCategoriaComboBox.FormattingEnabled = true;
+            this.idCategoriaComboBox.Location = new Point(10, 141);
+            this.idCategoriaComboBox.Name = "idCategoriaComboBox";
+            this.idCategoriaComboBox.Size = new Size(323, 23);
+            this.idCategoriaComboBox.TabIndex = 10;
+            this.idCategoriaComboBox.ValueMember = "Id";
+            this.idCategoriaComboBox.SelectedIndexChanged += idCategoriaComboBox_SelectedIndexChanged;
+            // 
+            // tbCategoriaBindingSource
+            // 
+            tbCategoriaBindingSource.DataMember = "tbCategoria";
+            tbCategoriaBindingSource.DataSource = servicoDataSet;
+            // 
+            // servicoDataSet
+            // 
+            servicoDataSet.DataSetName = "ServicoDataSet";
+            servicoDataSet.Namespace = "http://tempuri.org/ServicoDataSet.xsd";
+            servicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cadastradorPorTextBox
             // 
             cadastradorPorTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "cadastradorPor", true));
@@ -180,12 +207,6 @@ namespace Desafio
             tbPostBindingSource.DataMember = "tbPost";
             tbPostBindingSource.DataSource = servicoDataSet;
             // 
-            // servicoDataSet
-            // 
-            servicoDataSet.DataSetName = "ServicoDataSet";
-            servicoDataSet.Namespace = "http://tempuri.org/ServicoDataSet.xsd";
-            servicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataDiaTextBox
             // 
             dataDiaTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "dataDia", true));
@@ -198,47 +219,24 @@ namespace Desafio
             // 
             // idAutorComboBox
             // 
-           
-            idAutorComboBox.DataSource = tbAutorBindingSource;
-            idAutorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            idAutorComboBox.FormattingEnabled = true;
-            idAutorComboBox.Location = new Point(12, 89);
-            idAutorComboBox.Margin = new Padding(4, 3, 4, 3);
-            idAutorComboBox.Name = "idAutorComboBox";
-            idAutorComboBox.Size = new Size(321, 23);
-            idAutorComboBox.TabIndex = 3;
-            idAutorComboBox.ValueMember = "nome";
-            idAutorComboBox.SelectedIndexChanged += idAutorComboBox_SelectedIndexChanged;
+            this.idAutorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbPostBindingSource, "Id", true));
+            this.idAutorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbPostBindingSource, "idAutor", true));
+            this.idAutorComboBox.DataSource = tbAutorBindingSource;
+            this.idAutorComboBox.DisplayMember = "Id";
+            this.idAutorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.idAutorComboBox.FormattingEnabled = true;
+            this.idAutorComboBox.Location = new Point(12, 89);
+            this.idAutorComboBox.Margin = new Padding(4, 3, 4, 3);
+            this.idAutorComboBox.Name = "idAutorComboBox";
+            this.idAutorComboBox.Size = new Size(321, 23);
+            this.idAutorComboBox.TabIndex = 3;
+            this.idAutorComboBox.ValueMember = "Id";
+            this.idAutorComboBox.SelectedIndexChanged += idAutorComboBox_SelectedIndexChanged;
             // 
-
             // tbAutorBindingSource
             // 
             tbAutorBindingSource.DataMember = "tbAutor";
             tbAutorBindingSource.DataSource = servicoDataSet;
-
-            // idCategoriaComboBox
-            // 
-
-            idCategoriaComboBox.DataSource = tbCategoriaBindingSource;
-            idCategoriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            idCategoriaComboBox.FormattingEnabled = true;
-            idCategoriaComboBox.Location = new Point(10, 141);
-            idCategoriaComboBox.Name = "idCategoriaComboBox";
-            idCategoriaComboBox.Size = new Size(323, 23);
-            idCategoriaComboBox.TabIndex = 10;
-            idCategoriaComboBox.ValueMember = "nome";
-            idCategoriaComboBox.SelectedIndexChanged += idCategoriaComboBox_SelectedIndexChanged;
-
-            // tbUsuarioBindingSource
-            // 
-            tbCategoriaBindingSource.DataMember = "tbCategoria";
-            tbCategoriaBindingSource.DataSource = servicoDataSet;
-
-            // 
-
-
-
-
             // 
             // idPostTextBox
             // 
@@ -491,7 +489,6 @@ namespace Desafio
             // 
             tbCategoriaTableAdapter.ClearBeforeFill = true;
             // 
-
             // frmPost
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -506,12 +503,12 @@ namespace Desafio
             Name = "frmPost";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Post";
-            Load += frmOS_Load;
+            Load += frmPost_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).EndInit();
             tbPostBindingNavigator.ResumeLayout(false);

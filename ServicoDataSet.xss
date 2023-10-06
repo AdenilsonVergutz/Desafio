@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:tbUsuario" ZOrder="5" X="638" Y="70" Height="267" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK_tbPost_tbAutor_id" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Post_Autor_id" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>373</X>
@@ -36,7 +36,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Post_IdCategoria" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_tbPost_tbCategoria_id" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>373</X>
