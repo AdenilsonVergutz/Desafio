@@ -69,6 +69,7 @@ namespace Desafio.formulario
             label1 = new Label();
             groupBox3 = new GroupBox();
             tbCategoriaDataGridView = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -471,7 +472,7 @@ namespace Desafio.formulario
             tbCategoriaDataGridView.AllowUserToAddRows = false;
             tbCategoriaDataGridView.AllowUserToDeleteRows = false;
             tbCategoriaDataGridView.AutoGenerateColumns = false;
-            tbCategoriaDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
+            tbCategoriaDataGridView.Columns.AddRange(new DataGridViewColumn[] { id, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
             tbCategoriaDataGridView.DataSource = tbCategoriaBindingSource;
             tbCategoriaDataGridView.Dock = DockStyle.Fill;
             tbCategoriaDataGridView.Location = new Point(4, 19);
@@ -481,6 +482,13 @@ namespace Desafio.formulario
             tbCategoriaDataGridView.Size = new Size(809, 284);
             tbCategoriaDataGridView.TabIndex = 0;
             tbCategoriaDataGridView.MouseDoubleClick += tbServicoDataGridView_MouseDoubleClick;
+            // 
+            // id
+            // 
+            id.DataPropertyName = "id";
+            id.HeaderText = "Código";
+            id.Name = "id";
+            id.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -589,6 +597,7 @@ namespace Desafio.formulario
         private GroupBox groupBox3;
         private DataGridView tbCategoriaDataGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
