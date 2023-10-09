@@ -69,7 +69,6 @@ namespace Desafio.formulario
             label1 = new Label();
             groupBox3 = new GroupBox();
             tbCategoriaDataGridView = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -291,6 +290,7 @@ namespace Desafio.formulario
             tbServicoBindingNavigator.Size = new Size(845, 25);
             tbServicoBindingNavigator.TabIndex = 1;
             tbServicoBindingNavigator.Text = "bindingNavigator1";
+            tbServicoBindingNavigator.RefreshItems += tbServicoBindingNavigator_RefreshItems;
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -471,7 +471,7 @@ namespace Desafio.formulario
             tbCategoriaDataGridView.AllowUserToAddRows = false;
             tbCategoriaDataGridView.AllowUserToDeleteRows = false;
             tbCategoriaDataGridView.AutoGenerateColumns = false;
-            tbCategoriaDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
+            tbCategoriaDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
             tbCategoriaDataGridView.DataSource = tbCategoriaBindingSource;
             tbCategoriaDataGridView.Dock = DockStyle.Fill;
             tbCategoriaDataGridView.Location = new Point(4, 19);
@@ -481,14 +481,6 @@ namespace Desafio.formulario
             tbCategoriaDataGridView.Size = new Size(809, 284);
             tbCategoriaDataGridView.TabIndex = 0;
             tbCategoriaDataGridView.MouseDoubleClick += tbServicoDataGridView_MouseDoubleClick;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewTextBoxColumn1.HeaderText = "Código";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 50;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -543,7 +535,7 @@ namespace Desafio.formulario
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
-            Name = "frmServico";
+            Name = "frmCategoria";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de categoria";
             Load += frmCategoria_Load;

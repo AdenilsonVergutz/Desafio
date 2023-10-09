@@ -365,18 +365,18 @@ namespace Desafio
         {
             try
             {
-                FrmTag tag = null;
+                frmTag tag = null;
                 foreach (Form frm in this.MdiChildren)
                 {
-                    if (frm is FrmTag)
+                    if (frm is frmTag)
                     {
-                        tag = (FrmTag)frm;
+                        tag = (frmTag)frm;
                         break;
                     }
                 }
                 if (tag == null)
                 {
-                    tag = new FrmTag();
+                    tag = new frmTag();
                     tag.MdiParent = this;
                     tag.Show();
                 }

@@ -156,5 +156,10 @@ namespace Desafio.formulario
             cadastradoPorTextBox.Text = tbCategoriaDataGridView.CurrentRow.Cells[6].Value.ToString();
 
         }
+
+        private void tbServicoBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

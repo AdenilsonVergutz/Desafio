@@ -75,13 +75,13 @@ namespace Desafio
             txtPesquisar = new MaskedTextBox();
             groupBox2 = new GroupBox();
             tbPostDataGridView = new DataGridView();
-            groupBox3 = new GroupBox();
-            tbAutorTableAdapter = new tbAutorTableAdapter();
-            tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
             Titulo = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            groupBox3 = new GroupBox();
+            tbAutorTableAdapter = new tbAutorTableAdapter();
+            tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
             idOrdemLabel = new Label();
             idAutorLabel = new Label();
             idCategoriaLabel = new Label();
@@ -334,6 +334,7 @@ namespace Desafio
             tbPostBindingNavigator.Size = new Size(666, 25);
             tbPostBindingNavigator.TabIndex = 3;
             tbPostBindingNavigator.Text = "bindingNavigator1";
+            tbPostBindingNavigator.RefreshItems += tbPostBindingNavigator_RefreshItems;
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -511,27 +512,6 @@ namespace Desafio
             tbPostDataGridView.TabIndex = 0;
             tbPostDataGridView.MouseDoubleClick += tbPostDataGridView_MouseDoubleClick;
             // 
-            // groupBox3
-            // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(tbPostDataGridView);
-            groupBox3.Location = new Point(10, 399);
-            groupBox3.Margin = new Padding(4, 3, 4, 3);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 3, 4, 3);
-            groupBox3.Size = new Size(642, 269);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Post(s)";
-            // 
-            // tbAutorTableAdapter
-            // 
-            tbAutorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbCategoriaTableAdapter
-            // 
-            tbCategoriaTableAdapter.ClearBeforeFill = true;
-            // 
             // Titulo
             // 
             Titulo.DataPropertyName = "Titulo";
@@ -562,6 +542,27 @@ namespace Desafio
             dataGridViewTextBoxColumn5.HeaderText = "Cadastrado Por";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(tbPostDataGridView);
+            groupBox3.Location = new Point(10, 399);
+            groupBox3.Margin = new Padding(4, 3, 4, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(4, 3, 4, 3);
+            groupBox3.Size = new Size(642, 269);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Post(s)";
+            // 
+            // tbAutorTableAdapter
+            // 
+            tbAutorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbCategoriaTableAdapter
+            // 
+            tbCategoriaTableAdapter.ClearBeforeFill = true;
             // 
             // frmPost
             // 

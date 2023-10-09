@@ -159,5 +159,10 @@ namespace Desafio
         {
 
         }
+
+        private void tbPostBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

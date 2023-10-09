@@ -94,10 +94,13 @@ namespace Desafio
 //    [Id] INT NOT NULL IDENTITY(1, 1),
 //    [nome] VARCHAR(80) NOT NULL,
 
+//    [dataDia] VARCHAR(20) NULL,
+
+//    [cadastradorPor] VARCHAR(50) NULL,
+
 //    CONSTRAINT[PK_Tag] PRIMARY KEY([Id]),
 //	CONSTRAINT[UQ_Tag_nome] UNIQUE([nome])
-
-//)
+//	)
 
 
 //CREATE TABLE[tbPost] (
@@ -108,8 +111,9 @@ namespace Desafio
 //    [TagId] INT NULL,
 //    [Titulo] VARCHAR(160) NOT NULL,
 //    [Slug] VARCHAR(80) NOT NULL,
-//    [dataDia] VARCHAR(20) NULL,
-//    [cadastradorPor] VARCHAR(50) NULL,
+//[dataDia] VARCHAR(20) NULL,
+
+//[cadastradorPor] VARCHAR(50) NULL,
 
 
 //     CONSTRAINT[PK_Post] PRIMARY KEY([Id], [IdAutor]),
@@ -149,7 +153,7 @@ namespace Desafio
 
 
 //   CONSTRAINT[PK_Usuario] PRIMARY KEY([idUsuario]),
-	 
+
 //)
 
 
@@ -307,6 +311,6 @@ namespace Desafio
 
 //   CONSTRAINT[PK_Usuario] PRIMARY KEY([idUsuario]),
 //   CONSTRAINT[FK_User_Perfil] FOREIGN KEY([nivelAcesso]) REFERENCES[tbPerfil]([nome])
-	 
+
 //)
 
