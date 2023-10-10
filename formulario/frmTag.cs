@@ -85,5 +85,12 @@ namespace Desafio.formulario
         {
 
         }
+
+        private void tbTagBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
