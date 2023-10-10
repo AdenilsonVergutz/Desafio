@@ -31,16 +31,16 @@ namespace Desafio.formulario
         /// </summary>
         private void InitializeComponent()
         {
-
-
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTag));
             tagDataDiaLabel = new Label();
             nomeTagLabel = new Label();
             TagLabel = new Label();
             igualLabel = new Label();
             filtrarPorTagLabel = new Label();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTag));
-
+            usuarioCadastroTagLabel = new Label();
             TagGroupBox = new GroupBox();
             dataCadastroTagTextBox = new TextBox();
             tbTagBindingSource = new BindingSource(components);
@@ -48,15 +48,15 @@ namespace Desafio.formulario
             nomeTagTextBox = new TextBox();
             idTagTextBox = new TextBox();
             tagDataGridView = new DataGridView();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataDiaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cadastradorPorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tagGroupBox2 = new GroupBox();
-
             groupBox1 = new GroupBox();
             txtPesquisar = new TextBox();
             cbmFiltrarTag = new ComboBox();
             btnPesquisarTag = new Button();
-
-            tbTagTableAdapter = new ServicoDataSetTableAdapters.tbTagTableAdapter();
-
+            tbTagTableAdapter = new tbTagTableAdapter();
             tbTagBindingNavigator = new BindingNavigator(components);
             bindingNavigatorAddNewItem = new ToolStripButton();
             bindingNavigatorCountItem = new ToolStripLabel();
@@ -70,82 +70,14 @@ namespace Desafio.formulario
             bindingNavigatorMoveLastItem = new ToolStripButton();
             bindingNavigatorSeparator2 = new ToolStripSeparator();
             tbTagBindingNavigatorSaveItem = new ToolStripButton();
-
-
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataDiaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cadastradorPorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             TagGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tbTagBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tbTagBindingNavigator).BeginInit();
-            tbTagBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tagDataGridView).BeginInit();
             tagGroupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tagDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbTagBindingNavigator).BeginInit();
+            tbTagBindingNavigator.SuspendLayout();
             SuspendLayout();
-
-            // 
-            // TagGroupBox
-            // 
-            TagGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TagGroupBox.Controls.Add(dataCadastroTagTextBox);
-            TagGroupBox.Controls.Add(usuarioCadastroTagTextBox);
-            TagGroupBox.Controls.Add(usuarioCadastroTagLabel);
-            TagGroupBox.Controls.Add(tagDataDiaLabel);
-            TagGroupBox.Controls.Add(nomeTagTextBox);
-            TagGroupBox.Controls.Add(idTagTextBox);
-            TagGroupBox.Controls.Add(nomeTagLabel);
-            TagGroupBox.Controls.Add(TagLabel);
-            TagGroupBox.Location = new Point(22, 61);
-            TagGroupBox.Name = "TagGroupBox";
-            TagGroupBox.Size = new Size(665, 176);
-            TagGroupBox.TabIndex = 0;
-            TagGroupBox.TabStop = false;
-            TagGroupBox.Text = "Cadastre sua Tag";
-            // 
-            // dataCadastroTagTextBox
-            // 
-            dataCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "dataDia", true));
-            dataCadastroTagTextBox.Location = new Point(278, 144);
-            dataCadastroTagTextBox.Name = "dataCadastroTagTextBox";
-            dataCadastroTagTextBox.Size = new Size(126, 23);
-            dataCadastroTagTextBox.TabIndex = 7;
-            dataCadastroTagTextBox.Visible = false;
-            // 
-            // tbTagBindingSource
-            // 
-            tbTagBindingSource.DataMember = "tbTag";
-            tbTagBindingSource.DataSource = servicoDataSet;
-            //tbTagBindingSource.DataSource = typeof(ServicoDataSet);
-
-            // servicoDataSet
-            // 
-            servicoDataSet.DataSetName = "ServicoDataSet";
-            servicoDataSet.Namespace = "http://tempuri.org/ServicoDataSet.xsd";
-            servicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-
-            // 
-            // usuarioCadastroTagTextBox
-            // 
-            usuarioCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "cadastradorPor", true));
-            usuarioCadastroTagTextBox.Location = new Point(529, 143);
-            usuarioCadastroTagTextBox.Name = "usuarioCadastroTagTextBox";
-            usuarioCadastroTagTextBox.Size = new Size(130, 23);
-            usuarioCadastroTagTextBox.TabIndex = 6;
-            usuarioCadastroTagTextBox.Visible = false;
-            // 
-            // usuarioCadastroTagLabel
-            // 
-            usuarioCadastroTagLabel.AutoSize = true;
-            usuarioCadastroTagLabel.Location = new Point(430, 149);
-            usuarioCadastroTagLabel.Name = "usuarioCadastroTagLabel";
-            usuarioCadastroTagLabel.Size = new Size(101, 15);
-            usuarioCadastroTagLabel.TabIndex = 5;
-            usuarioCadastroTagLabel.Text = "Usuário cadastro: ";
             // 
             // tagDataDiaLabel
             // 
@@ -155,24 +87,6 @@ namespace Desafio.formulario
             tagDataDiaLabel.Size = new Size(87, 15);
             tagDataDiaLabel.TabIndex = 4;
             tagDataDiaLabel.Text = "Data Cadastro: ";
-            // 
-            // nomeTagTextBox
-            // 
-            nomeTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "nome", true));
-            nomeTagTextBox.Location = new Point(251, 46);
-            nomeTagTextBox.Name = "nomeTagTextBox";
-            nomeTagTextBox.Size = new Size(280, 23);
-            nomeTagTextBox.TabIndex = 3;
-            // 
-            // idTagTextBox
-            // 
-            idTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "Id", true));
-            idTagTextBox.Enabled = false;
-            idTagTextBox.Location = new Point(67, 47);
-            idTagTextBox.Name = "idTagTextBox";
-            idTagTextBox.Size = new Size(87, 23);
-            idTagTextBox.TabIndex = 2;
-            idTagTextBox.Visible = false;
             // 
             // nomeTagLabel
             // 
@@ -192,6 +106,89 @@ namespace Desafio.formulario
             TagLabel.TabIndex = 0;
             TagLabel.Text = "Código:";
             // 
+            // igualLabel
+            // 
+            igualLabel.AutoSize = true;
+            igualLabel.Location = new Point(246, 47);
+            igualLabel.Name = "igualLabel";
+            igualLabel.Size = new Size(15, 15);
+            igualLabel.TabIndex = 4;
+            igualLabel.Text = "=";
+            // 
+            // filtrarPorTagLabel
+            // 
+            filtrarPorTagLabel.AutoSize = true;
+            filtrarPorTagLabel.Location = new Point(11, 49);
+            filtrarPorTagLabel.Name = "filtrarPorTagLabel";
+            filtrarPorTagLabel.Size = new Size(64, 15);
+            filtrarPorTagLabel.TabIndex = 2;
+            filtrarPorTagLabel.Text = "Filtrar por: ";
+            // 
+            // usuarioCadastroTagLabel
+            // 
+            usuarioCadastroTagLabel.AutoSize = true;
+            usuarioCadastroTagLabel.Location = new Point(430, 149);
+            usuarioCadastroTagLabel.Name = "usuarioCadastroTagLabel";
+            usuarioCadastroTagLabel.Size = new Size(101, 15);
+            usuarioCadastroTagLabel.TabIndex = 5;
+            usuarioCadastroTagLabel.Text = "Usuário cadastro: ";
+            // 
+            // TagGroupBox
+            // 
+            TagGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TagGroupBox.Controls.Add(dataCadastroTagTextBox);
+            TagGroupBox.Controls.Add(tagDataDiaLabel);
+            TagGroupBox.Controls.Add(usuarioCadastroTagTextBox);
+            TagGroupBox.Controls.Add(usuarioCadastroTagLabel);
+            TagGroupBox.Controls.Add(nomeTagTextBox);
+            TagGroupBox.Controls.Add(nomeTagLabel);
+            TagGroupBox.Controls.Add(idTagTextBox);
+            TagGroupBox.Controls.Add(TagLabel);
+            TagGroupBox.Location = new Point(22, 61);
+            TagGroupBox.Margin = new Padding(4, 3, 4, 3);
+            TagGroupBox.Name = "TagGroupBox";
+            TagGroupBox.Size = new Size(665, 176);
+            TagGroupBox.TabIndex = 0;
+            TagGroupBox.TabStop = false;
+            TagGroupBox.Text = "Cadastre sua Tag";
+            // 
+            // dataCadastroTagTextBox
+            // 
+            dataCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "dataDia", true));
+            dataCadastroTagTextBox.Location = new Point(278, 144);
+            dataCadastroTagTextBox.Name = "dataCadastroTagTextBox";
+            dataCadastroTagTextBox.Size = new Size(126, 23);
+            dataCadastroTagTextBox.TabIndex = 7;
+            dataCadastroTagTextBox.Visible = false;
+            // 
+            // usuarioCadastroTagTextBox
+            // 
+            usuarioCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "cadastradorPor", true));
+            usuarioCadastroTagTextBox.Location = new Point(529, 143);
+            usuarioCadastroTagTextBox.Name = "usuarioCadastroTagTextBox";
+            usuarioCadastroTagTextBox.Size = new Size(130, 23);
+            usuarioCadastroTagTextBox.TabIndex = 6;
+            usuarioCadastroTagTextBox.Visible = false;
+            // 
+            // nomeTagTextBox
+            // 
+            nomeTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "nome", true));
+            nomeTagTextBox.Location = new Point(251, 46);
+            nomeTagTextBox.Name = "nomeTagTextBox";
+            nomeTagTextBox.Size = new Size(280, 23);
+            nomeTagTextBox.TabIndex = 3;
+            // 
+            // idTagTextBox
+            // 
+            idTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "Id", true));
+            idTagTextBox.Enabled = false;
+            idTagTextBox.Location = new Point(67, 47);
+            idTagTextBox.Margin = new Padding(4, 3, 4, 3);
+            idTagTextBox.Name = "idTagTextBox";
+            idTagTextBox.Size = new Size(87, 23);
+            idTagTextBox.TabIndex = 2;
+            idTagTextBox.Visible = false;
+            // 
             // tagDataGridView
             // 
             tagDataGridView.AllowUserToAddRows = false;
@@ -205,7 +202,7 @@ namespace Desafio.formulario
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             tagDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tagDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, dataDiaDataGridViewTextBoxColumn, cadastradorPorDataGridViewTextBoxColumn });
+            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, dataDiaDataGridViewTextBoxColumn, cadastradorPorDataGridViewTextBoxColumn });
             tagDataGridView.DataSource = tbTagBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -215,15 +212,42 @@ namespace Desafio.formulario
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             tagDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            tagDataGridView.Location = new Point(6, 31);
+            tagDataGridView.Dock = DockStyle.Fill;
+            tagDataGridView.Location = new Point(3, 19);
             tagDataGridView.Name = "tagDataGridView";
             tagDataGridView.ReadOnly = true;
             tagDataGridView.RowTemplate.Height = 25;
-            tagDataGridView.Size = new Size(653, 195);
+            tagDataGridView.Size = new Size(659, 210);
             tagDataGridView.TabIndex = 1;
+            tagDataGridView.MouseDoubleClick += tbTagDataGridView_MouseDoubleClick;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // dataDiaDataGridViewTextBoxColumn
+            // 
+            dataDiaDataGridViewTextBoxColumn.DataPropertyName = "dataDia";
+            dataDiaDataGridViewTextBoxColumn.HeaderText = "data Criação";
+            dataDiaDataGridViewTextBoxColumn.Name = "dataDiaDataGridViewTextBoxColumn";
+            dataDiaDataGridViewTextBoxColumn.ReadOnly = true;
+            dataDiaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // cadastradorPorDataGridViewTextBoxColumn
+            // 
+            cadastradorPorDataGridViewTextBoxColumn.DataPropertyName = "CadastradorPor";
+            cadastradorPorDataGridViewTextBoxColumn.HeaderText = "Usuário criação";
+            cadastradorPorDataGridViewTextBoxColumn.Name = "cadastradorPorDataGridViewTextBoxColumn";
+            cadastradorPorDataGridViewTextBoxColumn.ReadOnly = true;
+            cadastradorPorDataGridViewTextBoxColumn.Width = 200;
             // 
             // tagGroupBox2
             // 
+            tagGroupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tagGroupBox2.Controls.Add(tagDataGridView);
             tagGroupBox2.Location = new Point(22, 344);
             tagGroupBox2.Name = "tagGroupBox2";
@@ -234,26 +258,19 @@ namespace Desafio.formulario
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(igualLabel);
             groupBox1.Controls.Add(txtPesquisar);
             groupBox1.Controls.Add(filtrarPorTagLabel);
             groupBox1.Controls.Add(cbmFiltrarTag);
             groupBox1.Controls.Add(btnPesquisarTag);
             groupBox1.Location = new Point(29, 249);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(658, 89);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Pesquisar:";
-            // 
-            // igualLabel
-            // 
-            igualLabel.AutoSize = true;
-            igualLabel.Location = new Point(246, 47);
-            igualLabel.Name = "igualLabel";
-            igualLabel.Size = new Size(15, 15);
-            igualLabel.TabIndex = 4;
-            igualLabel.Text = "=";
             // 
             // txtPesquisar
             // 
@@ -263,22 +280,12 @@ namespace Desafio.formulario
             txtPesquisar.Size = new Size(151, 23);
             txtPesquisar.TabIndex = 3;
             // 
-            // filtrarPorTagLabel
-            // 
-            filtrarPorTagLabel.AutoSize = true;
-            filtrarPorTagLabel.Location = new Point(11, 49);
-            filtrarPorTagLabel.Name = "filtrarPorTagLabel";
-            filtrarPorTagLabel.Size = new Size(64, 15);
-            filtrarPorTagLabel.TabIndex = 2;
-            filtrarPorTagLabel.Text = "Filtrar por: ";
-            filtrarPorTagLabel.Click += filtrarPorTagLabel_Click;
-            // 
             // cbmFiltrarTag
             // 
-            cbmFiltrarTag.DataSource = tbTagBindingSource;
             cbmFiltrarTag.FormattingEnabled = true;
-            cbmFiltrarTag.Items.AddRange(new object[] { "", "Código", "Nome" });
+            cbmFiltrarTag.Items.AddRange(new object[] {"", "Código", "Nome" });
             cbmFiltrarTag.Location = new Point(79, 46);
+            cbmFiltrarTag.Margin = new Padding(4, 3, 4, 3);
             cbmFiltrarTag.Name = "cbmFiltrarTag";
             cbmFiltrarTag.Size = new Size(157, 23);
             cbmFiltrarTag.TabIndex = 1;
@@ -292,12 +299,10 @@ namespace Desafio.formulario
             btnPesquisarTag.Text = "Pesquisar";
             btnPesquisarTag.UseVisualStyleBackColor = true;
             btnPesquisarTag.Click += btnPesquisar_Click;
-
+            // 
             // tbTagTableAdapter
             // 
             tbTagTableAdapter.ClearBeforeFill = true;
-
-
             // 
             // tbTagBindingNavigator
             // 
@@ -306,7 +311,6 @@ namespace Desafio.formulario
             tbTagBindingNavigator.CountItem = bindingNavigatorCountItem;
             tbTagBindingNavigator.DeleteItem = bindingNavigatorDeleteItem;
             tbTagBindingNavigator.Items.AddRange(new ToolStripItem[] { bindingNavigatorMoveFirstItem, bindingNavigatorMovePreviousItem, bindingNavigatorSeparator, bindingNavigatorPositionItem, bindingNavigatorCountItem, bindingNavigatorSeparator1, bindingNavigatorMoveNextItem, bindingNavigatorMoveLastItem, bindingNavigatorSeparator2, bindingNavigatorAddNewItem, bindingNavigatorDeleteItem, tbTagBindingNavigatorSaveItem });
-
             tbTagBindingNavigator.Location = new Point(0, 0);
             tbTagBindingNavigator.MoveFirstItem = bindingNavigatorMoveFirstItem;
             tbTagBindingNavigator.MoveLastItem = bindingNavigatorMoveLastItem;
@@ -318,8 +322,6 @@ namespace Desafio.formulario
             tbTagBindingNavigator.TabIndex = 1;
             tbTagBindingNavigator.Text = "bindingNavigatorTag";
             tbTagBindingNavigator.RefreshItems += tbTagBindingNavigator_RefreshItems;
-
-
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -329,7 +331,6 @@ namespace Desafio.formulario
             bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             bindingNavigatorAddNewItem.Size = new Size(23, 22);
             bindingNavigatorAddNewItem.Text = "Add new";
-
             // 
             // bindingNavigatorCountItem
             // 
@@ -337,7 +338,6 @@ namespace Desafio.formulario
             bindingNavigatorCountItem.Size = new Size(37, 22);
             bindingNavigatorCountItem.Text = "de {0}";
             bindingNavigatorCountItem.ToolTipText = "Total number of items";
-
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -347,7 +347,6 @@ namespace Desafio.formulario
             bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             bindingNavigatorDeleteItem.Size = new Size(23, 22);
             bindingNavigatorDeleteItem.Text = "Delete";
-
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -412,52 +411,10 @@ namespace Desafio.formulario
             // tbTagBindingNavigatorSaveItem
             // 
             tbTagBindingNavigatorSaveItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tbTagBindingNavigatorSaveItem.Image = (Image)resources.GetObject("tbServicoBindingNavigatorSaveItem.Image");
-            tbTagBindingNavigatorSaveItem.Name = "tbServicoBindingNavigatorSaveItem";
+            tbTagBindingNavigatorSaveItem.Name = "tbTagBindingNavigatorSaveItem";
             tbTagBindingNavigatorSaveItem.Size = new Size(23, 22);
             tbTagBindingNavigatorSaveItem.Text = "Save Data";
             tbTagBindingNavigatorSaveItem.Click += salvarToolStripButton_Click;
-
-
-
-
-
-
-
-
-
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Código";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // dataDiaDataGridViewTextBoxColumn
-            // 
-            dataDiaDataGridViewTextBoxColumn.DataPropertyName = "dataDia";
-            dataDiaDataGridViewTextBoxColumn.HeaderText = "data Criação";
-            dataDiaDataGridViewTextBoxColumn.Name = "dataDiaDataGridViewTextBoxColumn";
-            dataDiaDataGridViewTextBoxColumn.ReadOnly = true;
-            dataDiaDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // cadastradorPorDataGridViewTextBoxColumn
-            // 
-            cadastradorPorDataGridViewTextBoxColumn.DataPropertyName = "CadastradorPor";
-            cadastradorPorDataGridViewTextBoxColumn.HeaderText = "Usuário criação";
-            cadastradorPorDataGridViewTextBoxColumn.Name = "cadastradorPorDataGridViewTextBoxColumn";
-            cadastradorPorDataGridViewTextBoxColumn.ReadOnly = true;
-            cadastradorPorDataGridViewTextBoxColumn.Width = 200;
             // 
             // frmTag
             // 
@@ -468,22 +425,21 @@ namespace Desafio.formulario
             Controls.Add(groupBox1);
             Controls.Add(tagGroupBox2);
             Controls.Add(TagGroupBox);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmTag";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Tag";
             Load += frmTag_Load;
             TagGroupBox.ResumeLayout(false);
             TagGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tbTagBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tbTagBindingNavigator).EndInit();
-            tbTagBindingNavigator.ResumeLayout(false);
-            tbTagBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tagDataGridView).EndInit();
             tagGroupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tagDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbTagBindingNavigator).EndInit();
+            tbTagBindingNavigator.ResumeLayout(false);
+            tbTagBindingNavigator.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -496,7 +452,7 @@ namespace Desafio.formulario
         private TextBox idTagTextBox;
         private Label nomeTagLabel;
         private ServicoDataSet servicoDataSet;
-        private Desafio.ServicoDataSetTableAdapters.tbTagTableAdapter tbTagTableAdapter;
+        private tbTagTableAdapter tbTagTableAdapter;
 
 
         private BindingSource tbTagBindingSource;

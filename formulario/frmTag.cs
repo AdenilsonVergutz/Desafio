@@ -33,6 +33,19 @@ namespace Desafio.formulario
                 if (nomeTagTextBox.Text != "")
                 {
 
+
+                    //Mostrar a Data do Cadastro na Hora
+                    if (dataCadastroTagTextBox.Text == "")
+                    {
+                        dataCadastroTagTextBox.Text = DateTime.Now.ToString();
+                    }
+                    //Mostrar quem Cadastrou o usuario
+                    if (usuarioCadastroTagTextBox.Text == "")
+                    {
+                        usuarioCadastroTagTextBox.Text = frmLogin.usuarioConectado;
+                    }
+
+
                     //Executar a aplicação
                     this.Validate();
                     this.tbTagBindingSource.EndEdit();
@@ -62,7 +75,7 @@ namespace Desafio.formulario
         {
 
             // TODO: This line of code loads data into the 'servicoDataSet.tbTag' table. You can move, or remove it, as needed.
-            //this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
+            this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
 
 
         }
@@ -95,7 +108,7 @@ namespace Desafio.formulario
                      * dados usando o DataTable.*/
                     da.Fill(tag);
 
-                    /*A tbUsuarioDataGridView recebe o DataTable usuario*/
+                    /*A TagDataGridView recebe o DataTable usuario*/
                     tagDataGridView.DataSource = tag;
 
 
@@ -110,9 +123,9 @@ namespace Desafio.formulario
                     cn.Open();
                     cmd.CommandType = CommandType.Text;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable servico = new DataTable();
-                    da.Fill(servico);
-                    tagDataGridView.DataSource = servico;
+                    DataTable tag = new DataTable();
+                    da.Fill(tag);
+                    tagDataGridView.DataSource = tag;
 
                 }
 
@@ -132,6 +145,8 @@ namespace Desafio.formulario
         {
             idTagTextBox.Clear();
             nomeTagTextBox.Clear();
+            dataCadastroTagTextBox.Clear();
+            usuarioCadastroTagTextBox.Clear();
         }
 
         private void tbTagDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -139,14 +154,10 @@ namespace Desafio.formulario
             LimparCampo();
             idTagTextBox.Text = tagDataGridView.CurrentRow.Cells[0].Value.ToString();
             nomeTagTextBox.Text = tagDataGridView.CurrentRow.Cells[1].Value.ToString();
+            dataCadastroTagTextBox.Text = tagDataGridView.CurrentRow.Cells[2].Value.ToString();
+            usuarioCadastroTagTextBox.Text = tagDataGridView.CurrentRow.Cells[3].Value.ToString();
 
         }
-
-        private void filtrarPorTagLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbTagBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 

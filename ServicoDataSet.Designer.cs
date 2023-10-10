@@ -1446,6 +1446,7 @@ namespace Desafio {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+
                 this.ExtendedProperties.Add("Generator_RowChangedName", "tbServicoRowChanged");
                 this.ExtendedProperties.Add("Generator_RowChangingName", "tbServicoRowChanging");
                 this.ExtendedProperties.Add("Generator_RowDeletedName", "tbServicoRowDeleted");
@@ -2150,13 +2151,21 @@ namespace Desafio {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AutoIncrementSeed = 1;
+                this.columnId.AutoIncrementStep = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnnome.AllowDBNull = false;
                 this.columnnome.MaxLength = 80;
+                this.columndataDia.MaxLength = 20;
+                this.columncadastradorPor.MaxLength = 20;
+                this.ExtendedProperties.Add("Generator_RowChangedName", "tbTagRowChanged");
+                this.ExtendedProperties.Add("Generator_RowChangingName", "tbTagRowChanging");
+                this.ExtendedProperties.Add("Generator_RowDeletedName", "tbTagRowDeleted");
+                this.ExtendedProperties.Add("Generator_RowDeletingName", "tbTagRowDeleting");
+                this.ExtendedProperties.Add("Generator_UserTableName", "tbTag");
+
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

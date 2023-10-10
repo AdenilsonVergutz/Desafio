@@ -35,7 +35,7 @@ namespace Desafio
             usuárioToolStripMenuItem = new ToolStripMenuItem();
             AutorToolStripMenuItem = new ToolStripMenuItem();
             serviçoToolStripMenuItem = new ToolStripMenuItem();
-            ordemDeServiçoToolStripMenuItem = new ToolStripMenuItem();
+            PostToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             AutorToolStripMenuItem1 = new ToolStripMenuItem();
@@ -72,7 +72,7 @@ namespace Desafio
             // 
             // cadastroToolStripMenuItem
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem, AutorToolStripMenuItem, serviçoToolStripMenuItem, ordemDeServiçoToolStripMenuItem, sairToolStripMenuItem });
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem, AutorToolStripMenuItem, serviçoToolStripMenuItem, PostToolStripMenuItem, sairToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             cadastroToolStripMenuItem.Size = new Size(66, 20);
             cadastroToolStripMenuItem.Text = "Cadastro";
@@ -98,12 +98,12 @@ namespace Desafio
             serviçoToolStripMenuItem.Text = "Categoria";
             serviçoToolStripMenuItem.Click += serviçoToolStripMenuItem_Click;
             // 
-            // ordemDeServiçoToolStripMenuItem
+            // PostToolStripMenuItem
             // 
-            ordemDeServiçoToolStripMenuItem.Name = "ordemDeServiçoToolStripMenuItem";
-            ordemDeServiçoToolStripMenuItem.Size = new Size(127, 22);
-            ordemDeServiçoToolStripMenuItem.Text = "Postagem";
-            ordemDeServiçoToolStripMenuItem.Click += PostToolStripMenuItem_Click;
+            PostToolStripMenuItem.Name = "PostToolStripMenuItem";
+            PostToolStripMenuItem.Size = new Size(127, 22);
+            PostToolStripMenuItem.Text = "Postagem";
+            PostToolStripMenuItem.Click += PostToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -292,7 +292,7 @@ namespace Desafio
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private ToolStripMenuItem AutorToolStripMenuItem;
         private ToolStripMenuItem serviçoToolStripMenuItem;
-        private ToolStripMenuItem ordemDeServiçoToolStripMenuItem;
+        private ToolStripMenuItem PostToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private ToolStripMenuItem AutorToolStripMenuItem1;
