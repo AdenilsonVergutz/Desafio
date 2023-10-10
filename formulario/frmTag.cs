@@ -19,7 +19,7 @@ namespace Desafio.formulario
         }
         SqlConnection cn = new SqlConnection(Desafio.Properties.Settings.Default.ServicoConnectionString);
         SqlCommand cmd = null;
-        private void salvarToolStripButton_Click(object sender, EventArgs e)
+        private void tbTagBindingNavigatorSaveItem_Click(object sender, EventArgs e)
 
         {
             try
@@ -33,6 +33,16 @@ namespace Desafio.formulario
                 //Se os campos estiver preenchido faça
                 if (nomeTagTextBox.Text != "")
                 {
+                    //Executar a aplicação
+                    this.Validate();
+                    this.tbTagBindingSource.EndEdit();
+                    this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
+
+
+                    MessageBox.Show("Cadastro realizado com sucesso",
+                               "Sucesso",
+                                   MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information);
 
                     //Mostrar a Data do Cadastro na Hora
                     if (dataCadastroTagTextBox.Text == "")
@@ -45,14 +55,7 @@ namespace Desafio.formulario
                         usuarioCadastroTagTextBox.Text = frmLogin.usuarioConectado;
                     }
 
-                    //Executar a aplicação
-                    this.Validate();
-                    this.tbTagBindingSource.EndEdit();
-                    this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
-                    MessageBox.Show("Cadastro realizado com sucesso",
-                               "Sucesso",
-                                   MessageBoxButtons.OK,
-                                       MessageBoxIcon.Information);
+
                 }
 
                 else

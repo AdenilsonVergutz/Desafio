@@ -5365,9 +5365,7 @@ SELECT idUsuario, usuario, senha, repitaSenha, nivelAcesso, dataDia, cadastrador
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cadastradorPor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cadastradorPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [tbTag] ([nome], [dataDia], [cadastradorPor]) VALUES (@nome, @dataDia" +
-                ", @cadastradorPor);\r\nSELECT Id, nome, dataDia, cadastradorPor FROM tbTag WHERE (" +
-                "Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [tbTag] ([nome], [dataDia], [cadastradorPor]) VALUES (@nome, @dataDia, @cadastradorPor);  SELECT Id, nome, dataDia, cadastradorPor FROM tbTag WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataDia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataDia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
