@@ -41,8 +41,6 @@ namespace Desafio.formulario
             nomeTagLabel = new Label();
             TagLabel = new Label();
             tagDataGridView = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bindingSource1 = new BindingSource(components);
             tagGroupBox2 = new GroupBox();
             groupBox1 = new GroupBox();
@@ -52,6 +50,10 @@ namespace Desafio.formulario
             cbmFiltrarTag = new ComboBox();
             tbTagBindingSource = new BindingSource(components);
             btnPesquisarTag = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nome = new DataGridViewTextBoxColumn();
+            dataDia = new DataGridViewTextBoxColumn();
+            cadastradorPor = new DataGridViewTextBoxColumn();
             TagGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tagDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -79,6 +81,7 @@ namespace Desafio.formulario
             // 
             // dataCadastroTagTextBox
             // 
+            dataCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "dataDia", true));
             dataCadastroTagTextBox.Location = new Point(278, 144);
             dataCadastroTagTextBox.Name = "dataCadastroTagTextBox";
             dataCadastroTagTextBox.Size = new Size(126, 23);
@@ -87,6 +90,7 @@ namespace Desafio.formulario
             // 
             // usuarioCadastroTagTextBox
             // 
+            usuarioCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "cadastradorPor", true));
             usuarioCadastroTagTextBox.Location = new Point(529, 143);
             usuarioCadastroTagTextBox.Name = "usuarioCadastroTagTextBox";
             usuarioCadastroTagTextBox.Size = new Size(130, 23);
@@ -113,6 +117,7 @@ namespace Desafio.formulario
             // 
             // nomeTagTextBox
             // 
+            nomeTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "nome", true));
             nomeTagTextBox.Location = new Point(251, 46);
             nomeTagTextBox.Name = "nomeTagTextBox";
             nomeTagTextBox.Size = new Size(280, 23);
@@ -120,6 +125,7 @@ namespace Desafio.formulario
             // 
             // idTagTextBox
             // 
+            idTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "Id", true));
             idTagTextBox.Enabled = false;
             idTagTextBox.Location = new Point(67, 47);
             idTagTextBox.Name = "idTagTextBox";
@@ -150,28 +156,14 @@ namespace Desafio.formulario
             tagDataGridView.AllowUserToAddRows = false;
             tagDataGridView.AutoGenerateColumns = false;
             tagDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn });
-            tagDataGridView.DataSource = bindingSource1;
+            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nome, dataDia, cadastradorPor });
+            tagDataGridView.DataSource = tbTagBindingSource;
             tagDataGridView.Location = new Point(6, 31);
             tagDataGridView.Name = "tagDataGridView";
             tagDataGridView.ReadOnly = true;
             tagDataGridView.RowTemplate.Height = 25;
             tagDataGridView.Size = new Size(653, 195);
             tagDataGridView.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Código";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingSource1
             // 
@@ -252,6 +244,38 @@ namespace Desafio.formulario
             btnPesquisarTag.Text = "Pesquisar";
             btnPesquisarTag.UseVisualStyleBackColor = true;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Código";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // nome
+            // 
+            nome.DataPropertyName = "nome";
+            nome.HeaderText = "nome";
+            nome.Name = "nome";
+            nome.ReadOnly = true;
+            nome.Width = 180;
+            // 
+            // dataDia
+            // 
+            dataDia.DataPropertyName = "dataDia";
+            dataDia.HeaderText = "data Criação";
+            dataDia.Name = "dataDia";
+            dataDia.ReadOnly = true;
+            dataDia.Width = 110;
+            // 
+            // cadastradorPor
+            // 
+            cadastradorPor.DataPropertyName = "CadastradorPor";
+            cadastradorPor.HeaderText = "Usuário criação";
+            cadastradorPor.Name = "cadastradorPor";
+            cadastradorPor.ReadOnly = true;
+            cadastradorPor.Width = 200;
+            // 
             // frmTag
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -287,8 +311,6 @@ namespace Desafio.formulario
         private BindingSource bindingSource1;
         private BindingSource tbTagTableAdapter;
         private GroupBox tagGroupBox2;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private Label tagDataDiaLabel;
         private TextBox dataCadastroTagTextBox;
         private TextBox usuarioCadastroTagTextBox;
@@ -299,5 +321,9 @@ namespace Desafio.formulario
         private Label filtrarPorTagLabel;
         private TextBox txtPesquisar;
         private Label igualLabel;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn dataDia;
+        private DataGridViewTextBoxColumn cadastradorPor;
     }
 }
