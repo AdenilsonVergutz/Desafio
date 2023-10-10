@@ -38,23 +38,38 @@ namespace Desafio
             Label dataDiaLabel;
             Label cadastradorPorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPost));
+            
             groupBox1 = new GroupBox();
-            idTagComboBox = new ComboBox();
             TagLabel = new Label();
             SlugPostLabel = new Label();
-            SlugPostTextBox = new TextBox();
-            tbPostBindingSource = new BindingSource(components);
-            servicoDataSet = new ServicoDataSet();
-            TituloTextBox = new TextBox();
             Titulolabel = new Label();
-            idCategoriaComboBox = new ComboBox();
-            tbCategoriaBindingSource = new BindingSource(components);
+            idPostTextBox = new TextBox();
+            SlugPostTextBox = new TextBox();
             cadastradorPorTextBox = new TextBox();
             dataDiaTextBox = new TextBox();
+            TituloTextBox = new TextBox();
+
+            idCategoriaComboBox = new ComboBox();
             idAutorComboBox = new ComboBox();
+            idTagComboBox = new ComboBox();
+
+            tbPostBindingSource = new BindingSource(components);
+            tbTagBindingSource = new BindingSource(components);
+            tbCategoriaBindingSource = new BindingSource(components);
             tbAutorBindingSource = new BindingSource(components);
-            idPostTextBox = new TextBox();
+
+
+
             tbPostTableAdapter = new tbPostTableAdapter();
+            tbAutorTableAdapter = new tbAutorTableAdapter();
+            tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
+            tbTagTableAdapter = new tbTagTableAdapter();
+
+
+            servicoDataSet = new ServicoDataSet();
+
+
+
             tbPostBindingNavigator = new BindingNavigator(components);
             bindingNavigatorAddNewItem = new ToolStripButton();
             bindingNavigatorCountItem = new ToolStripLabel();
@@ -68,21 +83,23 @@ namespace Desafio
             bindingNavigatorMoveLastItem = new ToolStripButton();
             bindingNavigatorSeparator2 = new ToolStripSeparator();
             tbPostBindingNavigatorSaveItem = new ToolStripButton();
+
             label1 = new Label();
             cbmFiltrar = new ComboBox();
             label2 = new Label();
             btnPesquisar = new Button();
             txtPesquisar = new MaskedTextBox();
             groupBox2 = new GroupBox();
+
             tbPostDataGridView = new DataGridView();
-            groupBox3 = new GroupBox();
-            tbAutorTableAdapter = new tbAutorTableAdapter();
-            tbCategoriaTableAdapter = new tbCategoriaTableAdapter();
             Id = new DataGridViewTextBoxColumn();
             Titulo = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            groupBox3 = new GroupBox();
+
+
             idOrdemLabel = new Label();
             idAutorLabel = new Label();
             idCategoriaLabel = new Label();
@@ -92,6 +109,7 @@ namespace Desafio
             ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbTagBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).BeginInit();
             tbPostBindingNavigator.SuspendLayout();
@@ -178,14 +196,7 @@ namespace Desafio
             groupBox1.TabStop = false;
             groupBox1.Text = "Dados do Post";
             groupBox1.Enter += groupBox1_Enter;
-            // 
-            // idTagComboBox
-            // 
-            idTagComboBox.FormattingEnabled = true;
-            idTagComboBox.Location = new Point(8, 195);
-            idTagComboBox.Name = "idTagComboBox";
-            idTagComboBox.Size = new Size(191, 23);
-            idTagComboBox.TabIndex = 16;
+  
             // 
             // TagLabel
             // 
@@ -241,6 +252,29 @@ namespace Desafio
             Titulolabel.Size = new Size(40, 15);
             Titulolabel.TabIndex = 11;
             Titulolabel.Text = "Titulo:";
+
+            // 
+            // idTagComboBox
+            //
+            idTagComboBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Id", true));
+            idTagComboBox.DataBindings.Add(new Binding("SelectedValue", tbPostBindingSource, "TagId", true));
+            idTagComboBox.DataSource = tbTagBindingSource;
+            idTagComboBox.DisplayMember = "Id";
+            idTagComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            idTagComboBox.FormattingEnabled = true;
+            idTagComboBox.Location = new Point(8, 195);
+            idTagComboBox.Name = "idTagComboBox";
+            idTagComboBox.Size = new Size(191, 23);
+            idTagComboBox.TabIndex = 16;
+            idTagComboBox.ValueMember = "Id";
+            idTagComboBox.SelectedIndexChanged += idTagComboBox_SelectedIndexChanged;
+
+            // 
+            // tbTagBindingSource
+            // 
+            tbTagBindingSource.DataMember = "tbTag";
+            tbTagBindingSource.DataSource = servicoDataSet;
+
             // 
             // idCategoriaComboBox
             // 
@@ -262,26 +296,6 @@ namespace Desafio
             tbCategoriaBindingSource.DataMember = "tbCategoria";
             tbCategoriaBindingSource.DataSource = servicoDataSet;
             // 
-            // cadastradorPorTextBox
-            // 
-            cadastradorPorTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "cadastradorPor", true));
-            cadastradorPorTextBox.Enabled = false;
-            cadastradorPorTextBox.Location = new Point(265, 250);
-            cadastradorPorTextBox.Margin = new Padding(4, 3, 4, 3);
-            cadastradorPorTextBox.Name = "cadastradorPorTextBox";
-            cadastradorPorTextBox.Size = new Size(162, 23);
-            cadastradorPorTextBox.TabIndex = 9;
-            // 
-            // dataDiaTextBox
-            // 
-            dataDiaTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "dataDia", true));
-            dataDiaTextBox.Enabled = false;
-            dataDiaTextBox.Location = new Point(445, 250);
-            dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
-            dataDiaTextBox.Name = "dataDiaTextBox";
-            dataDiaTextBox.Size = new Size(170, 23);
-            dataDiaTextBox.TabIndex = 7;
-            // 
             // idAutorComboBox
             // 
             idAutorComboBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Id", true));
@@ -302,6 +316,27 @@ namespace Desafio
             // 
             tbAutorBindingSource.DataMember = "tbAutor";
             tbAutorBindingSource.DataSource = servicoDataSet;
+            // 
+            // cadastradorPorTextBox
+            // 
+            cadastradorPorTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "cadastradorPor", true));
+            cadastradorPorTextBox.Enabled = false;
+            cadastradorPorTextBox.Location = new Point(265, 250);
+            cadastradorPorTextBox.Margin = new Padding(4, 3, 4, 3);
+            cadastradorPorTextBox.Name = "cadastradorPorTextBox";
+            cadastradorPorTextBox.Size = new Size(162, 23);
+            cadastradorPorTextBox.TabIndex = 9;
+            // 
+            // dataDiaTextBox
+            // 
+            dataDiaTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "dataDia", true));
+            dataDiaTextBox.Enabled = false;
+            dataDiaTextBox.Location = new Point(445, 250);
+            dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
+            dataDiaTextBox.Name = "dataDiaTextBox";
+            dataDiaTextBox.Size = new Size(170, 23);
+            dataDiaTextBox.TabIndex = 7;
+
             // 
             // idPostTextBox
             // 
@@ -444,7 +479,7 @@ namespace Desafio
             // cbmFiltrar
             // 
             cbmFiltrar.FormattingEnabled = true;
-            cbmFiltrar.Items.AddRange(new object[] { "", "POST", "Autor", "categoria" });
+            cbmFiltrar.Items.AddRange(new object[] { "", "POST", "Autor", "categoria", "tag" });
             cbmFiltrar.Location = new Point(76, 33);
             cbmFiltrar.Margin = new Padding(4, 3, 4, 3);
             cbmFiltrar.Name = "cbmFiltrar";
@@ -513,27 +548,6 @@ namespace Desafio
             tbPostDataGridView.TabIndex = 0;
             tbPostDataGridView.MouseDoubleClick += tbPostDataGridView_MouseDoubleClick;
             // 
-            // groupBox3
-            // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(tbPostDataGridView);
-            groupBox3.Location = new Point(10, 399);
-            groupBox3.Margin = new Padding(4, 3, 4, 3);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 3, 4, 3);
-            groupBox3.Size = new Size(642, 269);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Post(s)";
-            // 
-            // tbAutorTableAdapter
-            // 
-            tbAutorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbCategoriaTableAdapter
-            // 
-            tbCategoriaTableAdapter.ClearBeforeFill = true;
-            // 
             // Id
             // 
             Id.DataPropertyName = "Id";
@@ -572,6 +586,31 @@ namespace Desafio
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(tbPostDataGridView);
+            groupBox3.Location = new Point(10, 399);
+            groupBox3.Margin = new Padding(4, 3, 4, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(4, 3, 4, 3);
+            groupBox3.Size = new Size(642, 269);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Post(s)";
+            // 
+            // tbAutorTableAdapter
+            // 
+            tbAutorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbCategoriaTableAdapter
+            // 
+            tbCategoriaTableAdapter.ClearBeforeFill = true;
+            //
+            // tbTagTableAdapter
+            // 
+            tbTagTableAdapter.ClearBeforeFill = true;
+            // 
             // frmPost
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -592,6 +631,8 @@ namespace Desafio
             ((System.ComponentModel.ISupportInitialize)tbPostBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)servicoDataSet).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbCategoriaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbTagBindingSource).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)tbAutorBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbPostBindingNavigator).EndInit();
             tbPostBindingNavigator.ResumeLayout(false);
@@ -645,10 +686,17 @@ namespace Desafio
 
 
         private GroupBox groupBox3;
+
         private BindingSource tbAutorBindingSource;
-        private tbAutorTableAdapter tbAutorTableAdapter;
         private BindingSource tbCategoriaBindingSource;
+        private BindingSource tbTagBindingSource;
+
+        private tbAutorTableAdapter tbAutorTableAdapter;
         private tbCategoriaTableAdapter tbCategoriaTableAdapter;
+        private tbTagTableAdapter tbTagTableAdapter;
+
+
+
         private ComboBox idCategoriaComboBox;
         private Label Titulolabel;
         private ComboBox idTagComboBox;

@@ -19,7 +19,7 @@ namespace Desafio
         SqlCommand cmd = null;
         private void tbPostBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if ((idAutorComboBox.Text != "") && (idCategoriaComboBox.Text != ""))
+            if ((idAutorComboBox.Text != "") && (idCategoriaComboBox.Text != "") && (idTagComboBox.Text != ""))
             {
                 if (dataDiaTextBox.Text == "")
                 {
@@ -50,6 +50,8 @@ namespace Desafio
             this.tbCategoriaTableAdapter.Fill(this.servicoDataSet.tbCategoria);
             // TODO: This line of code loads data into the 'servicoDataSet.tbAutor' table. You can move, or remove it, as needed.
             this.tbAutorTableAdapter.Fill(this.servicoDataSet.tbAutor);
+            // TODO: This line of code loads data into the 'servicoDataSet.tbTag' table. You can move, or remove it, as needed.
+            this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
             // TODO: This line of code loads data into the 'servicoDataSet.tbPost' table. You can move, or remove it, as needed.
             this.tbPostTableAdapter.Fill(this.servicoDataSet.tbPost);
 
@@ -116,6 +118,20 @@ namespace Desafio
                     tbPostDataGridView.DataSource = os;
 
                 }
+
+                if (cbmFiltrar.Text == "Código Tag")
+                {
+                    //define a instrução SQL
+                    string sql = "SELECT * FROM tbPost WHERE idTag =" + txtPesquisar.Text + "";
+                    cmd = new SqlCommand(sql, cn);
+                    cn.Open();
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable os = new DataTable();
+                    da.Fill(os);
+                    tbPostDataGridView.DataSource = os;
+
+                }
             }
             catch (Exception ex)
             {
@@ -132,6 +148,7 @@ namespace Desafio
             idPostTextBox.Clear();
             idAutorComboBox.SelectedIndex = -1;
             idCategoriaComboBox.SelectedIndex = -1;
+            idTagComboBox.SelectedIndex = -1;
             dataDiaTextBox.Clear();
             cadastradorPorTextBox.Clear();
         }
@@ -141,8 +158,9 @@ namespace Desafio
             idPostTextBox.Text = tbPostDataGridView.CurrentRow.Cells[0].Value.ToString();
             idAutorComboBox.Text = tbPostDataGridView.CurrentRow.Cells[1].Value.ToString();
             idCategoriaComboBox.Text = tbPostDataGridView.CurrentRow.Cells[2].Value.ToString();
-            dataDiaTextBox.Text = tbPostDataGridView.CurrentRow.Cells[3].Value.ToString();
-            cadastradorPorTextBox.Text = tbPostDataGridView.CurrentRow.Cells[4].Value.ToString();
+            idTagComboBox.Text = tbPostDataGridView.CurrentRow.Cells[3].Value.ToString();
+            dataDiaTextBox.Text = tbPostDataGridView.CurrentRow.Cells[4].Value.ToString();
+            cadastradorPorTextBox.Text = tbPostDataGridView.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -161,6 +179,11 @@ namespace Desafio
         }
 
         private void tbPostBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idTagComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
