@@ -243,7 +243,7 @@ namespace Desafio
             // 
             // tsbTag
             // 
-            tsbTag.Image = Properties.Resources.paste;
+            //tsbTag.Image = Properties.Resources.paste;
             tsbTag.Image = (Image)resources.GetObject("tsbTag.Image");
             tsbTag.ImageScaling = ToolStripItemImageScaling.None;
             tsbTag.ImageTransparentColor = Color.Magenta;

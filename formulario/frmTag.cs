@@ -19,6 +19,9 @@ namespace Desafio.formulario
         }
         SqlConnection cn = new SqlConnection(Desafio.Properties.Settings.Default.ServicoConnectionString);
         SqlCommand cmd = null;
+
+
+       
         private void tbTagBindingNavigatorSaveItem_Click(object sender, EventArgs e)
 
         {
@@ -33,16 +36,6 @@ namespace Desafio.formulario
                 //Se os campos estiver preenchido faça
                 if (nomeTagTextBox.Text != "")
                 {
-                    //Executar a aplicação
-                    this.Validate();
-                    this.tbTagBindingSource.EndEdit();
-                    this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
-
-
-                    MessageBox.Show("Cadastro realizado com sucesso",
-                               "Sucesso",
-                                   MessageBoxButtons.OK,
-                                       MessageBoxIcon.Information);
 
                     //Mostrar a Data do Cadastro na Hora
                     if (dataCadastroTagTextBox.Text == "")
@@ -55,6 +48,15 @@ namespace Desafio.formulario
                         usuarioCadastroTagTextBox.Text = frmLogin.usuarioConectado;
                     }
 
+                    //Executar a aplicação
+                    this.Validate();
+                    this.tbTagBindingSource.EndEdit();
+                    this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
+
+                    MessageBox.Show("Cadastro realizado com sucesso",
+                               "Sucesso",
+                                   MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information);
 
                 }
 
@@ -76,12 +78,10 @@ namespace Desafio.formulario
         private void frmTag_Load(object sender, EventArgs e)
         {
 
-            // TODO: This line of code loads data into the 'servicoDataSet.tbTag' table. You can move, or remove it, as needed.
-            //this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
-
+            // TODO: This line of code loads data into the 'servicoDataSet.tbCategoria' table. You can move, or remove it, as needed.
+            this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
 
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             try
@@ -141,8 +141,6 @@ namespace Desafio.formulario
                 cn.Close();
             }
         }
-
-
         private void LimparCampo()
         {
             idTagTextBox.Clear();
@@ -150,7 +148,6 @@ namespace Desafio.formulario
             dataCadastroTagTextBox.Clear();
             usuarioCadastroTagTextBox.Clear();
         }
-
         private void tbTagDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             LimparCampo();
