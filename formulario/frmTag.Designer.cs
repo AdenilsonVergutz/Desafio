@@ -70,6 +70,10 @@ namespace Desafio.formulario
             bindingNavigatorMoveLastItem = new ToolStripButton();
             bindingNavigatorSeparator2 = new ToolStripSeparator();
             tbTagBindingNavigatorSaveItem = new ToolStripButton();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataDiaDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            cadastradorPorDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             TagGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tbTagBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tagDataGridView).BeginInit();
@@ -161,6 +165,11 @@ namespace Desafio.formulario
             dataCadastroTagTextBox.TabIndex = 7;
             dataCadastroTagTextBox.Visible = false;
             // 
+            // tbTagBindingSource
+            // 
+            tbTagBindingSource.DataMember = "tbTag";
+            tbTagBindingSource.DataSource = typeof(ServicoDataSet);
+            // 
             // usuarioCadastroTagTextBox
             // 
             usuarioCadastroTagTextBox.DataBindings.Add(new Binding("Text", tbTagBindingSource, "cadastradorPor", true));
@@ -202,7 +211,7 @@ namespace Desafio.formulario
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             tagDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             tagDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, dataDiaDataGridViewTextBoxColumn, cadastradorPorDataGridViewTextBoxColumn });
+            tagDataGridView.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, dataDiaDataGridViewTextBoxColumn, cadastradorPorDataGridViewTextBoxColumn, idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn1, dataDiaDataGridViewTextBoxColumn1, cadastradorPorDataGridViewTextBoxColumn1 });
             tagDataGridView.DataSource = tbTagBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -283,7 +292,7 @@ namespace Desafio.formulario
             // cbmFiltrarTag
             // 
             cbmFiltrarTag.FormattingEnabled = true;
-            cbmFiltrarTag.Items.AddRange(new object[] {"", "Código", "Nome" });
+            cbmFiltrarTag.Items.AddRange(new object[] { "", "Código", "Nome" });
             cbmFiltrarTag.Location = new Point(79, 46);
             cbmFiltrarTag.Margin = new Padding(4, 3, 4, 3);
             cbmFiltrarTag.Name = "cbmFiltrarTag";
@@ -416,6 +425,34 @@ namespace Desafio.formulario
             tbTagBindingNavigatorSaveItem.Text = "Save Data";
             tbTagBindingNavigatorSaveItem.Click += salvarToolStripButton_Click;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn1
+            // 
+            nomeDataGridViewTextBoxColumn1.DataPropertyName = "nome";
+            nomeDataGridViewTextBoxColumn1.HeaderText = "nome";
+            nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
+            nomeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataDiaDataGridViewTextBoxColumn1
+            // 
+            dataDiaDataGridViewTextBoxColumn1.DataPropertyName = "dataDia";
+            dataDiaDataGridViewTextBoxColumn1.HeaderText = "dataDia";
+            dataDiaDataGridViewTextBoxColumn1.Name = "dataDiaDataGridViewTextBoxColumn1";
+            dataDiaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cadastradorPorDataGridViewTextBoxColumn1
+            // 
+            cadastradorPorDataGridViewTextBoxColumn1.DataPropertyName = "cadastradorPor";
+            cadastradorPorDataGridViewTextBoxColumn1.HeaderText = "cadastradorPor";
+            cadastradorPorDataGridViewTextBoxColumn1.Name = "cadastradorPorDataGridViewTextBoxColumn1";
+            cadastradorPorDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // frmTag
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -488,5 +525,8 @@ namespace Desafio.formulario
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataDiaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cadastradorPorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataDiaDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn cadastradorPorDataGridViewTextBoxColumn1;
     }
 }

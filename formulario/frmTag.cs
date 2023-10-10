@@ -27,12 +27,12 @@ namespace Desafio.formulario
                 //Desabilita o botão excluir para quem tiver nivel de acesso Operador
                 if (frmLogin.NivelAcesso == "")
                 {
-                    //bindingNavigatorDeleteItem.Enabled = false;
+                    bindingNavigatorDeleteItem.Enabled = false;
                 }
+
                 //Se os campos estiver preenchido faça
                 if (nomeTagTextBox.Text != "")
                 {
-
 
                     //Mostrar a Data do Cadastro na Hora
                     if (dataCadastroTagTextBox.Text == "")
@@ -45,11 +45,10 @@ namespace Desafio.formulario
                         usuarioCadastroTagTextBox.Text = frmLogin.usuarioConectado;
                     }
 
-
                     //Executar a aplicação
                     this.Validate();
                     this.tbTagBindingSource.EndEdit();
-                    //this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
+                    this.tbTagTableAdapter.Update(this.servicoDataSet.tbTag);
                     MessageBox.Show("Cadastro realizado com sucesso",
                                "Sucesso",
                                    MessageBoxButtons.OK,
@@ -75,7 +74,7 @@ namespace Desafio.formulario
         {
 
             // TODO: This line of code loads data into the 'servicoDataSet.tbTag' table. You can move, or remove it, as needed.
-            this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
+            //this.tbTagTableAdapter.Fill(this.servicoDataSet.tbTag);
 
 
         }
