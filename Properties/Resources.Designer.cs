@@ -10,8 +10,9 @@
 
 namespace Desafio.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
     /// </summary>
@@ -128,6 +129,11 @@ namespace Desafio.Properties {
                 object obj = ResourceManager.GetObject("telaLogin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
+        }
+
+        internal static Image GetObject(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

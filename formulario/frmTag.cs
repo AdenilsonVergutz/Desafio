@@ -15,10 +15,10 @@ namespace Desafio.formulario
         public frmTag()
         {
             InitializeComponent();
-            SqlConnection cn = new SqlConnection(Desafio.Properties.Settings.Default.ServicoConnectionString);
-            SqlCommand cmd = null;
 
         }
+        SqlConnection cn = new SqlConnection(Desafio.Properties.Settings.Default.ServicoConnectionString);
+        SqlCommand cmd = null;
         private void salvarToolStripButton_Click(object sender, EventArgs e)
 
         {
@@ -66,6 +66,67 @@ namespace Desafio.formulario
 
 
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbmFiltrarTag.Text == "Código")
+                {
+                    //Define a instrução Sql
+                    string sql = "SELECT * FROM tbTag WHERE Id =" + txtPesquisar.Text + "";
+
+                    //Lê os dados da variavel sql e conectar no cn
+                    cmd = new SqlCommand(sql, cn);
+                    //Abre conexão
+                    cn.Open();
+
+                    //Define o valor da CommandType para cmd
+                    cmd.CommandType = CommandType.Text;
+
+                    /*Representa um conjunto de comandos de dados e uma conexão de banco de dados 
+                    que são usados para preencher o DataSet e atualizar um banco de dados SQL Server.*/
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    //Representa uma tabela de dados na memória.
+                    DataTable tag = new DataTable();
+
+                    /* Adiciona ou atualiza linhas em um DataTable para que correspondam na fonte de 
+                     * dados usando o DataTable.*/
+                    da.Fill(tag);
+
+                    /*A tbUsuarioDataGridView recebe o DataTable usuario*/
+                    tagDataGridView.DataSource = tag;
+
+
+
+
+                }
+                if (cbmFiltrarTag.Text == "Nome")
+                {
+                    //define a instrução SQL
+                    string sql = "SELECT * FROM tbTag WHERE nome LIKE '%" + txtPesquisar.Text + "%'";
+                    cmd = new SqlCommand(sql, cn);
+                    cn.Open();
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable servico = new DataTable();
+                    da.Fill(servico);
+                    tagDataGridView.DataSource = servico;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
 
         private void LimparCampo()
         {
