@@ -596,7 +596,7 @@ namespace Desafio.formulario
         private Label label1;
         private GroupBox groupBox3;
         private DataGridView tbCategoriaDataGridView;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        //private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

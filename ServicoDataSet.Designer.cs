@@ -1083,8 +1083,13 @@ namespace Desafio {
                 base.Columns.Add(this.columnSlug);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid,
-                                this.columnIdAutor}, true));
+                                this.columnIdAutor,
+                                this.columnIdCategoria,
+                                this.columnTagId}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = 1;
                 this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
                 this.columndataDia.MaxLength = 20;
                 this.columncadastradorPor.MaxLength = 50;
                 this.columnIdCategoria.AllowDBNull = false;
