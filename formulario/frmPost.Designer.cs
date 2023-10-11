@@ -79,12 +79,15 @@ namespace Desafio
             txtPesquisar = new MaskedTextBox();
             groupBox2 = new GroupBox();
             tbPostDataGridView = new DataGridView();
-            groupBox3 = new GroupBox();
             Id = new DataGridViewTextBoxColumn();
             Titulo = new DataGridViewTextBoxColumn();
+            Slug = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            TagId = new DataGridViewTextBoxColumn();
+            IdCategoria = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            groupBox3 = new GroupBox();
             idOrdemLabel = new Label();
             idAutorLabel = new Label();
             idCategoriaLabel = new Label();
@@ -136,7 +139,7 @@ namespace Desafio
             // dataDiaLabel
             // 
             dataDiaLabel.AutoSize = true;
-            dataDiaLabel.Location = new Point(445, 232);
+            dataDiaLabel.Location = new Point(585, 232);
             dataDiaLabel.Margin = new Padding(4, 0, 4, 0);
             dataDiaLabel.Name = "dataDiaLabel";
             dataDiaLabel.Size = new Size(101, 15);
@@ -146,7 +149,7 @@ namespace Desafio
             // cadastradorPorLabel
             // 
             cadastradorPorLabel.AutoSize = true;
-            cadastradorPorLabel.Location = new Point(261, 232);
+            cadastradorPorLabel.Location = new Point(401, 232);
             cadastradorPorLabel.Margin = new Padding(4, 0, 4, 0);
             cadastradorPorLabel.Name = "cadastradorPorLabel";
             cadastradorPorLabel.Size = new Size(94, 15);
@@ -176,7 +179,7 @@ namespace Desafio
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(638, 281);
+            groupBox1.Size = new Size(865, 281);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Dados do Post";
@@ -195,7 +198,6 @@ namespace Desafio
             idTagComboBox.Size = new Size(191, 23);
             idTagComboBox.TabIndex = 16;
             idTagComboBox.ValueMember = "Id";
-            idTagComboBox.SelectedIndexChanged += idTagComboBox_SelectedIndexChanged;
             // 
             // tbPostBindingSource
             // 
@@ -225,7 +227,7 @@ namespace Desafio
             // SlugPostLabel
             // 
             SlugPostLabel.AutoSize = true;
-            SlugPostLabel.Location = new Point(322, 82);
+            SlugPostLabel.Location = new Point(462, 82);
             SlugPostLabel.Name = "SlugPostLabel";
             SlugPostLabel.Size = new Size(33, 15);
             SlugPostLabel.TabIndex = 14;
@@ -234,7 +236,7 @@ namespace Desafio
             // SlugPostTextBox
             // 
             SlugPostTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Slug", true));
-            SlugPostTextBox.Location = new Point(361, 79);
+            SlugPostTextBox.Location = new Point(501, 79);
             SlugPostTextBox.Multiline = true;
             SlugPostTextBox.Name = "SlugPostTextBox";
             SlugPostTextBox.Size = new Size(254, 125);
@@ -243,7 +245,7 @@ namespace Desafio
             // TituloTextBox
             // 
             TituloTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "Titulo", true));
-            TituloTextBox.Location = new Point(361, 16);
+            TituloTextBox.Location = new Point(501, 16);
             TituloTextBox.Name = "TituloTextBox";
             TituloTextBox.Size = new Size(253, 23);
             TituloTextBox.TabIndex = 12;
@@ -251,7 +253,7 @@ namespace Desafio
             // Titulolabel
             // 
             Titulolabel.AutoSize = true;
-            Titulolabel.Location = new Point(318, 19);
+            Titulolabel.Location = new Point(458, 19);
             Titulolabel.Name = "Titulolabel";
             Titulolabel.Size = new Size(40, 15);
             Titulolabel.TabIndex = 11;
@@ -270,7 +272,6 @@ namespace Desafio
             idCategoriaComboBox.Size = new Size(189, 23);
             idCategoriaComboBox.TabIndex = 10;
             idCategoriaComboBox.ValueMember = "Id";
-            idCategoriaComboBox.SelectedIndexChanged += idCategoriaComboBox_SelectedIndexChanged;
             // 
             // tbCategoriaBindingSource
             // 
@@ -281,7 +282,7 @@ namespace Desafio
             // 
             cadastradorPorTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "cadastradorPor", true));
             cadastradorPorTextBox.Enabled = false;
-            cadastradorPorTextBox.Location = new Point(265, 250);
+            cadastradorPorTextBox.Location = new Point(405, 250);
             cadastradorPorTextBox.Margin = new Padding(4, 3, 4, 3);
             cadastradorPorTextBox.Name = "cadastradorPorTextBox";
             cadastradorPorTextBox.Size = new Size(162, 23);
@@ -291,7 +292,7 @@ namespace Desafio
             // 
             dataDiaTextBox.DataBindings.Add(new Binding("Text", tbPostBindingSource, "dataDia", true));
             dataDiaTextBox.Enabled = false;
-            dataDiaTextBox.Location = new Point(445, 250);
+            dataDiaTextBox.Location = new Point(585, 250);
             dataDiaTextBox.Margin = new Padding(4, 3, 4, 3);
             dataDiaTextBox.Name = "dataDiaTextBox";
             dataDiaTextBox.Size = new Size(170, 23);
@@ -311,7 +312,6 @@ namespace Desafio
             idAutorComboBox.Size = new Size(187, 23);
             idAutorComboBox.TabIndex = 3;
             idAutorComboBox.ValueMember = "Id";
-            idAutorComboBox.SelectedIndexChanged += idAutorComboBox_SelectedIndexChanged;
             // 
             // tbAutorBindingSource
             // 
@@ -359,7 +359,7 @@ namespace Desafio
             tbPostBindingNavigator.MovePreviousItem = bindingNavigatorMovePreviousItem;
             tbPostBindingNavigator.Name = "tbPostBindingNavigator";
             tbPostBindingNavigator.PositionItem = bindingNavigatorPositionItem;
-            tbPostBindingNavigator.Size = new Size(666, 25);
+            tbPostBindingNavigator.Size = new Size(893, 25);
             tbPostBindingNavigator.TabIndex = 3;
             tbPostBindingNavigator.Text = "bindingNavigator1";
             tbPostBindingNavigator.RefreshItems += tbPostBindingNavigator_RefreshItems;
@@ -461,7 +461,7 @@ namespace Desafio
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(7, 37);
+            label1.Location = new Point(151, 37);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(61, 15);
@@ -472,7 +472,7 @@ namespace Desafio
             // 
             cbmFiltrar.FormattingEnabled = true;
             cbmFiltrar.Items.AddRange(new object[] { "", "POST", "Autor", "categoria", "tag" });
-            cbmFiltrar.Location = new Point(76, 33);
+            cbmFiltrar.Location = new Point(220, 33);
             cbmFiltrar.Margin = new Padding(4, 3, 4, 3);
             cbmFiltrar.Name = "cbmFiltrar";
             cbmFiltrar.Size = new Size(140, 23);
@@ -481,7 +481,7 @@ namespace Desafio
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(224, 37);
+            label2.Location = new Point(368, 37);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(15, 15);
@@ -490,7 +490,7 @@ namespace Desafio
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Location = new Point(407, 31);
+            btnPesquisar.Location = new Point(551, 31);
             btnPesquisar.Margin = new Padding(4, 3, 4, 3);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(88, 27);
@@ -501,7 +501,7 @@ namespace Desafio
             // 
             // txtPesquisar
             // 
-            txtPesquisar.Location = new Point(246, 33);
+            txtPesquisar.Location = new Point(390, 33);
             txtPesquisar.Margin = new Padding(4, 3, 4, 3);
             txtPesquisar.Name = "txtPesquisar";
             txtPesquisar.Size = new Size(153, 23);
@@ -519,7 +519,7 @@ namespace Desafio
             groupBox2.Margin = new Padding(4, 3, 4, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 3, 4, 3);
-            groupBox2.Size = new Size(638, 75);
+            groupBox2.Size = new Size(865, 75);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Posts";
@@ -529,29 +529,16 @@ namespace Desafio
             tbPostDataGridView.AllowUserToAddRows = false;
             tbPostDataGridView.AllowUserToDeleteRows = false;
             tbPostDataGridView.AutoGenerateColumns = false;
-            tbPostDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Titulo, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            tbPostDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Titulo, Slug, dataGridViewTextBoxColumn2, TagId, IdCategoria, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
             tbPostDataGridView.DataSource = tbPostBindingSource;
             tbPostDataGridView.Dock = DockStyle.Fill;
             tbPostDataGridView.Location = new Point(4, 19);
             tbPostDataGridView.Margin = new Padding(4, 3, 4, 3);
             tbPostDataGridView.Name = "tbPostDataGridView";
             tbPostDataGridView.ReadOnly = true;
-            tbPostDataGridView.Size = new Size(634, 247);
+            tbPostDataGridView.Size = new Size(861, 247);
             tbPostDataGridView.TabIndex = 0;
             tbPostDataGridView.MouseDoubleClick += tbPostDataGridView_MouseDoubleClick;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(tbPostDataGridView);
-            groupBox3.Location = new Point(10, 399);
-            groupBox3.Margin = new Padding(4, 3, 4, 3);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 3, 4, 3);
-            groupBox3.Size = new Size(642, 269);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Post(s)";
             // 
             // Id
             // 
@@ -568,12 +555,33 @@ namespace Desafio
             Titulo.ReadOnly = true;
             Titulo.Width = 200;
             // 
+            // Slug
+            // 
+            Slug.DataPropertyName = "Slug";
+            Slug.HeaderText = "Slug";
+            Slug.Name = "Slug";
+            Slug.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.DataPropertyName = "IdAutor";
             dataGridViewTextBoxColumn2.HeaderText = "Código Autor";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // TagId
+            // 
+            TagId.DataPropertyName = "TagId";
+            TagId.HeaderText = "Tag";
+            TagId.Name = "TagId";
+            TagId.ReadOnly = true;
+            // 
+            // IdCategoria
+            // 
+            IdCategoria.DataPropertyName = "IdCategoria";
+            IdCategoria.HeaderText = "Categoria";
+            IdCategoria.Name = "IdCategoria";
+            IdCategoria.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -591,11 +599,24 @@ namespace Desafio
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(tbPostDataGridView);
+            groupBox3.Location = new Point(10, 399);
+            groupBox3.Margin = new Padding(4, 3, 4, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(4, 3, 4, 3);
+            groupBox3.Size = new Size(869, 269);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Post(s)";
+            // 
             // frmPost
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(666, 688);
+            ClientSize = new Size(893, 688);
             Controls.Add(tbPostBindingNavigator);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -654,6 +675,7 @@ namespace Desafio
         private MaskedTextBox txtPesquisar;
         private GroupBox groupBox2;
         private DataGridView tbPostDataGridView;
+
         //private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         //private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 
@@ -685,7 +707,10 @@ namespace Desafio
         private TextBox TituloTextBox;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Titulo;
+        private DataGridViewTextBoxColumn Slug;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn TagId;
+        private DataGridViewTextBoxColumn IdCategoria;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }

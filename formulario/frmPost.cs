@@ -19,8 +19,16 @@ namespace Desafio
         SqlCommand cmd = null;
         private void tbPostBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if ((idAutorComboBox.Text != "") && (idCategoriaComboBox.Text != "") && (idTagComboBox.Text != ""))
+            if ((idAutorComboBox.Text != "") && (idCategoriaComboBox.Text != "") && (idTagComboBox.Text != "") && (TituloTextBox.Text != "") && (SlugPostTextBox.Text != ""))
             {
+                this.Validate();
+                this.tbPostBindingSource.EndEdit();
+                this.tbPostTableAdapter.Update(this.servicoDataSet.tbPost);
+                MessageBox.Show("Post cadastrado com sucesso",
+                               "Sucesso",
+                                   MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information);
+
                 if (dataDiaTextBox.Text == "")
                 {
                     dataDiaTextBox.Text = DateTime.Now.ToString();
@@ -30,13 +38,7 @@ namespace Desafio
                     cadastradorPorTextBox.Text = frmLogin.usuarioConectado;
                 }
 
-                this.Validate();
-                this.tbPostBindingSource.EndEdit();
-                this.tbPostTableAdapter.Update(this.servicoDataSet.tbPost);
-                MessageBox.Show("Post cadastrado com sucesso",
-                               "Sucesso",
-                                   MessageBoxButtons.OK,
-                                       MessageBoxIcon.Information);
+
             }
             else
             {
@@ -149,18 +151,36 @@ namespace Desafio
             idAutorComboBox.SelectedIndex = -1;
             idCategoriaComboBox.SelectedIndex = -1;
             idTagComboBox.SelectedIndex = -1;
-            dataDiaTextBox.Clear();
+
+            //idPostTextBox.Clear();
+            //idAutorComboBox.ResetText();
+            //idCategoriaComboBox.ResetText();
+            //idTagComboBox.ResetText();
+
+            dataDiaTextBox.Text = "";
             cadastradorPorTextBox.Clear();
+            TituloTextBox.Text = "";
+            SlugPostTextBox.Text = "";
         }
         private void tbPostDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            LimparCampo();
-            idPostTextBox.Text = tbPostDataGridView.CurrentRow.Cells[0].Value.ToString();
-            idAutorComboBox.Text = tbPostDataGridView.CurrentRow.Cells[1].Value.ToString();
-            idCategoriaComboBox.Text = tbPostDataGridView.CurrentRow.Cells[2].Value.ToString();
-            idTagComboBox.Text = tbPostDataGridView.CurrentRow.Cells[3].Value.ToString();
-            dataDiaTextBox.Text = tbPostDataGridView.CurrentRow.Cells[4].Value.ToString();
-            cadastradorPorTextBox.Text = tbPostDataGridView.CurrentRow.Cells[5].Value.ToString();
+            try
+            {
+                LimparCampo();
+                idPostTextBox.Text = tbPostDataGridView.CurrentRow.Cells[0].Value.ToString();
+                idAutorComboBox.Text = tbPostDataGridView.CurrentRow.Cells[1].Value.ToString();
+                idCategoriaComboBox.Text = tbPostDataGridView.CurrentRow.Cells[2].Value.ToString();
+                idTagComboBox.Text = tbPostDataGridView.CurrentRow.Cells[3].Value.ToString();
+                dataDiaTextBox.Text = tbPostDataGridView.CurrentRow.Cells[4].Value.ToString();
+                cadastradorPorTextBox.Text = tbPostDataGridView.CurrentRow.Cells[5].Value.ToString();
+                TituloTextBox.Text = tbPostDataGridView.CurrentRow.Cells[6].Value.ToString();
+                SlugPostTextBox.Text = tbPostDataGridView.CurrentRow.Cells[7].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível Carregar os dados pelo motivo: " + ex.Message);
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -187,5 +207,7 @@ namespace Desafio
         {
 
         }
+
+
     }
 }

@@ -89,12 +89,12 @@ namespace Desafio
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             groupBox4 = new GroupBox();
             tbPostDataGridView = new DataGridView();
-            tbPostBindingSource = new BindingSource(components);
-            tbPostTableAdapter = new ServicoDataSetTableAdapters.tbPostTableAdapter();
-            timer1 = new System.Windows.Forms.Timer(components);
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
+            tbPostBindingSource = new BindingSource(components);
+            tbPostTableAdapter = new ServicoDataSetTableAdapters.tbPostTableAdapter();
+            timer1 = new System.Windows.Forms.Timer(components);
             idAutorLabel = new Label();
             nomeLabel = new Label();
             cpfLabel = new Label();
@@ -668,20 +668,7 @@ namespace Desafio
             tbPostDataGridView.Size = new Size(484, 292);
             tbPostDataGridView.TabIndex = 0;
             tbPostDataGridView.CellContentClick += tbPostDataGridView_CellContentClick;
-            // 
-            // tbPostBindingSource
-            // 
-            tbPostBindingSource.DataMember = "FK_Post_Autor_id";
-            tbPostBindingSource.DataSource = tbAutorBindingSource;
-            // 
-            // tbPostTableAdapter
-            // 
-            tbPostTableAdapter.ClearBeforeFill = true;
-            // 
-            // timer1
-            // 
-            timer1.Enabled = true;
-            timer1.Tick += timer1_Tick;
+            tbPostDataGridView.MouseDoubleClick += tbAutorDataGridView_MouseDoubleClick;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -706,6 +693,20 @@ namespace Desafio
             dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             dataGridViewTextBoxColumn15.ReadOnly = true;
             dataGridViewTextBoxColumn15.Width = 120;
+            // 
+            // tbPostBindingSource
+            // 
+            tbPostBindingSource.DataMember = "FK_Post_Autor_id";
+            tbPostBindingSource.DataSource = tbAutorBindingSource;
+            // 
+            // tbPostTableAdapter
+            // 
+            tbPostTableAdapter.ClearBeforeFill = true;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // frmAutor
             // 
