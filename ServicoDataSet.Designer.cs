@@ -1088,12 +1088,14 @@ namespace Desafio {
                                 this.columnTagId}, true));
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = 1;
+                this.columnid.AutoIncrementStep = 1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columndataDia.MaxLength = 20;
                 this.columncadastradorPor.MaxLength = 50;
                 this.columnIdCategoria.AllowDBNull = false;
                 this.columnIdAutor.AllowDBNull = false;
+                this.columnTagId.AllowDBNull = false;
                 this.columnTitulo.AllowDBNull = false;
                 this.columnTitulo.MaxLength = 160;
                 this.columnSlug.AllowDBNull = false;
@@ -1446,8 +1448,8 @@ namespace Desafio {
                 this.columndataDia.MaxLength = 20;
                 this.columncadastradoPor.MaxLength = 20;
                 this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AutoIncrementSeed = 1;
+                this.columnid.AutoIncrementStep = 1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
